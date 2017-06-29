@@ -2,6 +2,8 @@
 
 const express = require('express')
 const app = express()
+
+var ip = "localhost";	//127.0.0.1
 var port = process.argv[2];
 
 app.get('/', function (req, res) {
@@ -9,6 +11,6 @@ app.get('/', function (req, res) {
   console.log('Hello World!');
 })
 
-app.listen(port, function () {
-  console.log('Example app listening on ' + port + '!');
-})
+var server = app.listen(port, ip, function () {
+    console.log(`Servidor: Listening on http://${ip}:${port}/`);
+});

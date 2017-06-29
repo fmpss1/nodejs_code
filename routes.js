@@ -2,9 +2,9 @@
 
 var appRouter = function(app) {
 //var SerdidorDaEquipa = require('./SerdidorDaEquipa.js');
-var port = 4000;
+var port = process.env.PORT || 4000;
 
-//http://localhost:3000/
+//localhost:3000/
 app.get("/", function(req, res) {
     res.send("API: <br><br> http://localhost:3000/account <br> http://localhost:3000/new_server <br> http://localhost:3000/stop_server");
 	console.log("\n Novo acesso -> " + Date());
@@ -13,8 +13,8 @@ app.get("/", function(req, res) {
 	console.log(' *** [Server] User local  address and port ' + req.connection.localAddress +':'+ req.connection.localPort);
 });
 
-//http://localhost:3000/account?username=nraboy
-//http://localhost:3000/account?username=test
+//localhost:3000/account?username=nraboy
+//localhost:3000/account?username=test
 app.get("/account", function(req, res) {
     var accountMock = {
         "username": "nraboy",
@@ -37,10 +37,12 @@ app.get("/account", function(req, res) {
 	}
 });
 
+//localhost:3000/new_server
 app.get("/new_server", function(req, res) {	
 	//res.send("Teste novo servidor");
 	var cp = require('child_process');
 	var start_new_server_cmd = "node routes/SerdidorDaEquipa.js " + port + "";
+	//localhost:4000/ exemplo
 	cp.execSync('start cmd.exe /k "'+ start_new_server_cmd +'"');
 	port++;
 });
@@ -51,7 +53,7 @@ app.get("/stop_server", function(req, res) {
 	res.send("Teste desliga servidor");
 });
 
-//http://localhost:3000/account?username=test?password=test?twitter=@test
+//localhost:3000/account?username=test?password=test?twitter=@test
 app.post("/account", function(req, res) {
     if(!req.body.username || !req.body.password || !req.body.twitter) {
         return res.send({"status": "error", "message": "missing a parameter"});
@@ -61,5 +63,4 @@ app.post("/account", function(req, res) {
 });
 
 }
-
 module.exports = appRouter;
