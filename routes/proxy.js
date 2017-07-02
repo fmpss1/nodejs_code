@@ -1,7 +1,52 @@
 "use strict";
 
 class Proxy{
-	constructor(db, logger, app, port_routes, ServidorDaEquipa, array_children_pids, array_children_ports){
+	constructor(logger, app, db){
+
+	app.get('/', function (req, res, next) {
+		res.render('index');
+		//Nota: só quando se muda de browser é que o porto de origem muda.
+		logger.info("\n Novo acesso -> " + Date() +
+		'\n *** [Client] User remote address and port ' + 
+		req.connection.remoteAddress +':'+ req.connection.remotePort +
+		'\n *** [Server] User local  address and port ' +
+		req.connection.localAddress +':'+ req.connection.localPort);
+	});
+
+	app.get('/secure', function (req, res, next) {
+		res.render('secure');
+	});
+
+	app.get('/sign_in', function (req, res, next) {
+		res.render('sign_in', { flash: req.flash() } );
+	});
+
+	app.post('/sign_in', function (req, res, next) {
+
+		// you might like to do a database look-up or something more scalable here
+		if (req.body.username && req.body.username === 'user' && req.body.password && req.body.password === 'pass') {
+			req.session.authenticated = true;
+			res.redirect('/secure');
+		} else {
+			req.flash('error', 'Username and password are incorrect');
+			res.redirect('/sign_in');
+		}
+
+	});
+
+	app.get('/logout', function (req, res, next) {
+		delete req.session.authenticated;
+		res.redirect('/');
+	});
+
+
+
+
+
+
+
+
+
 
 	//http://localhost:3000/
 	app.get("/", function(req, res) {
@@ -90,28 +135,3 @@ class Proxy{
 	}
 }
 module.exports = Proxy;
-
-
-function api_apresentation(req, res, logger){
-	res.send("<br> RESTful API:" +
-    	"<br> <br> <br>--- Proxy <br>"+
-    	"<br> http://localhost:3000/account_get" +
-    	"<br> http://localhost:3000/account_get?username=teste2" +
-    	"<br> " +
-    	"<br> http://localhost:3000/account_post (simula o post)" +
-    	"<br> http://localhost:3000/account_post?team=team_8&username=teste9&password=teste4" +
-    	"<br> " +
-    	"<br> http://localhost:3000/account (post -> Precisa de um form do lado do cliente)" +
-    	"<br> " +
-    	"<br> http://localhost:3000/account_delete_team?team=team_1" +
-    	"<br> http://localhost:3000/account_delete_username?username=teste1" +
-    	"<br> <br> <br> --- MEMS <br>" +
-    	"<br> http://localhost:3000/start_server" +
-    	"<br> http://localhost:3000/stop_server");
-	//Nota: só quando se muda de browser é que o porto de origem muda.
-	logger.info("\n Novo acesso -> " + Date() +
-		'\n *** [Client] User remote address and port ' +
-		req.connection.remoteAddress +':'+ req.connection.remotePort +
-		'\n *** [Server] User local  address and port ' +
-		req.connection.localAddress +':'+ req.connection.localPort);
-}

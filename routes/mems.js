@@ -1,7 +1,7 @@
 "use strict";
 
 class MEMS{
-	constructor(db, logger, app, port_routes, ServidorDaEquipa, array_children_pids, array_children_ports){
+	constructor(logger, app, port_routes, ServidorDaEquipa, array_children_pids, array_children_ports){
 
 
 	//http://localhost:3000/localhost:3000/start_server
