@@ -1,7 +1,7 @@
-doctype html
+doctype hstml
 html(lang="en")
 	head
-		title Secure
+		title Secure Area
 	body
 		h1 Hi, secure user.
 		p Navigate to
@@ -9,15 +9,18 @@ html(lang="en")
 				li: a(href="/logout") Logout
 
 		h4 RESTful API implemented:
-		h4 Proxy
-		h5 http://localhost:3000/account_register
-		h5 http://localhost:3000/account_get?username=teste2
-		h5 http://localhost:3000/account_post?team=team_8&username=teste9&password=teste4
-		h5 http://localhost:3000/account_delete_team?team=team_1
-		h5 http://localhost:3000/account_delete_username?username=teste1
-		h4 MEMS
-		h5 http://localhost:3000/start_server
-		h5 http://localhost:3000/stop_server
+
+		h3 Proxy
+		p http://localhost:3000/login
+		p http://localhost:3000/create_account
+		p http://localhost:3000/change_account
+		p http://localhost:3000/remove_account
+		p http://localhost:3000/remove_team_admin
+		p http://localhost:3000/remove_username_admin
+
+		h3 MEMS
+		p http://localhost:3000/start_server
+		p http://localhost:3000/stop_server
 
 
 

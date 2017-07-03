@@ -1,0 +1,22 @@
+doctype html
+html(lang="en")
+	head
+		title Create Account
+	body
+		h1 Create Account
+		p Write the team, username and password to create your account.
+		form(method='post')
+
+			p
+				label(for='team') Team
+				input(type='text', name='team')
+			p
+				label(for='username') Username
+				input(type='text', name='username')
+			p
+				label(for='password') Password
+				input(type='password', name='password')
+
+			input(type='submit')
+		- each message in flash
+			h4(style="color: red;")

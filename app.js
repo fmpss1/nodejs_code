@@ -98,7 +98,6 @@ function getDB(logger){
 //Tentar pôr esta função dentro do ficheiro proxy,js, faz mais sentido
 function checkAuth (req, res, next) {
 	console.log('checkAuth ' + req.url);
-
 	// don't serve /secure to those not logged in
 	// you should add to this list, for each and every secure url
 	if (req.url === '/secure' && (!req.session || !req.session.authenticated)) {
