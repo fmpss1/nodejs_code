@@ -1,34 +1,37 @@
-# nodejs_code
+
+# PROJECT: nodejs_code
 
 
 
 
 
-RESTful API
-###########################################################################################
-<br> RESTful API:" +
-"<br> <br> <br>--- Proxy <br>"+
-"<br> http://localhost:3000/account_get" +
-"<br> http://localhost:3000/account_get?username=teste2" +
-"<br> " +
-"<br> http://localhost:3000/account_post (simula o post)" +
-"<br> http://localhost:3000/account_post?team=team_8&username=teste9&password=teste4" +
-"<br> " +
-"<br> http://localhost:3000/account (post -> Precisa de um form do lado do cliente)" +
-"<br> " +
-"<br> http://localhost:3000/account_delete_team?team=team_1" +
-"<br> http://localhost:3000/account_delete_username?username=teste1" +
-"<br> <br> <br> --- MEMS <br>" +
-"<br> http://localhost:3000/start_server" +
-"<br> http://localhost:3000/stop_server"
-###########################################################################################
+RESTful API Implemented
+
+        h3 Proxy
+        p http://localhost:3000/login
+        p http://localhost:3000/account_create
+        p http://localhost:3000/account_change
+        p http://localhost:3000/account_remove
+        p http://localhost:3000/admin_remove_team
+        p http://localhost:3000/admin_remove_username
+        p http://localhost:3000/logout
+        p http://localhost:3000/index
+        p http://localhost:3000/secure
+        p http://localhost:3000/unauthorised
+
+
+        h3 Scaĺe
+        p http://localhost:3000/server_start
+
+        p http://localhost:3000/server_stop
+
 
 
 
 
 
 INTERFACE
-*******************************************************************************************
+
 
 [2017-07-02 16:57:35.058] [INFO] log - 
 Plataforma: linux | undefined
@@ -61,18 +64,19 @@ Número de child PIDs: 2
     password: 'teste3',
     _id: 'zxcEx3mC3ihDFe7T' } ]
 
-*******************************************************************************************
+
+
 
 
 
 
 
 COMMANDS TO INSTALL PROJECT
-===========================================
+
 - Download repository
 - Install node.js
 - Install npm
 - Install npm install -g nodemon
 - Inside the directory do npm install
 - Then always nodemon app.js
-===========================================
+

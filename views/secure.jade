@@ -1,4 +1,4 @@
-doctype hstml
+doctype html
 html(lang="en")
 	head
 		title Secure Area
@@ -12,15 +12,23 @@ html(lang="en")
 
 		h3 Proxy
 		p http://localhost:3000/login
-		p http://localhost:3000/create_account
-		p http://localhost:3000/change_account
-		p http://localhost:3000/remove_account
-		p http://localhost:3000/remove_team_admin
-		p http://localhost:3000/remove_username_admin
+		p http://localhost:3000/account_create
+		p http://localhost:3000/account_change
+		p http://localhost:3000/account_remove
+		p http://localhost:3000/admin_remove_team
+		p http://localhost:3000/admin_remove_username
+		p http://localhost:3000/logout
+		p http://localhost:3000/index
+		p http://localhost:3000/secure
+		p http://localhost:3000/unauthorised
 
-		h3 MEMS
-		p http://localhost:3000/start_server
-		p http://localhost:3000/stop_server
+
+		h3 Scale
+		p http://localhost:3000/server_start
+			li: a(href="/server_start") Create server
+
+		p http://localhost:3000/server_stop
+			li: a(href="/server_stop") Stop server
 
 
 

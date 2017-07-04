@@ -1,10 +1,31 @@
 "use strict";
 
 class Proxy{
-	constructor(logger, app, db){
+	constructor(logger, app, db_teams){
 
 	//http://localhost:3000/
 	app.get('/', function (req, res, next) {
+		if(!req.session.userName && !req.session.visitCount){
+			req.session.userName = "theo";
+			req.session.visitCount = 1;
+	//		res.status(201).send(req.session);
+		} else {
+			req.session.visitCount += 1;
+	//		res.status(200).send(req.session);
+		}
+
+/*
+//Forma de contar os acessos dos utilizadores. Desenvolver.
+cookie	
+originalMaxAge	
+expires	
+httpOnly	true
+path	"/"
+flash	
+userName	"theo"
+visitCount	6
+*/
+
 		res.render('index');
 		//Nota: só quando se muda de browser é que o porto de origem muda.
 		logger.info("\n Novo acesso -> " + Date() +
@@ -18,7 +39,7 @@ class Proxy{
 		res.render('login', { flash: req.flash() } );
 	});
 
-	app.get('/create_account', function (req, res, next) {
+	app.get('/account_create', function (req, res, next) {
 		res.render('create_account', { flash: req.flash() } );
 	});
 
@@ -30,7 +51,7 @@ class Proxy{
 		if(!(req.body.password && req.body.username && req.body.password)) {
         	return res.send({"status": "error", "message": "missing username team|username|password"});
     	}
-		db.find({username: req.body.username}, function(err, data){
+		db_teams.find({username: req.body.username}, function(err, data){
 			if(data.length === 0) {
         		return res.send({"status": "error", "message": "wrong username"});
     		}
@@ -53,21 +74,21 @@ class Proxy{
 		});
 	});
 
-	app.post('/create_account', function (req, res, next) {
+	app.post('/account_create', function (req, res, next) {
 		if(!(req.body.password && req.body.username && req.body.password)) {
         	return res.send({"status": "error", "message": "missing username team|username|password"});
     	}
-		db.find({username: req.body.username}, function(err, data){
+		db_teams.find({username: req.body.username}, function(err, data){
 			// Só permitir um único username, mesmo em equipas diferentes. 
 			if(data.length === 0) {
 				var data = {team: req.body.team, username: req.body.username, password: req.body.password}; 
-				db.insert( data, function(err, data){
+				db_teams.insert( data, function(err, data){
 					return res.send({"status": "info", "message": "Account created"});
 				});
 			} else {
 				//Parece que o flash não está a funcionar, pode ser do firefox
 				req.flash('error', 'username already exist');
-				res.redirect('/create_account');
+				res.redirect('/account_create');
 			}
 		});
 	});
