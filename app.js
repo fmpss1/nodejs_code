@@ -1,5 +1,8 @@
 "use strict";
 
+//var appmetrics = require('appmetrics');
+//var monitoring = appmetrics.monitor();
+
 var express = require("express");
 var morgan = require("morgan");
 var bodyParser = require("body-parser");
@@ -8,18 +11,21 @@ var session = require('express-session');
 var router = require('router')
 var flash = require('flash');
 var app = express();
+var cluster = require('cluster');
+var http = require('http');
 
-var Datastore = require('nedb');
-var db_teams = new Datastore({ filename: 'dbs/teams', autoload: true });
-var db_children = new Datastore({ filename: 'dbs/children', autoload: true });
+//var Datastore = require('nedb');
+//var db_teams = new Datastore({ filename: 'dbs/teams', autoload: true });
+//var db_children = new Datastore({ filename: 'dbs/children', autoload: true });
 
 var os = require('os');
-var cpuCount = os.cpus().length;
 
 var ip = "localhost";	//127.0.0.1
+
 //Esclarecer a questão dos portos ficarem ocupados
-var port_server = process.env.PORT || 3000;
+var port_server = process.env.PORT || 4000;
 var port_routes = process.env.PORT || 5000;
+
 //Ainda não está a funcionar, por causa das single quotes
 var SerdidorDaEquipa = 'servers/SerdidorDaEquipa.js';
 
@@ -44,25 +50,25 @@ app.set('view engine', 'jade');
 app.set('view options', { layout: false });
 
 var Server = require("./servers/server.js");
-var Proxy = require("./routes/proxy.js");
-var Scale = require("./routes/scale.js");
+var Proxy  = require("./proxy/proxy.js");
+var Scale  = require("./scale/scale.js");
 
-var server = new Server(logger, app ,ip ,port_server);
-var proxy = new Proxy(logger, app, db_teams);
-var scale = new Scale(logger, app, db_children, port_routes, SerdidorDaEquipa);
+var proxy  = new Proxy  (logger, app);
+var scale  = new Scale  (logger, app, ip, port_server, os, cluster, http, port_routes, SerdidorDaEquipa);
 
+/*
 setInterval(function () {
 	//Clear terminal/console in loop
 	console.log('\x1Bc');
 	logger.info('\nPlataforma: ' + process.platform + ' | ' + repository_location_pwd() +
-		'\nNúmero de CPUs disponíveis: ' + cpuCount +
+		'\nNúmero de CPUs disponíveis: ' + os.cpus().length +
 		'\n--- PROXY ---\n' +
 		'Equipas e utilizadores registadas: ' +
 		getDBTeamsCount() + '\n' + getDBTeams() +
 		'\n--- SCALE ---\n' +
 		'Processo PID do app: ' + process.pid + '\nNúmero de child PIDs: ' +
 		getDBChildrenCount() + '\n' + getDBChildren());
-}, 5000);
+}, 50000);
 
 function repository_location_pwd(){
 	var exec = require('child_process').exec;
@@ -71,6 +77,15 @@ function repository_location_pwd(){
 	});
 }
 
+*/
+
+
+
+
+
+
+
+/*
 function run(cmd, callback) {
     var spawn = require('child_process').spawn;
     var command = spawn(cmd);
@@ -114,6 +129,14 @@ function getDBChildrenCount(){
 	return tempa;
 }
 
+
+
+*/
+
+
+
+
+
 //Tentar pôr esta função dentro do ficheiro proxy,js, faz mais sentido
 function checkAuth (req, res, next) {
 	console.log('checkAuth ' + req.url);
@@ -125,3 +148,22 @@ function checkAuth (req, res, next) {
 	}
 	next();
 }
+
+
+
+
+
+
+
+/*
+monitoring.on('initialized', function (env) {
+    env = monitoring.getEnvironment();
+    for (var entry in env) {
+        console.log(entry + ':' + env[entry]);
+    };
+});
+
+monitoring.on('cpu', function (cpu) {
+    console.log('[' + new Date(cpu.time) + '] CPU: ' + cpu.process);
+});
+*/
