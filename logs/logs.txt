@@ -115166,3 +115166,55 @@ Servidor: Listening on http://localhost:4000/
  *** [Server] User local  address and port 127.0.0.1:4000
 [2017-07-16 18:38:21.024] [INFO] log - 
 Servidor: Listening on http://localhost:4000/
+[2017-07-16 18:53:58.726] [INFO] log - 
+Servidor: Listening on http://localhost:4000/
+[2017-07-16 19:14:29.144] [INFO] log - 
+Servidor: Listening on http://localhost:4000/
+[2017-07-18 23:21:15.796] [INFO] log - 
+Servidor: Listening on http://localhost:4000/
+[2017-07-18 23:22:08.453] [INFO] log - 
+ Novo acesso -> Tue Jul 18 2017 23:22:08 GMT+0100 (WEST)
+ *** [Client] User remote address and port 127.0.0.1:46136
+ *** [Server] User local  address and port 127.0.0.1:4000
+[2017-07-18 23:39:44.949] [INFO] log - 
+Servidor: Listening on http://localhost:4000/
+[2017-07-18 23:39:59.470] [INFO] log - 
+ Novo acesso -> Tue Jul 18 2017 23:39:59 GMT+0100 (WEST)
+ *** [Client] User remote address and port 127.0.0.1:46142
+ *** [Server] User local  address and port 127.0.0.1:4000
+[2017-07-18 23:43:06.034] [INFO] log - 
+Servidor: Listening on http://localhost:4000/
+[2017-07-18 23:43:11.409] [INFO] log - 
+ Novo acesso -> Tue Jul 18 2017 23:43:11 GMT+0100 (WEST)
+ *** [Client] User remote address and port 127.0.0.1:46158
+ *** [Server] User local  address and port 127.0.0.1:4000
+[2017-07-18 23:45:46.924] [INFO] log - 
+Servidor: Listening on http://localhost:4000/
+[2017-07-18 23:50:27.649] [INFO] log - 
+Servidor: Listening on http://localhost:4000/
+[2017-07-18 23:51:25.707] [INFO] log - 
+Servidor: Listening on http://localhost:4000/
+[2017-07-18 23:51:52.393] [INFO] log - 
+Servidor: Listening on http://localhost:4000/
+[2017-07-18 23:53:17.050] [INFO] log - 
+Servidor: Listening on http://localhost:4000/
+[2017-07-19 00:00:50.804] [INFO] log - 
+Servidor: Listening on http://localhost:4000/
+[2017-07-19 00:06:30.371] [INFO] log - 
+Servidor: Listening on http://localhost:4000/
+[2017-07-19 00:09:37.926] [INFO] log - 
+Servidor: Listening on ldap://localhost:1389/
+[2017-07-19 00:09:37.926] [INFO] log - 
+Servidor: Listening on http://localhost:4000/
+[2017-07-19 00:15:23.139] [INFO] log - 
+Servidor: Listening on http://localhost:4000/
+[2017-07-19 00:15:23.143] [INFO] log - 
+Servidor: Listening on ldap://localhost:1389/
+[2017-07-19 00:20:58.167] [INFO] log - 
+Servidor: Listening on http://localhost:4000/
+[2017-07-19 00:20:58.169] [INFO] log - 
+Servidor: Listening on ldap://localhost:1389/
+[2017-07-19 00:24:21.345] [INFO] log - 
+Servidor: Listening on http://localhost:4000/
+[2017-07-19 00:24:21.345] [INFO] log - 
+Servidor: Listening on ldap://localhost:1389/

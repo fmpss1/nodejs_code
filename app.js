@@ -1,8 +1,5 @@
 "use strict";
 
-//var appmetrics = require('appmetrics');
-//var monitoring = appmetrics.monitor();
-
 var express = require("express");
 var morgan = require("morgan");
 var bodyParser = require("body-parser");
@@ -13,17 +10,14 @@ var flash = require('flash');
 var app = express();
 var cluster = require('cluster');
 var http = require('http');
-
-//var Datastore = require('nedb');
-//var db_teams = new Datastore({ filename: 'dbs/teams', autoload: true });
-//var db_children = new Datastore({ filename: 'dbs/children', autoload: true });
-
 var os = require('os');
+var ldap = require('ldapjs');
+var assert = require('assert');
+
 
 var ip = "localhost";	//127.0.0.1
-
-//Esclarecer a questão dos portos ficarem ocupados
-var port_server = process.env.PORT || 4000;
+var port_server_http = process.env.PORT || 4000;
+var port_server_ldap = process.env.PORT || 1389;
 var port_routes = process.env.PORT || 5000;
 
 //Ainda não está a funcionar, por causa das single quotes
@@ -49,12 +43,15 @@ app.use(flash());
 app.set('view engine', 'jade');
 app.set('view options', { layout: false });
 
-var Server = require("./servers/server.js");
-var Proxy  = require("./proxy/proxy.js");
-var Scale  = require("./scale/scale.js");
+var Ldap = require("./servers/server_ldap.js");
+var server_ldap = ldap.createServer();
+var LDAP = new Ldap(ldap, server_ldap);
 
-var proxy  = new Proxy  (logger, app);
-var scale  = new Scale  (logger, app, ip, port_server, os, cluster, http, port_routes, SerdidorDaEquipa);
+var Proxy = require("./module_master/proxy.js");
+var proxy = new Proxy (logger, app, ldap, assert);
+
+var Cluster = require("./module_scale/cluster.js");
+var cluster = new Cluster (logger, app, server_ldap, ip, port_server_http, port_server_ldap, os, cluster, http);
 
 /*
 setInterval(function () {
@@ -129,11 +126,7 @@ function getDBChildrenCount(){
 	return tempa;
 }
 
-
-
 */
-
-
 
 
 
@@ -148,22 +141,3 @@ function checkAuth (req, res, next) {
 	}
 	next();
 }
-
-
-
-
-
-
-
-/*
-monitoring.on('initialized', function (env) {
-    env = monitoring.getEnvironment();
-    for (var entry in env) {
-        console.log(entry + ':' + env[entry]);
-    };
-});
-
-monitoring.on('cpu', function (cpu) {
-    console.log('[' + new Date(cpu.time) + '] CPU: ' + cpu.process);
-});
-*/

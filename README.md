@@ -4,6 +4,28 @@
 
 
 
+MAIN IDEA
+
+|----------|----------|----------|----------|
+|          |          |          |          |
+| Worker 1 | Worker 3 | Worker 5 | Worker 7 |
+|   HTTP   |          |          |          |
+|          |          |          |          |
+|----------|----------|----------|----------|
+|          |          |          |          |
+| Worker 2 | Worker 4 | Worker 6 | Worker 8 |
+|   LDAP   |          |          |          |
+|          |          |          |          |
+|----------|----------|----------|----------|
+
+CLUSTER = 8 Cores = 8 Workers
+Module Proxy = W1 and W2
+Module Scale = All others
+
+
+
+
+
 
 RESTful API Implemented
 
@@ -22,7 +44,6 @@ RESTful API Implemented
 
         h3 Scaĺe
         p http://localhost:3000/server_start
-
         p http://localhost:3000/server_stop
 
 
