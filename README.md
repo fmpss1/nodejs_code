@@ -3,30 +3,6 @@
 
 
 
-
-MAIN IDEA
-
-|----------|----------|----------|----------|
-|          |          |          |          |
-| Worker 1 | Worker 3 | Worker 5 | Worker 7 |
-|   HTTP   |          |          |          |
-|          |          |          |          |
-|----------|----------|----------|----------|
-|          |          |          |          |
-| Worker 2 | Worker 4 | Worker 6 | Worker 8 |
-|   LDAP   |          |          |          |
-|          |          |          |          |
-|----------|----------|----------|----------|
-
-CLUSTER = 8 Cores = 8 Workers
-Module Proxy = W1 and W2
-Module Scale = All others
-
-
-
-
-
-
 RESTful API Implemented
 
         h3 Proxy
@@ -45,49 +21,6 @@ RESTful API Implemented
         h3 Scaĺe
         p http://localhost:3000/server_start
         p http://localhost:3000/server_stop
-
-
-
-
-
-
-INTERFACE
-
-
-[2017-07-02 16:57:35.058] [INFO] log - 
-Plataforma: linux | undefined
-Número de CPUs disponíveis: 8
---- PROXY
-Equipas e utilizadores registadas:
-undefined
---- MEMS
-Processo PID do app: 4733
-Número de child PIDs: 2
-[2017-07-02 16:57:35.061] [INFO] log - * Servidor 4747
-[2017-07-02 16:57:35.063] [INFO] log - * Servidor 4812
-[2017-07-02 16:57:35.063] [INFO] log - /home/faroleco/Desktop/nodejs_code_rep
-
-[2017-07-02 16:57:35.064] [INFO] log -
-[ { team: 'team_3',
-    username: 'teste4',
-    password: 'teste4',
-    _id: 'GSkkSh64AsE3lL2T' },
-  { team: 'team_1',
-    username: 'teste2',
-    password: 'teste2',
-    _id: 'HZkKsLzKJyihIUla' },
-  { team: 'team_3',
-    username: 'teste5',
-    password: 'teste5',
-    _id: 'avTJHykVlbxUkHuT' },
-  { team: 'team_2',
-    username: 'teste3',
-    password: 'teste3',
-    _id: 'zxcEx3mC3ihDFe7T' } ]
-
-
-
-
 
 
 

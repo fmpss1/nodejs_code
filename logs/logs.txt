@@ -115218,3 +115218,31 @@ Servidor: Listening on ldap://localhost:1389/
 Servidor: Listening on http://localhost:4000/
 [2017-07-19 00:24:21.345] [INFO] log - 
 Servidor: Listening on ldap://localhost:1389/
+[2017-07-29 17:50:06.639] [INFO] log - 
+Servidor: Listening on http://localhost:4000/
+[2017-07-29 17:50:06.642] [INFO] log - 
+Servidor: Listening on ldap://localhost:1389/
+[2017-07-29 17:54:36.796] [INFO] log - 
+ Novo acesso -> Sat Jul 29 2017 17:54:36 GMT+0100 (WEST)
+ *** [Client] User remote address and port 127.0.0.1:37230
+ *** [Server] User local  address and port 127.0.0.1:4000
+[2017-07-29 17:56:49.986] [INFO] log - 
+ Novo acesso -> Sat Jul 29 2017 17:56:49 GMT+0100 (WEST)
+ *** [Client] User remote address and port 127.0.0.1:37230
+ *** [Server] User local  address and port 127.0.0.1:4000
+[2017-07-29 17:58:53.304] [INFO] log - 
+Servidor: Listening on ldap://localhost:1389/
+[2017-07-29 17:58:53.315] [INFO] log - 
+Servidor: Listening on http://localhost:4000/
+[2017-07-29 18:06:54.035] [INFO] log - 
+Servidor: Listening on ldap://localhost:1389/
+[2017-07-29 18:06:54.035] [INFO] log - 
+Servidor: Listening on http://localhost:4000/
+[2017-07-29 18:08:32.527] [INFO] log - 
+Servidor: Listening on ldap://localhost:1389/
+[2017-07-29 18:08:32.546] [INFO] log - 
+Servidor: Listening on http://localhost:3000/
+[2017-07-29 18:08:41.289] [INFO] log - 
+ Novo acesso -> Sat Jul 29 2017 18:08:41 GMT+0100 (WEST)
+ *** [Client] User remote address and port 127.0.0.1:59132
+ *** [Server] User local  address and port 127.0.0.1:3000

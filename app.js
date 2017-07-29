@@ -16,7 +16,7 @@ var assert = require('assert');
 
 
 var ip = "localhost";	//127.0.0.1
-var port_server_http = process.env.PORT || 4000;
+var port_server_http = process.env.PORT || 3000;
 var port_server_ldap = process.env.PORT || 1389;
 var port_routes = process.env.PORT || 5000;
 
