@@ -1,18 +1,18 @@
 "use strict";
 
-var express = require("express");
-var morgan = require("morgan");
-var bodyParser = require("body-parser");
-var cookieParser = require('cookie-parser');
-var session = require('express-session');
-var router = require('router')
-var flash = require('flash');
-var app = express();
-var cluster = require('cluster');
-var http = require('http');
-var os = require('os');
-var ldap = require('ldapjs');
-var assert = require('assert');
+var express   		= require("express");
+var morgan   		= require("morgan");
+var bodyParser  	= require("body-parser");
+var cookieParser 	= require('cookie-parser');
+var session   		= require('express-session');
+var router    		= require('router')
+var flash   		= require('flash');
+var app    			= express();
+var cluster  		= require('cluster');
+var http  			= require('http');
+var os   			= require('os');
+var ldap   			= require('ldapjs');
+var assert   		= require('assert');
 
 
 var ip = "localhost";	//127.0.0.1
@@ -21,7 +21,7 @@ var port_server_ldap = process.env.PORT || 1389;
 var port_routes = process.env.PORT || 5000;
 
 //Ainda não está a funcionar, por causa das single quotes
-var SerdidorDaEquipa = 'servers/SerdidorDaEquipa.js';
+var SerdidorDaEquipa = 'SerdidorDaEquipa.js';
 
 var log4js = require('log4js');
 log4js.configure({
@@ -43,7 +43,7 @@ app.use(flash());
 app.set('view engine', 'jade');
 app.set('view options', { layout: false });
 
-var Ldap = require("./servers/server_ldap.js");
+var Ldap = require("./module_master/ldap.js");
 var server_ldap = ldap.createServer();
 var LDAP = new Ldap(ldap, server_ldap);
 
@@ -52,6 +52,8 @@ var proxy = new Proxy (logger, app, ldap, assert);
 
 var Cluster = require("./module_scale/cluster.js");
 var cluster = new Cluster (logger, app, server_ldap, ip, port_server_http, port_server_ldap, os, cluster, http);
+
+
 
 /*
 setInterval(function () {

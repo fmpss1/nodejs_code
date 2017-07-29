@@ -2,12 +2,16 @@
 
 class Cluster{
     constructor(logger, app, server_ldap, ip, port_server_http, port_server_ldap, os, cluster, http){
-
-        var cluster = cluster;
-        var http = http;
-        var numCPUs = os.cpus().length;
-        var app = app;
-        var server_ldap = server_ldap;
+        var logger              = logger;
+        var app                 = app;
+        var server_ldap         = server_ldap;
+        var ip                  = ip;
+        var port_server_http    = port_server_http;
+        var port_server_ldap    = port_server_ldap;
+        var os                  = os;
+        var cluster             = cluster;
+        var http                = http;
+        var numCPUs             = os.cpus().length;
 
         if (cluster.isMaster) {
             console.log(`Master ${process.pid} is running, número de CPUs: ${numCPUs}`);
@@ -28,11 +32,11 @@ class Cluster{
 
         } else if (cluster.worker.id === 1){
                 app.listen(port_server_http, ip, function () {
-                    logger.info('\nServidor: Listening on http://'+ ip +':'+ port_server_http +'/');
+                    logger.info('\nServidor LDAP: Listening on http://'+ ip +':'+ port_server_http +'/');
                 });
         } else if (cluster.worker.id === 2){
                 server_ldap.listen(port_server_ldap, ip, function () {
-                    logger.info('\nServidor: Listening on ldap://'+ ip +':'+ port_server_ldap +'/');
+                    logger.info('\nServidor HTTP: Listening on ldap://'+ ip +':'+ port_server_ldap +'/');
                 });
         } else {     
             
@@ -48,7 +52,7 @@ class Cluster{
                 //cluster.on('new_server', function(worker) {
 
                 var spawn = require('child_process').spawn;
-                var child = spawn('node', ['servers/SerdidorDaEquipa.js', parseInt(4000+Math.random()*5000) ]);
+                var child = spawn('node', ['SerdidorDaEquipa.js', parseInt(4000+Math.random()*5000) ]);
         
 
                 //var child = spawn('node', ['servers/SerdidorDaEquipa.js', port_routes]);
@@ -71,8 +75,10 @@ class Cluster{
 
             server = server.listen(8000, function(err) {
                 if (err) throw err;
-                var host = server.address().address;
-                var port = server.address().port;
+                //var host = server.address().address;
+                //var port = server.address().port;
+                var host = 'localhost';
+                var port = '8000';
 
                 console.log('Server listening at http://%s:%s', host, port);
             });

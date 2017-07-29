@@ -1,39 +1,14 @@
 "use strict";
 
-//Adaptar
-//http://ldapjs.org/
-
-//Quanto detectar uma certa latência, procura outra máquina com recursos
-//https://github.com/nodejitsu/node-http-proxy
-//https://stackoverflow.com/questions/42156282/how-to-cluster-node-app-in-multiple-machines
-
-
 class Proxy{
-	constructor(logger, app, ldap, assert){
+	constructor(logger, app, server_ldap, assert){
+		var logger			= logger;
+		var app 			= app;
+		var server_ldap 	= server_ldap;
+		var assert			= assert;
 
 	//http://localhost:3000/
 	app.get('/', function (req, res, next) {
-		if(!req.session.userName && !req.session.visitCount){
-			req.session.userName = "theo";
-			req.session.visitCount = 1;
-	//		res.status(201).send(req.session);
-		} else {
-			req.session.visitCount += 1;
-	//		res.status(200).send(req.session);
-		}
-
-/*
-//Forma de contar os acessos dos utilizadores. Desenvolver.
-cookie	
-originalMaxAge	
-expires	
-httpOnly	true
-path	"/"
-flash	
-userName	"theo"
-visitCount	6
-*/
-
 		res.render('index');
 		//Nota: só quando se muda de browser é que o porto de origem muda.
 		logger.info("\n Novo acesso -> " + Date() +
@@ -48,7 +23,7 @@ visitCount	6
 	});
 
 	app.get('/account_create', function (req, res, next) {
-		res.render('create_account', { flash: req.flash() } );
+		res.render('account_create', { flash: req.flash() } );
 	});
 
 	app.get('/secure', function (req, res, next) {
@@ -56,21 +31,17 @@ visitCount	6
 	});
 
 	app.post('/login', function (req, res, next) {
-		if(!(req.body.password && req.body.username && req.body.password)) {
+		if(!(req.body.team && req.body.username && req.body.password)) {
         	return res.send({"status": "error", "message": "missing username team|username|password"});
     	}
 
-		var client = ldap.createClient({
-  			url: 'ldap://127.0.0.1:1389'
-		});
-
-		client.bind('cn='+req.body.username+'', req.body.password, function(err) {	// Só o root pode adicionar users
-		//client.bind('cn=root', 'secret', function(err) {	// Só o root pode adicionar users
+		var client = server_ldap.createClient({ url: 'ldap://127.0.0.1:1389' });
+		// Só o root pode adicionar users
+		client.bind('cn='+req.body.username+'', req.body.password, function(err) {	
+		//client.bind('cn=root', 'secret', function(err) {
   			assert.ifError(err);
-
   			req.session.authenticated = true;
         	res.redirect('/secure');
-
   			console.log("teste xxx");
 		});
 
@@ -120,6 +91,21 @@ client.add('cn=teste, o=joyent', entry, function(err) {		//o - raiz
 		if(!(req.body.password && req.body.username && req.body.password)) {
         	return res.send({"status": "error", "message": "missing username team|username|password"});
     	}
+
+    	var entry = {
+  			cn: 'root',
+  			sn: 'bar',
+  			email: ['foo@bar.com', 'foo1@bar.com'],
+  			objectclass: 'fooPerson'
+		};
+
+		var client = server_ldap.createClient({ url: 'ldap://127.0.0.1:1389' });
+		client.add('cn=root, o=example', entry, function(err) {
+  			assert.ifError(err);
+  			res.redirect('/secure');
+  			console.log("teste xxxddsfdf");
+		});
+
     	/*
 		db_teams.find({username: req.body.username}, function(err, data){
 			// Só permitir um único username, mesmo em equipas diferentes. 
