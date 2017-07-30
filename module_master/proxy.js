@@ -1,11 +1,16 @@
 "use strict";
 
 class Proxy{
-	constructor(logger, app, server_ldap, assert){
+
+	
+	constructor(logger, app, ldap, URL_LDAP, assert){
 		var logger			= logger;
 		var app 			= app;
-		var server_ldap 	= server_ldap;
+		var URL_LDAP 		= URL_LDAP;
 		var assert			= assert;
+		var client;
+		var user 			= 'cn=root';
+  		var pass 			= 'secret';
 
 	//http://localhost:3000/
 	app.get('/', function (req, res, next) {
@@ -31,100 +36,49 @@ class Proxy{
 	});
 
 	app.post('/login', function (req, res, next) {
+console.log(URL_LDAP);
 		if(!(req.body.team && req.body.username && req.body.password)) {
         	return res.send({"status": "error", "message": "missing username team|username|password"});
     	}
-
-		var client = server_ldap.createClient({ url: 'ldap://127.0.0.1:1389' });
-		// Só o root pode adicionar users
-		client.bind('cn='+req.body.username+'', req.body.password, function(err) {	
-		//client.bind('cn=root', 'secret', function(err) {
-  			assert.ifError(err);
-  			req.session.authenticated = true;
-        	res.redirect('/secure');
-  			console.log("teste xxx");
-		});
-
-
-//add user
-/*
-var entry = {
-  cn: 'root',	//nome
-  sn: 'test',	//apelido
-  email: ['foo@bar.com', 'foo1@bar.com'],
-  objectclass: 'fooPerson'		//Tipo de objeto: Exemplo pessoa
-};
-
-client.add('cn=teste, o=joyent', entry, function(err) {		//o - raiz
-  assert.ifError(err);
-});
-*/
-
-
-
-    	/*
-		db_teams.find({username: req.body.username}, function(err, data){
-			if(data.length === 0) {
-        		return res.send({"status": "error", "message": "wrong username"});
-    		}
-			var data_db_delay = data;
-			// A função anterior leva algum tempo a processar o find, tem que se forçar um atraso,
-			//para a variável data_db_delay possa assumir o valor do find.
-			// Se isto não for feito fica durante uns instantes undefined.
-			setTimeout(function () {
-				if(	req.body.team == data_db_delay[0].team &&
-					req.body.username == data_db_delay[0].username && 
-					req.body.password == data_db_delay[0].password ){
-					req.session.authenticated = true;
-        			res.redirect('/secure');
-				} else {
-					//Parece que o flash não está a funcionar, pode ser do firefox
-					req.flash('error', 'Username and password are incorrect');
-					res.redirect('/login');
-				}
-			}, 1000);
-		});
-		*/
+    	else {
+			client = ldap.createClient({ url: URL_LDAP });
+			client.bind('cn='+req.body.username+' ,ou='+req.body.team+', o=ldap', req.body.password, function(err) {	
+  				assert.ifError(err);
+  				req.session.authenticated = true;
+        		res.redirect('/secure');
+			});
+		}
 	});
 
 	app.post('/account_create', function (req, res, next) {
-		if(!(req.body.password && req.body.username && req.body.password)) {
+		if(!(req.body.team && req.body.username && req.body.password)) {
         	return res.send({"status": "error", "message": "missing username team|username|password"});
     	}
-
-    	var entry = {
-  			cn: 'root',
-  			sn: 'bar',
-  			email: ['foo@bar.com', 'foo1@bar.com'],
-  			objectclass: 'fooPerson'
-		};
-
-		var client = server_ldap.createClient({ url: 'ldap://127.0.0.1:1389' });
-		client.add('cn=root, o=example', entry, function(err) {
-  			assert.ifError(err);
-  			res.redirect('/secure');
-  			console.log("teste xxxddsfdf");
-		});
-
-    	/*
-		db_teams.find({username: req.body.username}, function(err, data){
-			// Só permitir um único username, mesmo em equipas diferentes. 
-			if(data.length === 0) {
-				var data = {team: req.body.team, username: req.body.username, password: req.body.password}; 
-				db_teams.insert( data, function(err, data){
-					return res.send({"status": "info", "message": "Account created"});
-				});
-			} else {
-				//Parece que o flash não está a funcionar, pode ser do firefox
-				req.flash('error', 'username already exist');
-				res.redirect('/account_create');
-			}
-		});
-		*/
+    	else {
+ console.log(URL_LDAP);
+  			client = ldap.createClient({ url: URL_LDAP });
+  			// Só o root pode adicionar users
+  			var newDN = 'cn='+req.body.username+' ,ou='+req.body.team+', o=ldap';
+  			var newUser = {
+    			cn: req.body.username,
+    			objectClass: 'inetOrgPerson',
+    			userPassword: req.body.password
+  			}
+  			client.bind(user, pass, function(err){
+    			client.add(newDN, newUser, function(err){
+					assert.ifError(err);
+ 				});
+  				assert.ifError(err);
+        		res.redirect('/login');
+  			});
+  		}
 	});
 
 	app.get('/logout', function (req, res, next) {
 		delete req.session.authenticated;
+		client.unbind (function(err) {
+			assert.ifError(err);
+		});
 		res.redirect('/');
 	});
 

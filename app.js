@@ -14,11 +14,11 @@ var os   			= require('os');
 var ldap   			= require('ldapjs');
 var assert   		= require('assert');
 
-
-var ip = "localhost";	//127.0.0.1
-var port_server_http = process.env.PORT || 3000;
-var port_server_ldap = process.env.PORT || 1389;
-var port_routes = process.env.PORT || 5000;
+var ip			= '127.0.0.1'; //'localhost'
+var port_http	= process.env.PORT || 3000;
+var port_ldap 	= process.env.PORT || 1389;
+var URL_HTTP 	= 'http://'+ ip +':'+ port_http;
+var URL_LDAP 	= 'ldap://'+ ip +':'+ port_ldap;
 
 //Ainda não está a funcionar, por causa das single quotes
 var SerdidorDaEquipa = 'SerdidorDaEquipa.js';
@@ -47,12 +47,11 @@ var Ldap = require("./module_master/ldap.js");
 var server_ldap = ldap.createServer();
 var LDAP = new Ldap(ldap, server_ldap);
 
-var Proxy = require("./module_master/proxy.js");
-var proxy = new Proxy (logger, app, ldap, assert);
-
 var Cluster = require("./module_scale/cluster.js");
-var cluster = new Cluster (logger, app, server_ldap, ip, port_server_http, port_server_ldap, os, cluster, http);
+var cluster = new Cluster (logger, app, server_ldap, URL_HTTP, URL_LDAP, os, cluster, http);
 
+var Proxy = require("./module_master/proxy.js");
+var proxy = new Proxy (logger, app, ldap, URL_LDAP, assert);
 
 
 /*
@@ -132,7 +131,7 @@ function getDBChildrenCount(){
 
 
 
-//Tentar pôr esta função dentro do ficheiro proxy,js, faz mais sentido
+//Tentar pôr esta função dentro do ficheiro proxy.js, faz mais sentido
 function checkAuth (req, res, next) {
 	console.log('checkAuth ' + req.url);
 	// don't serve /secure to those not logged in

@@ -23,13 +23,8 @@ done
 
 
 
-
-
-
-
-
-
-
+#LDAP testes
+ldapsearch -H ldap://localhost:1389 -x -D cn=root -w secret -LLL -b "o=joyent" objectclass=* cn=root
 
 
 

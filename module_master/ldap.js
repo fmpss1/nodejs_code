@@ -14,31 +14,56 @@ class Ldap{
       return next();
     }
 
+
+//Directory Information Tree
+//Suffix   -> o   =ldap
+//Branches -> ou  =team
+//Leaves   -> cn  =user
+
+//Example: cn=alice, ou=team_01, o=ldap
+
+//DN -> distinguished name
+//cn -> common name
+//userPassword (opcional)
+
+
 //--- Globals
-    var SUFFIX = 'o=joyent';
+    var SUFFIX = 'o=ldap';
+    //var SUFFIX = 'ou=users, o=joyent';
     var db = {};
 
-
     server_ldap.bind('cn=root', function(req, res, next) {
+console.log("teste 1");
       if (req.dn.toString() !== 'cn=root' || req.credentials !== 'secret'){
         return next(new ldap.InvalidCredentialsError());    
       }
-      console.log("teste 1");
+
+console.log(JSON.stringify(db));
+
       res.end();
       return next();
     });
 
     server_ldap.add(SUFFIX, authorize, function(req, res, next) {
+console.log("teste 2");
       var dn = req.dn.toString();
+      console.log(dn);
+
       if (db[dn])
         return next(new ldap.EntryAlreadyExistsError(dn));
       db[dn] = req.toObject().attributes;
+
+console.log(JSON.stringify(db));
+
       res.end();
       return next();
     });
 
     server_ldap.bind(SUFFIX, function(req, res, next) {
+console.log("teste 3");
       var dn = req.dn.toString();
+      console.log(dn);
+      
       if (!db[dn])
         return next(new ldap.NoSuchObjectError(dn));
       if (!db[dn].userpassword)
@@ -46,12 +71,12 @@ class Ldap{
       if (db[dn].userpassword.indexOf(req.credentials) === -1){
         return next(new ldap.InvalidCredentialsError());
       }
-      console.log("teste 2");
       res.end();
       return next();
     });
 
     server_ldap.compare(SUFFIX, authorize, function(req, res, next) {
+console.log("teste 4");
       var dn = req.dn.toString();
       if (!db[dn])
         return next(new ldap.NoSuchObjectError(dn));

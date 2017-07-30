@@ -1,17 +1,16 @@
 "use strict";
 
 class Cluster{
-    constructor(logger, app, server_ldap, ip, port_server_http, port_server_ldap, os, cluster, http){
-        var logger              = logger;
-        var app                 = app;
-        var server_ldap         = server_ldap;
-        var ip                  = ip;
-        var port_server_http    = port_server_http;
-        var port_server_ldap    = port_server_ldap;
-        var os                  = os;
-        var cluster             = cluster;
-        var http                = http;
-        var numCPUs             = os.cpus().length;
+    constructor(logger, app, server_ldap, URL_HTTP, URL_LDAP, os, cluster, http){
+        var logger          = logger;
+        var app             = app;
+        var server_ldap     = server_ldap;
+        var URL_HTTP        = URL_HTTP;
+        var URL_LDAP        = URL_LDAP;
+        var os              = os;
+        var cluster         = cluster;
+        var http            = http;
+        var numCPUs         = os.cpus().length;
 
         if (cluster.isMaster) {
             console.log(`Master ${process.pid} is running, número de CPUs: ${numCPUs}`);
@@ -31,12 +30,14 @@ class Cluster{
             });
 
         } else if (cluster.worker.id === 1){
-                app.listen(port_server_http, ip, function () {
-                    logger.info('\nServidor LDAP: Listening on http://'+ ip +':'+ port_server_http +'/');
+                app.listen(URL_HTTP.substring(17, 22),
+                    URL_HTTP.substring(7, 16), function () {
+                    logger.info('\nServidor HTTP: Listening on '+ URL_HTTP +'/');
                 });
         } else if (cluster.worker.id === 2){
-                server_ldap.listen(port_server_ldap, ip, function () {
-                    logger.info('\nServidor HTTP: Listening on ldap://'+ ip +':'+ port_server_ldap +'/');
+                server_ldap.listen(URL_LDAP.substring(17, 22),
+                    URL_LDAP.substring(7, 16), function () {
+                    logger.info('\nServidor LDAP: Listening on '+ URL_LDAP +'/');
                 });
         } else {     
             
@@ -80,7 +81,7 @@ class Cluster{
                 var host = 'localhost';
                 var port = '8000';
 
-                console.log('Server listening at http://%s:%s', host, port);
+                console.log('Server listening at http://%s:%s/', host, port);
             });
       
 
