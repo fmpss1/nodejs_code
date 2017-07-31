@@ -52,9 +52,7 @@ console.log("teste 2");
       if (db[dn])
         return next(new ldap.EntryAlreadyExistsError(dn));
       db[dn] = req.toObject().attributes;
-
 console.log(JSON.stringify(db));
-
       res.end();
       return next();
     });
@@ -100,6 +98,7 @@ console.log("teste 4");
       if (!db[dn])
         return next(new ldap.NoSuchObjectError(dn));
       delete db[dn];
+console.log(JSON.stringify(db));
       res.end();
       return next();
     });

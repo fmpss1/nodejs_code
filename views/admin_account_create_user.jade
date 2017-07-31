@@ -1,12 +1,10 @@
 doctype html
 html(lang="en")
 	head
-		title Login
+		title Create Account
 	body
-		h1 Login
-		p Write the team you will belong.
-		p Use <i>user</i>  for the username and <i>user</i>  for the password.
-		p Use <i>admin</i> for the username and <i>admin</i> for the password.
+		h1 Create Account
+		p Write the team, username and password to create your account.
 		form(method='post')
 
 			p
@@ -20,3 +18,5 @@ html(lang="en")
 				input(type='password', name='password')
 
 			input(type='submit')
+		- each message in flash
+			h4(style="color: red;")

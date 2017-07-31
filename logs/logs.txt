@@ -115920,3 +115920,211 @@ Servidor LDAP: Listening on ldap://127.0.0.1:1389/
 Servidor LDAP: Listening on ldap://127.0.0.1:1389/
 [2017-07-30 21:22:25.864] [INFO] log - 
 Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-07-31 19:41:41.503] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-07-31 19:41:41.504] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-07-31 19:41:52.703] [INFO] log - 
+ Novo acesso -> Mon Jul 31 2017 19:41:52 GMT+0100 (WEST)
+ *** [Client] User remote address and port 127.0.0.1:39188
+ *** [Server] User local  address and port 127.0.0.1:3000
+[2017-07-31 19:42:48.499] [INFO] log - 
+ Novo acesso -> Mon Jul 31 2017 19:42:48 GMT+0100 (WEST)
+ *** [Client] User remote address and port 127.0.0.1:39188
+ *** [Server] User local  address and port 127.0.0.1:3000
+[2017-07-31 19:48:53.261] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-07-31 19:48:53.271] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-07-31 19:49:16.071] [INFO] log - 
+ Novo acesso -> Mon Jul 31 2017 19:49:16 GMT+0100 (WEST)
+ *** [Client] User remote address and port 127.0.0.1:39194
+ *** [Server] User local  address and port 127.0.0.1:3000
+[2017-07-31 19:55:34.852] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-07-31 19:55:34.852] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-07-31 19:55:40.876] [INFO] log - 
+ Novo acesso -> Mon Jul 31 2017 19:55:40 GMT+0100 (WEST)
+ *** [Client] User remote address and port 127.0.0.1:39196
+ *** [Server] User local  address and port 127.0.0.1:3000
+[2017-07-31 20:06:19.957] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-07-31 20:06:19.963] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-07-31 20:06:43.390] [INFO] log - 
+ Novo acesso -> Mon Jul 31 2017 20:06:43 GMT+0100 (WEST)
+ *** [Client] User remote address and port 127.0.0.1:39270
+ *** [Server] User local  address and port 127.0.0.1:3000
+[2017-07-31 20:07:43.468] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-07-31 20:07:43.474] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-07-31 20:07:47.595] [INFO] log - 
+ Novo acesso -> Mon Jul 31 2017 20:07:47 GMT+0100 (WEST)
+ *** [Client] User remote address and port 127.0.0.1:39278
+ *** [Server] User local  address and port 127.0.0.1:3000
+[2017-07-31 20:09:02.964] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-07-31 20:09:02.971] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-07-31 20:09:05.559] [INFO] log - 
+ Novo acesso -> Mon Jul 31 2017 20:09:05 GMT+0100 (WEST)
+ *** [Client] User remote address and port 127.0.0.1:39288
+ *** [Server] User local  address and port 127.0.0.1:3000
+[2017-07-31 20:10:14.138] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-07-31 20:10:14.146] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-07-31 20:13:58.742] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-07-31 20:13:58.742] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-07-31 20:14:03.582] [INFO] log - 
+ Novo acesso -> Mon Jul 31 2017 20:14:03 GMT+0100 (WEST)
+ *** [Client] User remote address and port 127.0.0.1:39296
+ *** [Server] User local  address and port 127.0.0.1:3000
+[2017-07-31 20:41:05.014] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-07-31 20:41:05.024] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-07-31 20:41:08.959] [INFO] log - 
+ Novo acesso -> Mon Jul 31 2017 20:41:08 GMT+0100 (WEST)
+ *** [Client] User remote address and port 127.0.0.1:39304
+ *** [Server] User local  address and port 127.0.0.1:3000
+[2017-07-31 20:53:03.732] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-07-31 20:53:03.748] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-07-31 20:53:07.080] [INFO] log - 
+ Novo acesso -> Mon Jul 31 2017 20:53:07 GMT+0100 (WEST)
+ *** [Client] User remote address and port 127.0.0.1:39316
+ *** [Server] User local  address and port 127.0.0.1:3000
+[2017-07-31 20:53:22.881] [INFO] log - 
+ Novo acesso -> Mon Jul 31 2017 20:53:22 GMT+0100 (WEST)
+ *** [Client] User remote address and port 127.0.0.1:39322
+ *** [Server] User local  address and port 127.0.0.1:3000
+[2017-07-31 20:57:53.004] [INFO] log - 
+ Novo acesso -> Mon Jul 31 2017 20:57:53 GMT+0100 (WEST)
+ *** [Client] User remote address and port 127.0.0.1:39336
+ *** [Server] User local  address and port 127.0.0.1:3000
+[2017-07-31 21:02:34.753] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-07-31 21:02:34.754] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-07-31 21:02:38.926] [INFO] log - 
+ Novo acesso -> Mon Jul 31 2017 21:02:38 GMT+0100 (WEST)
+ *** [Client] User remote address and port 127.0.0.1:39340
+ *** [Server] User local  address and port 127.0.0.1:3000
+[2017-07-31 21:03:49.397] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-07-31 21:03:49.409] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-07-31 21:03:53.064] [INFO] log - 
+ Novo acesso -> Mon Jul 31 2017 21:03:53 GMT+0100 (WEST)
+ *** [Client] User remote address and port 127.0.0.1:39346
+ *** [Server] User local  address and port 127.0.0.1:3000
+[2017-07-31 21:04:00.905] [INFO] log - 
+ Novo acesso -> Mon Jul 31 2017 21:04:00 GMT+0100 (WEST)
+ *** [Client] User remote address and port 127.0.0.1:39346
+ *** [Server] User local  address and port 127.0.0.1:3000
+[2017-07-31 21:07:50.141] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-07-31 21:07:50.141] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-07-31 21:07:55.679] [INFO] log - 
+ Novo acesso -> Mon Jul 31 2017 21:07:55 GMT+0100 (WEST)
+ *** [Client] User remote address and port 127.0.0.1:39360
+ *** [Server] User local  address and port 127.0.0.1:3000
+[2017-07-31 21:08:46.315] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-07-31 21:08:46.315] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-07-31 21:08:53.297] [INFO] log - 
+ Novo acesso -> Mon Jul 31 2017 21:08:53 GMT+0100 (WEST)
+ *** [Client] User remote address and port 127.0.0.1:39370
+ *** [Server] User local  address and port 127.0.0.1:3000
+[2017-07-31 21:14:57.477] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-07-31 21:14:57.480] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-07-31 21:15:06.670] [INFO] log - 
+ Novo acesso -> Mon Jul 31 2017 21:15:06 GMT+0100 (WEST)
+ *** [Client] User remote address and port 127.0.0.1:39494
+ *** [Server] User local  address and port 127.0.0.1:3000
+[2017-07-31 21:21:38.302] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-07-31 21:21:38.304] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-07-31 21:21:41.293] [INFO] log - 
+ Novo acesso -> Mon Jul 31 2017 21:21:41 GMT+0100 (WEST)
+ *** [Client] User remote address and port 127.0.0.1:39500
+ *** [Server] User local  address and port 127.0.0.1:3000
+[2017-07-31 21:24:16.615] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-07-31 21:24:16.615] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-07-31 21:24:19.656] [INFO] log - 
+ Novo acesso -> Mon Jul 31 2017 21:24:19 GMT+0100 (WEST)
+ *** [Client] User remote address and port 127.0.0.1:39508
+ *** [Server] User local  address and port 127.0.0.1:3000
+[2017-07-31 21:26:52.873] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-07-31 21:26:52.874] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-07-31 21:26:56.056] [INFO] log - 
+ Novo acesso -> Mon Jul 31 2017 21:26:56 GMT+0100 (WEST)
+ *** [Client] User remote address and port 127.0.0.1:39514
+ *** [Server] User local  address and port 127.0.0.1:3000
+[2017-07-31 21:29:54.480] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-07-31 21:29:54.481] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-07-31 21:30:49.122] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-07-31 21:30:49.132] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-07-31 21:30:50.630] [INFO] log - 
+ Novo acesso -> Mon Jul 31 2017 21:30:50 GMT+0100 (WEST)
+ *** [Client] User remote address and port 127.0.0.1:39528
+ *** [Server] User local  address and port 127.0.0.1:3000
+[2017-07-31 21:40:07.766] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-07-31 21:40:07.775] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-07-31 21:40:13.086] [INFO] log - 
+ Novo acesso -> Mon Jul 31 2017 21:40:13 GMT+0100 (WEST)
+ *** [Client] User remote address and port 127.0.0.1:39538
+ *** [Server] User local  address and port 127.0.0.1:3000
+[2017-07-31 21:58:51.624] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-07-31 21:58:51.624] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-07-31 21:58:55.756] [INFO] log - 
+ Novo acesso -> Mon Jul 31 2017 21:58:55 GMT+0100 (WEST)
+ *** [Client] User remote address and port 127.0.0.1:39548
+ *** [Server] User local  address and port 127.0.0.1:3000
+[2017-07-31 22:01:03.379] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-07-31 22:01:03.387] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-07-31 22:01:06.499] [INFO] log - 
+ Novo acesso -> Mon Jul 31 2017 22:01:06 GMT+0100 (WEST)
+ *** [Client] User remote address and port 127.0.0.1:39554
+ *** [Server] User local  address and port 127.0.0.1:3000
+[2017-07-31 22:02:28.193] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-07-31 22:02:28.196] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-07-31 22:02:32.482] [INFO] log - 
+ Novo acesso -> Mon Jul 31 2017 22:02:32 GMT+0100 (WEST)
+ *** [Client] User remote address and port 127.0.0.1:39560
+ *** [Server] User local  address and port 127.0.0.1:3000
+[2017-07-31 22:13:02.127] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-07-31 22:13:02.126] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-07-31 22:13:09.347] [INFO] log - 
+ Novo acesso -> Mon Jul 31 2017 22:13:09 GMT+0100 (WEST)
+ *** [Client] User remote address and port 127.0.0.1:39578
+ *** [Server] User local  address and port 127.0.0.1:3000
