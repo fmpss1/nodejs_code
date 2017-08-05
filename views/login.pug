@@ -1,0 +1,22 @@
+doctype html
+html(lang="en")
+	head
+		title Login
+	body
+		h1 Login
+		p Write the team you will belong.
+		p Use <i>user</i>  for the username and <i>user</i>  for the password.
+		p Use <i>admin</i> for the username and <i>admin</i> for the password.
+		form(method='post')
+
+			p
+				label(for='team') Team
+				input(type='text', name='team')
+			p
+				label(for='username') Username
+				input(type='text', name='username')
+			p
+				label(for='password') Password
+				input(type='password', name='password')
+
+			input(type='submit')

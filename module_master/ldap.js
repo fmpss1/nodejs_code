@@ -111,7 +111,7 @@ console.log(JSON.stringify(db));
         return next(new ldap.NoSuchObjectError(dn));
       var entry = db[dn];
       for (var i = 0; i < req.changes.length; i++) {
-        mod = req.changes[i].modification;
+        var mod = req.changes[i].modification;
         switch (req.changes[i].operation) {
           case 'replace':
             if (!entry[mod.type])

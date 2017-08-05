@@ -7,6 +7,7 @@ var cookieParser 	= require('cookie-parser');
 var session   		= require('express-session');
 var router    		= require('router')
 var flash   		= require('flash');
+var pug				= require('pug');
 var app    			= express();
 var cluster  		= require('cluster');
 var http  			= require('http');
@@ -40,7 +41,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(checkAuth);
 app.use(flash());
 //app.use(router);	// o npm do router esta instalado, se nao for preciso desinstalar
-app.set('view engine', 'jade');
+//app.set('view engine', 'jade');
+app.set('view engine', 'pug');
 app.set('view options', { layout: false });
 
 var Ldap = require("./module_master/ldap.js");
