@@ -1,10 +1,10 @@
 "use strict";
 
 var express   		= require("express");
+var session   		= require('express-session');
 var morgan   		= require("morgan");
 var bodyParser  	= require("body-parser");
 var cookieParser 	= require('cookie-parser');
-var session   		= require('express-session');
 var router    		= require('router')
 var flash   		= require('flash');
 var pug				= require('pug');

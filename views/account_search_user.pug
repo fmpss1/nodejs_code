@@ -1,12 +1,10 @@
 doctype html
 html(lang="en")
 	head
-		title Login
+		title Search for user Account
 	body
-		h1 Login
-		p Write the team you will belong.
-		p Use <i>user</i>  for the username and <i>user</i>  for the password.
-		p Use <i>admin</i> for the username and <i>admin</i> for the password.
+		h1 Search for user Account
+		p Write the username to search for that user account.
 		form(method='post')
 
 			p
@@ -20,6 +18,5 @@ html(lang="en")
 				input(type='password', name='password')
 
 			input(type='submit')
-			
 			p
-				li: a(href="/") Back to start page
+				li: a(href="/user_secure") Back to last page

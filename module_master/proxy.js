@@ -45,8 +45,15 @@ class Proxy{
           userPassword: 'teste'
         }
 
-  			var newDNc = 'cn=admin , ou=admin, o=ldap';
-  			var newUserc = {
+        var newDNc = 'cn=teste1 , ou=teste, o=ldap';
+        var newUserc = {
+          cn: 'teste1',
+          objectClass: 'inetOrgPerson',
+          userPassword: 'teste1'
+        }
+
+  			var newDNd = 'cn=admin , ou=admin, o=ldap';
+  			var newUserd = {
     			cn: 'admin',
     			objectClass: 'inetOrgPerson',
     			userPassword: 'admin'
@@ -68,6 +75,13 @@ class Proxy{
 
         client.bind(user, pass, function(err){
           client.add(newDNc, newUserc, function(err){
+          assert.ifError(err);
+        });
+          assert.ifError(err);
+        });
+
+        client.bind(user, pass, function(err){
+          client.add(newDNd, newUserd, function(err){
           assert.ifError(err);
         });
           assert.ifError(err);
@@ -114,8 +128,13 @@ class Proxy{
 
 
 
-
+  //http://localhost:3000/account_create?username=teste1
   app.get('/account_create', function (req, res, next) {
+//    if(!req.query.username) {
+//      return res.send({"status": "error", "message": "missing username"});
+//    }
+
+
     res.render('account_create', { flash: req.flash() } );
   });
 
@@ -127,12 +146,29 @@ class Proxy{
     res.render('account_remove', { flash: req.flash() } );
   });
 
-  app.get('/account_search', function (req, res, next) {
-    res.render('account_search', { flash: req.flash() } );
+  app.get('/account_search_user', function (req, res, next) {
+    res.render('account_search_user', { flash: req.flash() } );
   });
 
 
-
+/*
+  //http://localhost:3000/account_delete_team?team=team_1
+  //http://localhost:3000/account_delete_username?username=teste1
+  app.get("/account_delete_username", function(req, res) {
+    if(!req.query.username) {
+          return res.send({"status": "error", "message": "missing username"});
+      }
+      db.find({username: req.query.username}, function(err, data){ 
+      if(data.length != 0) {
+        db.remove( {username: req.query.username}, {}, function(err, data){
+          return res.send({"status": "info", "message": "username removed"});
+        });
+        } else {
+          return res.send({"status": "error", "message": "username not exist"});
+        }
+    });
+  });
+*/
 
 
   app.get('/user_account_search_team', function (req, res, next) {
@@ -262,10 +298,10 @@ class Proxy{
             client.del(newDN, function(err){
                 assert.ifError(err);
                 if(req.body.username == 'admin'){
-                  res.render('index', { status: 403 });
+                  res.render('admin_secure', { status: 403 });
                 }
                 else{
-                  res.render('admin_secure', { status: 403 });
+                  res.render('index', { status: 403 });
                 }
             });
             assert.ifError(err);
@@ -274,99 +310,57 @@ class Proxy{
   	}
 	});
 
-  app.post('/account_search', function (req, res, next) {
+  app.post('/account_search_user', function (req, res, next) {
     if(!(req.body.team && req.body.username && req.body.password)) {
         return res.send({"status": "error", "message": "missing username team|username|password"});
     }
     else {
 
       var opts = {
-        filter: '(&(objectClass=inetOrgPerson)(cn=*este))',
+        //filter: '(&(objectClass=inetOrgPerson)(cn=*ser))',
+        //filter: '(&(objectClass=inetOrgPerson))',
+        filter: '(&(cn=*))',
         scope: 'sub',
         attributes: ['cn']
+        //attributes: []
       };
 
         client.bind(user, pass, function(err){
+          //var newDN = 'ou='+req.body.team+', ou=user, o=ldap';
           var newDN = 'cn='+req.body.username+' ,ou='+req.body.team+', o=ldap';
-          client.search(newDN, opts, function(err, res) {
+          client.search(newDN, opts, function(err, resp) {
             assert.ifError(err);
+                //if(req.body.username == 'admin'){
+                //  res.render('admin_secure', { status: 403 });
+                //}
+                //else{
+                //  res.render('index', { status: 403 });
+                //}
 
-          res.on('searchEntry', function(entry) {
-            console.log('entry: ' + JSON.stringify(entry.object));
-            //return res.send(JSON.stringify(entry.object));
+          resp.on('searchEntry', function(entry) {
+            console.log('entry: ' + JSON.stringify(entry.object.cn));
+
+            if(JSON.stringify(entry.object.cn) == '"'+ req.body.username +'"'){
+              console.log('cn='+req.body.username);
+            }
+            else{
+              console.log('ERRO');
+            }
+            res.send(JSON.parse(entry).attributes);
           });
-          res.on('searchReference', function(referral) {
+          resp.on('searchReference', function(referral) {
             console.log('referral: ' + referral.uris.join());
           });
-          res.on('error', function(err) {
+          resp.on('error', function(err) {
             console.error('error: ' + err.message);
           });
-          res.on('end', function(result) {
+          resp.on('end', function(result) {
             console.log('status: ' + result.status);
-            //return res.send(result.status);
           });
         });
       });
     }
   });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	//http://localhost:3000/account_delete_team?team=team_1
-	app.get("/account_delete_team", function(req, res) {
-		if(!req.query.team) {
-        	return res.send({"status": "error", "message": "missing team"});
-    	}
-    	db.find({team: req.query.team}, function(err, data){ 
-			if(data.length != 0) {
-				db.remove( {team: req.query.team}, {multi: true},  function(err, data){
-					return res.send({"status": "info", "message": "team removed"});
-				});
-    		} else {
-    			return res.send({"status": "error", "message": "team not exist"});
-    		}
-		});
-	});
-
-	//http://localhost:3000/account_delete_username?username=teste1
-	app.get("/account_delete_username", function(req, res) {
-		if(!req.query.username) {
-        	return res.send({"status": "error", "message": "missing username"});
-    	}
-    	db.find({username: req.query.username}, function(err, data){ 
-			if(data.length != 0) {
-				db.remove( {username: req.query.username}, {}, function(err, data){
-					return res.send({"status": "info", "message": "username removed"});
-				});
-    		} else {
-    			return res.send({"status": "error", "message": "username not exist"});
-    		}
-		});
-	});
-
 	}
 }
 module.exports = Proxy;

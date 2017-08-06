@@ -1,0 +1,17 @@
+doctype html
+html(lang="en")
+	head
+		title Search for team
+	body
+		h1 Search for team
+		p Write the team to search.
+		form(method='post')
+
+			p
+				label(for='team') Team
+				input(type='text', name='team')
+
+			input(type='submit')
+			
+			p
+				li: a(href="/user_secure") Back to last page
