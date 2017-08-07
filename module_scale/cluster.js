@@ -1,12 +1,10 @@
 "use strict";
 
 class Cluster{
-    constructor(logger, app, server_ldap, URL_HTTP, URL_LDAP, os, cluster, http){
+    constructor(logger, app, server_ldap, os, cluster, http){
         var logger          = logger;
         var app             = app;
         var server_ldap     = server_ldap;
-        var URL_HTTP        = URL_HTTP;
-        var URL_LDAP        = URL_LDAP;
         var os              = os;
         var cluster         = cluster;
         var http            = http;
@@ -30,14 +28,14 @@ class Cluster{
             });
 
         } else if (cluster.worker.id === 1){
-                app.listen(URL_HTTP.substring(17, 22),
-                    URL_HTTP.substring(7, 16), function () {
-                    logger.info('\nServidor HTTP: Listening on '+ URL_HTTP +'/');
+                app.listen(app.get('URL_HTTP').substring(17, 22),
+                    app.get('URL_HTTP').substring(7, 16), function () {
+                    logger.info('\nServidor HTTP: Listening on '+ app.get('URL_HTTP') +'/');
                 });
         } else if (cluster.worker.id === 2){
-                server_ldap.listen(URL_LDAP.substring(17, 22),
-                    URL_LDAP.substring(7, 16), function () {
-                    logger.info('\nServidor LDAP: Listening on '+ URL_LDAP +'/');
+                server_ldap.listen(app.get('URL_LDAP').substring(17, 22),
+                    app.get('URL_LDAP').substring(7, 16), function () {
+                    logger.info('\nServidor LDAP: Listening on '+ app.get('URL_LDAP') +'/');
                 });
         } else {     
             

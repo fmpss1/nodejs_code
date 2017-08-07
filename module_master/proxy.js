@@ -2,10 +2,9 @@
 
 class Proxy{
 
-	constructor(logger, app, ldap, URL_LDAP, assert){
+	constructor(logger, app, ldap, assert){
 		var logger			   = logger;
 		var app 			     = app;
-		var URL_LDAP 		   = URL_LDAP;
 		var assert			   = assert;
 		var client;
 		var user 			     = 'cn=root';
@@ -29,7 +28,7 @@ class Proxy{
 
 
 //----- Criar users automáticos
-  			client = ldap.createClient({ url: URL_LDAP });
+  			client = ldap.createClient({ url: app.get('URL_LDAP') });
   				// Só o root pode adicionar users
   			var newDNa = 'cn=user , ou=user, o=ldap';
   			var newUsera = {
@@ -108,6 +107,9 @@ class Proxy{
     res.render('admin_secure', { flash: req.flash() } );
   });
 
+  app.get('/api_documentation', function (req, res, next) {
+    res.render('api_documentation', { flash: req.flash() } );
+  });
 
 
 
@@ -204,7 +206,7 @@ class Proxy{
         	return res.send({"status": "error", "message": "missing username team|username|password"});
     	}
     	else if(req.body.username=='root' && req.body.password=='secret'){
-    		client = ldap.createClient({ url: URL_LDAP });
+    		client = ldap.createClient({ url: app.get('URL_LDAP') });
         client.bind('cn='+req.body.username, req.body.password, function(err) {	
   				if(err){
   					res.render('unauthorised', { status: 403 });
@@ -216,7 +218,7 @@ class Proxy{
 			});
     	}
     	else {
-    		  client = ldap.createClient({ url: URL_LDAP });
+    		  client = ldap.createClient({ url: app.get('URL_LDAP') });
 			    client.bind('cn='+req.body.username+' ,ou='+req.body.team+', o=ldap', req.body.password, function(err) {	
   				if(err){
   					res.render('unauthorised', { status: 403 });
@@ -238,7 +240,7 @@ class Proxy{
         	return res.send({"status": "error", "message": "missing username team|username|password"});
     	}
     	else {
-  			client = ldap.createClient({ url: URL_LDAP });
+  			client = ldap.createClient({ url: app.get('URL_LDAP') });
   			// Só o root pode adicionar users
   			var newDN = 'cn='+req.body.username+' ,ou='+req.body.team+', o=ldap';
   			var newUser = {
@@ -267,7 +269,7 @@ class Proxy{
         return res.send({"status": "error", "message": "missing username team|username|password"});
     }
     else {
-        client = ldap.createClient({ url: URL_LDAP });
+        client = ldap.createClient({ url: app.get('URL_LDAP') });
         var newDN = 'cn='+req.body.username+' ,ou='+req.body.team+', o=ldap';
         var change = new ldap.Change({
               operation: 'replace',

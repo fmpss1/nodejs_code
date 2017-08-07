@@ -15,11 +15,13 @@ var os   			= require('os');
 var ldap   			= require('ldapjs');
 var assert   		= require('assert');
 
-var ip			= '127.0.0.1'; //'localhost'
-var port_http	= process.env.PORT || 3000;
-var port_ldap 	= process.env.PORT || 1389;
-var URL_HTTP 	= 'http://'+ ip +':'+ port_http;
-var URL_LDAP 	= 'ldap://'+ ip +':'+ port_ldap;
+
+app.set('ip', '127.0.0.1'); //'localhost
+app.set('port_http', process.env.PORT || 3000);
+app.set('port_ldap', process.env.PORT || 1389);
+app.set('URL_HTTP', 'http://'+ app.get('ip') +':'+ app.get('port_http'));
+app.set('URL_LDAP', 'ldap://'+ app.get('ip') +':'+ app.get('port_ldap'));
+
 
 //Ainda não está a funcionar, por causa das single quotes
 var SerdidorDaEquipa = 'SerdidorDaEquipa.js';
@@ -41,7 +43,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(checkAuth);
 app.use(flash());
 //app.use(router);	// o npm do router esta instalado, se nao for preciso desinstalar
-//app.set('view engine', 'jade');
 app.set('view engine', 'pug');
 app.set('view options', { layout: false });
 
@@ -50,10 +51,10 @@ var server_ldap = ldap.createServer();
 var LDAP = new Ldap(ldap, server_ldap);
 
 var Cluster = require("./module_scale/cluster.js");
-var cluster = new Cluster (logger, app, server_ldap, URL_HTTP, URL_LDAP, os, cluster, http);
+var cluster = new Cluster (logger, app, server_ldap, os, cluster, http);
 
 var Proxy = require("./module_master/proxy.js");
-var proxy = new Proxy (logger, app, ldap, URL_LDAP, assert);
+var proxy = new Proxy (logger, app, ldap, assert);
 
 
 /*
