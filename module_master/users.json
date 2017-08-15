@@ -1,0 +1,26 @@
+{
+"cn=user, ou=user, o=ldap":{
+	"cn":["user"],
+	"objectclass":["inetOrgPerson"],
+	"userpassword":["user"],
+	"state":["inactive"]
+	},
+"cn=teste, ou=teste, o=ldap":{
+	"cn":["teste"],
+	"objectclass":["inetOrgPerson"],
+	"userpassword":["teste"],
+	"state":["inactive"]
+	},
+"cn=teste1, ou=teste, o=ldap":{
+	"cn":["teste1"],
+	"objectclass":["inetOrgPerson"],
+	"userpassword":["teste1"],
+	"state":["inactive"]
+	},
+"cn=admin, ou=admin, o=ldap":{
+	"cn":["admin"],
+	"objectclass":["inetOrgPerson"],
+	"userpassword":["admin"],
+	"state":["inactive"]
+	}
+}

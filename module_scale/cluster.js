@@ -1,14 +1,17 @@
 "use strict";
 
+//Global configurations
+var config = require('../config');
+
 class Cluster{
-    constructor(logger, app, server_ldap, os, cluster, http){
-        var logger          = logger;
-        var app             = app;
+    constructor(server_ldap){
         var server_ldap     = server_ldap;
-        var os              = os;
-        var cluster         = cluster;
-        var http            = http;
-        var numCPUs         = os.cpus().length;
+        var logger          = config.logger;
+        var app             = config.app;
+        var os              = config.os;
+        var cluster         = config.cluster;
+        var http            = config.http;
+        var numCPUs         = config.os.cpus().length;
 
         if (cluster.isMaster) {
             console.log(`Master ${process.pid} is running, número de CPUs: ${numCPUs}`);
@@ -18,29 +21,25 @@ class Cluster{
             }
 
             cluster.on('online', function(worker) {
-                console.log('Worker ' + worker.process.pid + ' is online');
+                console.log('Worker_' + worker.id + ' PID_' + process.pid + ' is online');
             });
 
             cluster.on('exit', (worker, code, signal) => {
-                console.log('Worker ' + worker.process.pid + ' died with code: ' + code + ', and signal: ' + signal);
+                console.log('Worker_'+ worker.id + ' PID_' + process.pid + ' died with code: ' + code + ', and signal: ' + signal);
                 console.log('Starting a new worker');
                 cluster.fork();
             });
 
         } else if (cluster.worker.id === 1){
-                app.listen(app.get('URL_HTTP').substring(17, 22),
-                    app.get('URL_HTTP').substring(7, 16), function () {
-                    logger.info('\nServidor HTTP: Listening on '+ app.get('URL_HTTP') +'/');
+                app.listen(app.get('config').port_http, app.get('config').ip, function () {
+                    logger.info('\nWorker_'+ cluster.worker.id + ' PID_' + process.pid + ' Servidor HTTP: Listening on '+ app.get('config').URL_HTTP +'/');
                 });
         } else if (cluster.worker.id === 2){
-                server_ldap.listen(app.get('URL_LDAP').substring(17, 22),
-                    app.get('URL_LDAP').substring(7, 16), function () {
-                    logger.info('\nServidor LDAP: Listening on '+ app.get('URL_LDAP') +'/');
-                });
+                server_ldap.listen(app.get('config').port_ldap, app.get('config').ip, function () {
+                    logger.info('\nWorker_'+ cluster.worker.id + ' PID_' + process.pid + ' Servidor LDAP: Listening on '+ app.get('config').URL_LDAP +'/');
+                });   
         } else {     
             
-            console.log(cluster.worker.id);
-
             // Workers can share any TCP connection
             // In this case it is an HTTP server
             var server = http.createServer((req, res) => {
@@ -87,10 +86,11 @@ class Cluster{
             //  callback(null, inp + ' BAR (' + worker.process.pid + ')')
             //}
 
-            console.log(`Worker ${process.pid} started`);
+            console.log('Worker_' + cluster.worker.id + ' PID_' + process.pid + ' started');
         }
     }
 }
+
 module.exports = Cluster;
 
 

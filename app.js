@@ -1,60 +1,37 @@
 "use strict";
 
-var express   		= require("express");
-var session   		= require('express-session');
-var morgan   		= require("morgan");
-var bodyParser  	= require("body-parser");
-var cookieParser 	= require('cookie-parser');
-var router    		= require('router')
-var flash   		= require('flash');
-var pug				= require('pug');
-var app    			= express();
-var cluster  		= require('cluster');
-var http  			= require('http');
-var os   			= require('os');
-var ldap   			= require('ldapjs');
-var assert   		= require('assert');
+//Global configurations
+var config = require('./config')
+var app = config.app;
 
+//Express
+app.set('config', config);
+app.set('views', __dirname + '/views')
+app.set('view engine', 'pug');
+app.set('view options', { layout: false });
+app.use(config.cookieParser());
+app.use(config.morgan('combined'));
+app.use(config.session({ secret: 'example', resave: true, saveUninitialized: true }));
+app.use(config.bodyParser.json());
+app.use(config.bodyParser.urlencoded({ extended: true }));
+app.locals.moment = require('moment');
+app.use(config.flash());
 
-app.set('ip', '127.0.0.1'); //'localhost
-app.set('port_http', process.env.PORT || 3000);
-app.set('port_ldap', process.env.PORT || 1389);
-app.set('URL_HTTP', 'http://'+ app.get('ip') +':'+ app.get('port_http'));
-app.set('URL_LDAP', 'ldap://'+ app.get('ip') +':'+ app.get('port_ldap'));
-
+//Routes
+app.use(require('./module_master/proxy'));
 
 //Ainda não está a funcionar, por causa das single quotes
 var SerdidorDaEquipa = 'SerdidorDaEquipa.js';
 
-var log4js = require('log4js');
-log4js.configure({
-	appenders: [
-		{ type: 'console' },
-		{ type: 'file', filename: 'logs/logs.txt', category: 'log' }
-	]
-});
-var logger = log4js.getLogger('log');
-
-app.use(cookieParser());
-app.use(morgan('combined'));
-app.use(session({ secret: 'example', resave: true, saveUninitialized: true }));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(checkAuth);
-app.use(flash());
-//app.use(router);	// o npm do router esta instalado, se nao for preciso desinstalar
-app.set('view engine', 'pug');
-app.set('view options', { layout: false });
-
 var Ldap = require("./module_master/ldap.js");
-var server_ldap = ldap.createServer();
-var LDAP = new Ldap(ldap, server_ldap);
+var server_ldap = config.ldap.createServer();
+var LDAP = new Ldap(config.ldap, server_ldap);
 
 var Cluster = require("./module_scale/cluster.js");
-var cluster = new Cluster (logger, app, server_ldap, os, cluster, http);
+var cluster = new Cluster (server_ldap);
 
-var Proxy = require("./module_master/proxy.js");
-var proxy = new Proxy (logger, app, ldap, assert);
+
+
 
 
 /*
@@ -131,17 +108,3 @@ function getDBChildrenCount(){
 }
 
 */
-
-
-
-//Tentar pôr esta função dentro do ficheiro proxy.js, faz mais sentido
-function checkAuth (req, res, next) {
-	console.log('checkAuth ' + req.url);
-	// don't serve /secure to those not logged in
-	// you should add to this list, for each and every secure url
-	if (req.url === '/secure' && (!req.session || !req.session.authenticated)) {
-		res.render('unauthorised', { status: 403 });
-		return;
-	}
-	next();
-}
