@@ -76,21 +76,13 @@ router.get('/account_search_user', function (req, res, next) {
 
 
 /*
-  //http://localhost:3000/account_delete_team?team=team_1
-  //http://localhost:3000/account_delete_username?username=teste1
-  app.get("/account_delete_username", function(req, res) {
-    if(!req.query.username) {
-          return res.send({"status": "error", "message": "missing username"});
-      }
-      db.find({username: req.query.username}, function(err, data){ 
-      if(data.length != 0) {
-        db.remove( {username: req.query.username}, {}, function(err, data){
-          return res.send({"status": "info", "message": "username removed"});
-        });
-        } else {
-          return res.send({"status": "error", "message": "username not exist"});
-        }
-    });
+//http://localhost:3000/api/user?team=teste&username=teste&password=teste
+router.get("/login", function(req, res) {
+  if(!(req.query.team && req.query.username && req.query.password)) {
+    return res.send({"status": "error", "message": "missing team|username|password"});
+  }
+  else
+    res.redirect('/api/user_secure');
   });
 */
 
@@ -139,19 +131,14 @@ router.post('/login', function (req, res, next) {
         res.redirect('/api/admin_secure');
       }
       else{
-        
-        /*
-        change = new ldap.Change({
-        operation: 'replace',
-      modification: { userPassword: req.body.new_password }
-    });
-    client.modify(dn, change, function(err) {
-      assert.ifError(err);
-    });
-        */
-
         req.session.dn = 'cn='+req.body.username+' ,ou='+req.body.team+', o=ldap';
     		req.session.authenticated = true;
+        change = new ldap.Change({
+          operation: 'replace', modification: { state: ["active"] }
+        });
+        client.modify(dn, change, function(err) {
+          assert.ifError(err);
+        });
         res.redirect('/api/user_secure');
   		}
 		});
@@ -183,6 +170,7 @@ router.post('/account_create', function (req, res, next) {
     		cn:           req.body.username,
     		objectClass:  'inetOrgPerson',
     		userPassword: req.body.password,
+        token:        '',
         state:        'inactive'
   		}
     	client.add(dn, newUser, function(err){

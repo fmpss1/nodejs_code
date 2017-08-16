@@ -1,7 +1,11 @@
 "use strict";
 
 //Global configurations
-var config = require('../config');
+var config  = require('../config');
+var ldap    = config.ldap;
+var assert  = config.assert;
+
+var client, dn, change;
 
 class Cluster{
     constructor(server_ldap){
@@ -22,6 +26,26 @@ class Cluster{
 
             cluster.on('online', function(worker) {
                 console.log('Worker_' + worker.id + ' PID_' + process.pid + ' is online');
+
+/*
+//Usar isto para os servidores de equipa
+                client = ldap.createClient({ url: config.URL_LDAP });
+                dn = 'cn=Worker_'+worker.id+' ,ou=PID_'+process.pid+', o=ldap';
+                var newUser = {
+                    cn:           'Worker_'+worker.id,
+                    objectClass:  'Cluster_worker',
+                    userPassword: '',
+                    token:        '',
+                    state:        'active'
+                }
+                client.bind(dn, '', function(err) {
+                    client.add(dn, newUser, function(err){
+                        if(err){
+                            console.log('Worker online erro');
+                        }
+                    });
+                });
+*/  
             });
 
             cluster.on('exit', (worker, code, signal) => {

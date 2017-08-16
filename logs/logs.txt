@@ -117580,3 +117580,1469 @@ Servidor HTTP: Listening on http://127.0.0.1:3000/
  Novo acesso -> Sun Aug 06 2017 22:14:47 GMT+0100 (WEST)
  *** [Client] User remote address and port 127.0.0.1:52096
  *** [Server] User local  address and port 127.0.0.1:3000
+[2017-08-08 00:14:30.044] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-08 00:14:30.050] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-08 00:15:06.310] [INFO] log - 
+ Novo acesso -> Tue Aug 08 2017 00:15:06 GMT+0100 (WEST)
+ *** [Client] User remote address and port 127.0.0.1:44456
+ *** [Server] User local  address and port 127.0.0.1:3000
+[2017-08-08 00:20:08.294] [INFO] log - 
+ Novo acesso -> Tue Aug 08 2017 00:20:08 GMT+0100 (WEST)
+ *** [Client] User remote address and port 127.0.0.1:44480
+ *** [Server] User local  address and port 127.0.0.1:3000
+[2017-08-08 00:27:02.549] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-08 00:27:02.560] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-08 00:27:07.281] [INFO] log - 
+ Novo acesso -> Tue Aug 08 2017 00:27:07 GMT+0100 (WEST)
+ *** [Client] User remote address and port 127.0.0.1:44562
+ *** [Server] User local  address and port 127.0.0.1:3000
+[2017-08-08 00:31:14.495] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-08 00:31:14.513] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-08 00:31:18.446] [INFO] log - 
+ Novo acesso -> Tue Aug 08 2017 00:31:18 GMT+0100 (WEST)
+ *** [Client] User remote address and port 127.0.0.1:44696
+ *** [Server] User local  address and port 127.0.0.1:3000
+[2017-08-08 00:31:27.281] [INFO] log - 
+ Novo acesso -> Tue Aug 08 2017 00:31:27 GMT+0100 (WEST)
+ *** [Client] User remote address and port 127.0.0.1:44696
+ *** [Server] User local  address and port 127.0.0.1:3000
+[2017-08-08 00:35:17.587] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-08 00:35:17.621] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-08 00:35:20.645] [INFO] log - 
+ Novo acesso -> Tue Aug 08 2017 00:35:20 GMT+0100 (WEST)
+ *** [Client] User remote address and port 127.0.0.1:44700
+ *** [Server] User local  address and port 127.0.0.1:3000
+[2017-08-08 00:36:11.136] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-08 00:36:11.147] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-08 00:36:13.365] [INFO] log - 
+ Novo acesso -> Tue Aug 08 2017 00:36:13 GMT+0100 (WEST)
+ *** [Client] User remote address and port 127.0.0.1:44704
+ *** [Server] User local  address and port 127.0.0.1:3000
+[2017-08-08 00:36:53.770] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-08 00:36:53.780] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-08 00:36:56.561] [INFO] log - 
+ Novo acesso -> Tue Aug 08 2017 00:36:56 GMT+0100 (WEST)
+ *** [Client] User remote address and port 127.0.0.1:44708
+ *** [Server] User local  address and port 127.0.0.1:3000
+[2017-08-08 00:47:03.138] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-08 00:47:03.170] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-08 00:47:05.435] [INFO] log - 
+ Novo acesso -> Tue Aug 08 2017 00:47:05 GMT+0100 (WEST)
+ *** [Client] User remote address and port 127.0.0.1:44760
+ *** [Server] User local  address and port 127.0.0.1:3000
+[2017-08-08 20:24:45.874] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-08 20:24:45.875] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-08 20:25:14.326] [INFO] log - 
+ Novo acesso -> Tue Aug 08 2017 20:25:14 GMT+0100 (WEST)
+ *** [Client] User remote address and port 127.0.0.1:54874
+ *** [Server] User local  address and port 127.0.0.1:3000
+[2017-08-08 20:36:32.625] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-08 20:36:32.640] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-08 20:36:35.738] [INFO] log - 
+ Novo acesso -> Tue Aug 08 2017 20:36:35 GMT+0100 (WEST)
+ *** [Client] User remote address and port 127.0.0.1:55374
+ *** [Server] User local  address and port 127.0.0.1:3000
+[2017-08-08 20:39:47.256] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-08 20:39:47.262] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-08 22:48:54.629] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-08 22:48:54.635] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-08 22:50:09.211] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-08 22:50:09.244] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-08 22:50:43.800] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-08 22:50:43.801] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-08 22:51:18.263] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-08 22:51:18.282] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-08 22:52:00.586] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-08 22:52:00.590] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-08 23:01:21.426] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-08 23:01:21.426] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-08 23:12:07.209] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-08 23:12:07.211] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-08 23:12:38.694] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-08 23:12:38.698] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-08 23:12:46.506] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-08 23:12:46.510] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-08 23:13:01.258] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-08 23:13:01.297] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-08 23:13:18.105] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-08 23:13:18.125] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-08 23:17:59.320] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-08 23:17:59.320] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-08 23:26:34.723] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-08 23:26:34.723] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-08 23:30:12.988] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-08 23:30:12.994] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-08 23:30:46.882] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-08 23:30:46.893] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-08 23:31:43.131] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-08 23:31:43.146] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-08 23:33:02.683] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-08 23:33:02.707] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-08 23:37:34.964] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-08 23:37:34.963] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-08 23:40:15.183] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-08 23:40:15.189] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-08 23:41:18.174] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-08 23:41:18.207] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-08 23:42:22.080] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-08 23:42:22.086] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-08 23:45:26.339] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-08 23:45:26.348] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-08 23:46:46.339] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-08 23:46:46.342] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-08 23:47:27.362] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-08 23:47:27.404] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-08 23:56:44.521] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-08 23:56:44.531] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-09 00:00:37.565] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-09 00:00:37.567] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-09 00:01:23.112] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-09 00:01:23.120] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-09 00:07:06.694] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-09 00:07:06.745] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-09 00:07:46.312] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-09 00:07:46.313] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-09 00:08:17.971] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-09 00:08:17.976] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-09 00:08:43.642] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-09 00:08:43.643] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-09 00:14:04.464] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-09 00:14:04.491] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-09 00:18:51.776] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-09 00:18:51.783] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-09 00:19:33.620] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-09 00:19:33.631] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-09 00:19:46.017] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-09 00:19:46.025] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-09 00:20:28.530] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-09 00:20:28.539] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-09 00:21:19.852] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-09 00:21:19.889] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-09 00:22:53.106] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-09 00:22:53.158] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-09 00:24:11.769] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-09 00:24:11.811] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-09 00:25:34.387] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-09 00:25:34.391] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-09 00:26:24.749] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-09 00:26:24.773] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-09 00:27:38.683] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-09 00:27:38.689] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-09 00:29:12.539] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-09 00:29:12.548] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-09 00:30:27.098] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-09 00:30:27.102] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-09 00:32:30.851] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-09 00:32:30.894] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-09 00:33:50.964] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-09 00:33:50.991] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-09 00:34:32.725] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-09 00:34:32.732] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-09 00:35:05.036] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-09 00:35:05.053] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-09 00:35:36.514] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-09 00:35:36.518] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-09 00:36:19.667] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-09 00:36:19.667] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-09 00:36:47.165] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-09 00:36:47.182] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-09 00:37:03.148] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-09 00:37:03.204] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-09 00:37:43.679] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-09 00:37:43.684] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-09 00:38:51.087] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-09 00:38:51.097] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-09 00:42:35.837] [INFO] log - 
+Servidor HTTP: Listening on undefined/
+[2017-08-09 00:42:56.838] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-09 00:42:56.855] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-09 00:44:42.888] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-09 00:44:42.888] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-09 00:46:05.298] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-09 00:46:05.304] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-09 00:49:26.027] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-09 00:49:26.030] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-09 00:50:51.115] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-09 00:50:51.119] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-09 00:54:24.815] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-09 00:54:24.818] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-09 00:55:18.328] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-09 00:55:18.346] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-09 00:56:57.573] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-09 00:56:57.584] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-09 01:54:01.374] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-09 01:54:01.382] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-09 01:57:02.771] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-09 01:57:02.775] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-09 02:03:52.904] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-09 02:04:16.591] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-09 02:04:16.603] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 14:51:25.282] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 14:51:25.282] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 14:54:10.069] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 14:54:10.074] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 14:55:23.920] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 14:55:23.931] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 14:57:15.476] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 14:57:15.488] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 15:53:21.140] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 15:53:21.156] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 15:58:15.492] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 15:58:15.495] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 15:59:20.796] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 15:59:20.812] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 17:20:04.318] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 17:21:48.604] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 17:21:48.635] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 17:22:32.375] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 17:22:32.387] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 17:24:43.220] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 17:24:43.264] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 17:25:15.945] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 17:25:15.955] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 17:25:52.028] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 17:26:26.841] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 17:26:26.859] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 17:27:15.249] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 17:27:15.276] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 17:29:05.521] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 17:29:05.545] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 17:30:40.397] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 17:30:40.439] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 17:31:24.460] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 17:31:24.488] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 17:32:41.395] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 17:32:41.399] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 17:33:19.376] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 17:33:19.423] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 17:35:03.092] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 17:35:03.094] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 17:38:56.725] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 17:38:56.755] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 17:40:05.035] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 17:43:02.730] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 17:44:24.478] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 17:44:24.492] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 17:46:24.659] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 17:46:24.668] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 17:49:13.684] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 17:49:13.693] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 17:49:27.412] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 17:49:27.442] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 17:51:37.862] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 17:51:37.882] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 17:51:56.182] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 17:51:56.189] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 17:53:02.920] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 17:53:02.934] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 17:58:12.179] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 17:58:12.225] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 18:00:16.744] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 18:00:16.744] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 18:00:37.833] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 18:00:37.841] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 18:07:35.481] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 18:07:35.493] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 18:09:05.778] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 18:09:05.779] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 18:09:38.018] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 18:09:38.026] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 18:12:45.052] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 18:12:45.053] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 18:13:28.790] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 18:13:28.791] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 18:15:45.922] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 18:15:45.939] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 18:21:13.205] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 18:21:13.227] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 18:21:43.807] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 18:21:43.815] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 18:23:21.651] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 18:23:21.655] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 18:25:59.627] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 18:25:59.627] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 18:29:44.982] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 18:29:44.983] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 18:31:24.567] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 18:31:24.579] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 18:34:00.165] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 18:34:00.169] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 18:35:28.321] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 18:35:28.341] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 18:48:00.440] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 18:48:00.463] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 19:05:52.187] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 19:10:30.272] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 19:11:39.130] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 19:11:39.130] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 20:04:20.499] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 20:04:20.517] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 20:36:52.866] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 20:36:52.868] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 20:51:21.488] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 20:51:21.491] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 20:51:48.758] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 20:51:48.764] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 20:55:30.172] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 20:55:30.178] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 20:56:04.154] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 20:56:04.166] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 20:59:37.728] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 20:59:37.742] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 20:59:49.001] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 20:59:49.010] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 21:00:26.836] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 21:00:26.860] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 21:01:18.643] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 21:01:18.647] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 21:02:42.926] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 21:02:42.952] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 21:07:06.315] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 21:07:06.338] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 21:08:10.398] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 21:08:10.425] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 21:17:49.188] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 21:17:49.225] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 21:23:16.931] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 21:23:16.934] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 21:25:48.508] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 21:25:48.533] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 21:32:38.029] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 21:32:38.056] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 21:34:32.906] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 21:34:32.921] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 22:25:03.739] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 22:25:03.740] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 22:30:39.836] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 22:30:39.836] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 22:31:30.998] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 22:31:31.026] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 22:44:20.129] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 22:44:20.131] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 22:51:50.597] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 22:51:50.615] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 22:53:58.611] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 22:53:58.611] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 22:59:04.796] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 22:59:04.803] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 23:01:56.332] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 23:01:56.353] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 23:02:47.302] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 23:02:47.308] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 23:04:17.971] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 23:04:17.976] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 23:04:33.024] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 23:04:33.024] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 23:15:44.754] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 23:15:44.756] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 23:16:17.765] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 23:16:17.777] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 23:30:58.519] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 23:30:58.519] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 23:38:43.886] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 23:38:43.885] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 23:39:25.530] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 23:39:25.542] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 23:40:53.019] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 23:40:53.045] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 23:42:41.204] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 23:42:41.200] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 23:44:10.668] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 23:44:10.683] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-12 23:45:51.141] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-12 23:45:51.150] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 00:00:12.478] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 00:00:12.500] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 00:02:01.539] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 00:02:01.543] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 00:02:49.964] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 00:02:49.983] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 00:03:53.788] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 00:03:53.804] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 00:10:06.853] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 00:10:06.860] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 00:11:40.390] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 00:11:40.391] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 00:12:41.330] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 00:12:41.333] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 00:14:05.883] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 00:14:05.898] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 00:16:16.311] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 00:16:16.337] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 00:20:06.415] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 00:20:06.416] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 00:20:58.320] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 00:20:58.387] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 00:23:41.211] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 00:23:41.219] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 00:25:32.686] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 00:25:32.695] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 00:26:41.644] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 00:26:41.656] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 00:29:45.674] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 00:29:45.692] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 00:31:36.722] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 00:31:36.724] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 00:33:20.861] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 00:33:20.873] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 00:45:24.291] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 00:45:24.309] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 00:47:02.289] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 00:47:02.330] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 00:48:43.773] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 00:48:43.782] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 00:50:34.665] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 00:50:34.671] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 00:51:35.603] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 00:51:35.603] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 00:53:35.162] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 00:53:35.162] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 13:15:15.202] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 13:15:15.225] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 13:17:40.951] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 13:17:40.962] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 13:18:24.362] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 13:18:24.396] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 14:05:19.347] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 14:05:19.366] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 14:09:19.656] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 14:09:19.670] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 14:22:38.319] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 14:22:38.339] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 14:23:44.794] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 14:23:44.824] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 14:29:54.015] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 14:29:54.030] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 14:31:43.767] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 14:31:43.786] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 14:35:27.775] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 14:35:27.858] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 14:36:11.239] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 14:36:11.255] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 14:37:20.958] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 14:37:20.960] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 14:38:36.909] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 14:38:36.953] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 14:40:31.605] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 14:40:31.614] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 14:43:53.682] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 14:43:53.684] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 14:51:28.100] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 14:51:28.109] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 14:54:45.362] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 14:54:45.368] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 14:56:50.055] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 14:56:50.055] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 14:57:51.834] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 14:57:51.869] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 14:59:37.067] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 14:59:37.069] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 15:01:55.522] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 15:01:55.530] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 15:03:13.926] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 15:03:13.936] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 15:04:35.599] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 15:04:35.616] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 15:10:37.252] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 15:10:37.258] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 15:21:17.998] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 15:21:18.015] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 15:24:34.106] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 15:24:34.133] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 15:25:21.116] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 15:25:21.154] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 15:27:20.338] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 15:27:20.365] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 15:28:13.225] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 15:28:13.243] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 16:11:47.932] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 16:11:47.939] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 16:18:51.502] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 16:18:51.505] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 16:22:02.503] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 16:22:02.506] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 16:30:34.054] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 16:30:34.076] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 16:31:52.564] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 16:31:52.580] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 16:45:52.938] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 16:45:52.942] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 16:50:15.006] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 16:50:15.011] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 16:50:46.599] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 16:50:46.616] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 16:56:14.279] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 16:56:14.311] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 16:57:36.759] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 16:57:36.777] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 17:00:27.449] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 17:00:27.497] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 17:14:21.148] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 17:14:21.148] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 17:15:49.387] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 17:15:49.400] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 17:20:27.036] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 17:20:27.059] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 17:26:10.200] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 17:26:10.219] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 17:47:49.327] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 17:47:49.340] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 17:56:52.021] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 17:56:52.024] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 17:58:00.775] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 17:58:00.779] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 17:58:52.003] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 17:58:52.005] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 17:59:46.934] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 17:59:46.966] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 18:00:29.147] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 18:00:29.154] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 18:02:28.797] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 18:02:28.801] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 18:03:27.042] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 18:03:27.081] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 18:05:40.993] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 18:05:41.030] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 18:06:48.371] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 18:06:48.373] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 18:09:00.301] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 18:09:00.310] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 18:12:03.431] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 18:12:03.430] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 18:15:22.226] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 18:15:22.254] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 19:25:14.288] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 19:25:14.304] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 19:44:40.383] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 19:44:40.400] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 19:48:32.175] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 19:48:32.189] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 19:54:41.317] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 19:54:41.344] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 19:56:31.329] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 19:56:31.343] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 20:04:11.724] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 20:04:11.732] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 20:06:23.609] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 20:06:23.617] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 20:17:47.621] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 20:17:47.627] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 20:20:10.344] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 20:20:10.351] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 20:21:11.535] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 20:21:11.535] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 20:21:37.548] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 20:21:37.569] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 20:27:16.139] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 20:27:16.157] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 20:28:16.941] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 20:28:16.941] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 20:30:37.623] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 20:30:37.640] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 20:33:09.594] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 20:33:09.594] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 20:45:15.963] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 20:45:15.964] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 20:46:28.398] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 20:46:28.403] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 20:50:10.036] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 20:50:10.036] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 20:56:55.473] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 20:56:55.476] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 20:57:52.646] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 20:57:52.692] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 20:58:23.743] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 20:58:23.761] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 20:59:49.131] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 20:59:49.140] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 21:05:26.611] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 21:05:26.623] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 21:08:49.657] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 21:08:49.659] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 21:09:23.692] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 21:09:23.698] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 21:10:59.007] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 21:10:59.009] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 21:17:14.488] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 21:17:14.494] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 21:18:45.654] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 21:18:45.658] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 21:20:56.595] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 21:20:56.605] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 21:27:10.917] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 21:27:10.917] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 21:27:30.310] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 21:27:30.311] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 21:31:27.214] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 21:31:27.293] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 21:32:24.949] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 21:32:24.967] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 21:33:55.091] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 21:33:55.105] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 21:35:21.159] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 21:35:21.166] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 21:36:16.350] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 21:36:16.351] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 21:40:00.106] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 21:40:00.114] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 21:40:39.131] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 21:40:39.148] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 21:43:14.469] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 21:43:14.487] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 21:46:13.927] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 21:46:13.935] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 21:47:24.565] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 21:47:24.577] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 21:49:11.666] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 21:49:11.684] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 22:58:21.114] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 22:58:21.122] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 23:05:12.876] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 23:05:12.891] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 23:06:26.738] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 23:06:26.743] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 23:07:20.968] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 23:07:20.971] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 23:17:31.594] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 23:17:31.595] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 23:54:32.326] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-13 23:54:32.326] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 23:59:21.715] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-13 23:59:21.716] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-15 00:43:37.476] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-15 00:43:37.476] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-15 00:50:06.275] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-15 00:50:06.314] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-15 00:50:57.432] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-15 00:50:57.436] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-15 00:51:28.913] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-15 00:51:28.913] [INFO] log - 
+Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-15 00:53:31.843] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-15 00:54:15.911] [INFO] log - 
+Worker_1 PID_3306Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-15 00:54:15.912] [INFO] log - 
+Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-15 00:55:46.260] [INFO] log - 
+Worker_1 PID_3395 Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-15 00:55:46.271] [INFO] log - 
+Worker_2 PID_3400 Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-15 01:03:26.141] [INFO] log - 
+Worker_1 PID_3495 Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-15 01:03:26.168] [INFO] log - 
+Worker_2 PID_3500 Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-15 01:05:24.584] [INFO] log - 
+Worker_1 PID_3670 Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-15 01:05:24.621] [INFO] log - 
+Worker_2 PID_3675 Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-15 01:07:53.803] [INFO] log - 
+Worker_2 PID_3764 Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-15 01:07:53.804] [INFO] log - 
+Worker_1 PID_3759 Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-15 01:15:51.282] [INFO] log - 
+Worker_1 PID_3887 Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-15 01:15:51.296] [INFO] log - 
+Worker_2 PID_3892 Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-15 01:16:57.632] [INFO] log - 
+Worker_2 PID_3979 Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-15 01:16:57.658] [INFO] log - 
+Worker_1 PID_3974 Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-15 01:19:29.194] [INFO] log - 
+Worker_2 PID_4075 Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-15 01:19:29.197] [INFO] log - 
+Worker_1 PID_4070 Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-15 01:20:38.327] [INFO] log - 
+Worker_2 PID_4163 Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-15 01:20:38.359] [INFO] log - 
+Worker_1 PID_4158 Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-15 01:22:19.761] [INFO] log - 
+Worker_1 PID_4245 Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-15 01:22:19.763] [INFO] log - 
+Worker_2 PID_4250 Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-15 01:24:13.697] [INFO] log - 
+Worker_2 PID_4337 Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-15 01:24:13.702] [INFO] log - 
+Worker_1 PID_4332 Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-15 01:24:52.796] [INFO] log - 
+Worker_2 PID_4422 Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-15 01:24:52.819] [INFO] log - 
+Worker_1 PID_4417 Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-15 01:25:45.387] [INFO] log - 
+Worker_1 PID_4503 Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-15 01:25:45.388] [INFO] log - 
+Worker_2 PID_4508 Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-15 01:35:40.682] [INFO] log - 
+Worker_1 PID_4612 Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-15 01:35:40.693] [INFO] log - 
+Worker_2 PID_4617 Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-15 01:42:11.484] [INFO] log - 
+Worker_2 PID_4724 Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-15 01:42:11.490] [INFO] log - 
+Worker_1 PID_4719 Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-15 01:44:09.768] [INFO] log - 
+Worker_1 PID_4810 Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-15 01:44:09.777] [INFO] log - 
+Worker_2 PID_4815 Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-15 01:48:09.472] [INFO] log - 
+Worker_1 PID_4911 Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-15 01:48:09.477] [INFO] log - 
+Worker_2 PID_4916 Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-15 01:49:48.946] [INFO] log - 
+Worker_2 PID_5004 Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-15 01:49:48.956] [INFO] log - 
+Worker_1 PID_4999 Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-15 01:53:28.504] [INFO] log - 
+Worker_2 PID_5108 Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-15 01:53:28.520] [INFO] log - 
+Worker_1 PID_5103 Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-15 01:57:21.143] [INFO] log - 
+Worker_1 PID_5198 Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-15 01:57:21.165] [INFO] log - 
+Worker_2 PID_5203 Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-15 01:58:47.213] [INFO] log - 
+Worker_1 PID_5286 Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-15 01:58:47.229] [INFO] log - 
+Worker_2 PID_5291 Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-15 02:02:31.249] [INFO] log - 
+Worker_2 PID_5383 Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-15 02:02:31.268] [INFO] log - 
+Worker_1 PID_5378 Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-15 02:03:32.238] [INFO] log - 
+Worker_1 PID_5464 Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-15 02:03:32.254] [INFO] log - 
+Worker_2 PID_5469 Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-15 02:05:34.238] [INFO] log - 
+Worker_2 PID_5559 Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-15 02:05:34.241] [INFO] log - 
+Worker_1 PID_5554 Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-15 02:09:46.994] [INFO] log - 
+Worker_1 PID_5649 Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-15 02:09:46.994] [INFO] log - 
+Worker_2 PID_5654 Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-15 02:13:12.220] [INFO] log - 
+Worker_1 PID_5743 Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-15 02:13:12.234] [INFO] log - 
+Worker_2 PID_5748 Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-15 02:14:51.783] [INFO] log - 
+Worker_1 PID_5831 Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-15 02:14:51.795] [INFO] log - 
+Worker_2 PID_5836 Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-15 02:20:59.263] [INFO] log - 
+Worker_1 PID_5935 Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-15 02:20:59.270] [INFO] log - 
+Worker_2 PID_5940 Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-15 02:24:25.948] [INFO] log - 
+Worker_1 PID_6033 Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-15 02:24:25.963] [INFO] log - 
+Worker_2 PID_6038 Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-15 02:25:49.439] [INFO] log - 
+Worker_2 PID_6126 Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-15 02:25:49.445] [INFO] log - 
+Worker_1 PID_6121 Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-15 02:28:23.879] [INFO] log - 
+Worker_1 PID_6207 Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-15 02:28:23.883] [INFO] log - 
+Worker_2 PID_6212 Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-15 02:42:20.715] [INFO] log - 
+Worker_2 PID_6342 Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-15 02:42:20.717] [INFO] log - 
+Worker_1 PID_6337 Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-15 02:43:53.321] [INFO] log - 
+Worker_2 PID_6440 Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-15 02:43:53.334] [INFO] log - 
+Worker_1 PID_6435 Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-15 02:43:55.600] [INFO] log - 
+ Novo acesso -> Tue Aug 15 2017 02:43:55 GMT+0100 (WEST)
+ *** [Client] User remote address and port 127.0.0.1:60918
+ *** [Server] User local  address and port 127.0.0.1:3000
+[2017-08-15 02:44:55.066] [INFO] log - 
+ Novo acesso -> Tue Aug 15 2017 02:44:55 GMT+0100 (WEST)
+ *** [Client] User remote address and port 127.0.0.1:60918
+ *** [Server] User local  address and port 127.0.0.1:3000
+[2017-08-15 02:55:49.651] [INFO] log - 
+Worker_1 PID_6556 Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-15 02:55:49.689] [INFO] log - 
+Worker_2 PID_6561 Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-15 02:57:34.341] [INFO] log - 
+Worker_1 PID_6651 Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-15 02:57:34.342] [INFO] log - 
+Worker_2 PID_6652 Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-15 02:59:43.545] [INFO] log - 
+Worker_1 PID_6750 Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-15 02:59:43.555] [INFO] log - 
+Worker_2 PID_6755 Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-15 03:06:04.605] [INFO] log - 
+Worker_1 PID_6873 Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-15 03:06:04.606] [INFO] log - 
+Worker_2 PID_6878 Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-15 03:09:25.228] [INFO] log - 
+Worker_1 PID_6966 Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-15 03:09:25.241] [INFO] log - 
+Worker_2 PID_6971 Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-15 03:13:57.115] [INFO] log - 
+Worker_2 PID_7066 Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-15 03:13:57.121] [INFO] log - 
+Worker_1 PID_7061 Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-15 03:14:43.008] [INFO] log - 
+Worker_2 PID_7150 Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-15 03:14:43.024] [INFO] log - 
+Worker_1 PID_7145 Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-15 03:18:29.704] [INFO] log - 
+Worker_2 PID_7243 Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-15 03:18:29.713] [INFO] log - 
+Worker_1 PID_7238 Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-15 03:32:57.621] [INFO] log - 
+Worker_1 PID_7355 Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-15 03:32:57.622] [INFO] log - 
+Worker_2 PID_7360 Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-15 15:09:54.003] [INFO] log - 
+Worker_1 PID_4526 Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-15 15:09:54.010] [INFO] log - 
+Worker_2 PID_4531 Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-15 17:42:44.359] [INFO] log - 
+Worker_1 PID_5254 Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-15 17:42:44.363] [INFO] log - 
+Worker_2 PID_5259 Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-15 18:02:23.046] [INFO] log - 
+Worker_1 PID_5480 Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-15 18:02:23.081] [INFO] log - 
+Worker_2 PID_5485 Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-15 18:06:48.458] [INFO] log - 
+Worker_1 PID_5577 Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-15 18:06:48.490] [INFO] log - 
+Worker_2 PID_5582 Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-15 18:13:29.950] [INFO] log - 
+Worker_1 PID_5681 Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-15 18:13:29.957] [INFO] log - 
+Worker_2 PID_5686 Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-15 18:30:34.423] [INFO] log - 
+Worker_1 PID_5835 Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-15 18:30:34.473] [INFO] log - 
+Worker_2 PID_5840 Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-15 18:55:47.751] [INFO] log - 
+Worker_1 PID_5992 Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-15 18:55:47.753] [INFO] log - 
+Worker_2 PID_5997 Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-15 23:13:17.215] [INFO] log - 
+Worker_1 PID_6694 Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-15 23:13:17.233] [INFO] log - 
+Worker_2 PID_6699 Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-16 00:19:10.168] [INFO] log - 
+Worker_2 PID_6961 Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-16 00:19:10.182] [INFO] log - 
+Worker_1 PID_6956 Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-16 00:20:26.452] [INFO] log - 
+Worker_2 PID_7061 Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-16 00:20:26.453] [INFO] log - 
+Worker_1 PID_7056 Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-16 00:50:44.627] [INFO] log - 
+Worker_1 PID_7483 Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-16 00:50:44.628] [INFO] log - 
+Worker_2 PID_7488 Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-16 00:51:28.857] [INFO] log - 
+Worker_2 PID_7567 Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-16 00:51:28.877] [INFO] log - 
+Worker_1 PID_7566 Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-16 00:52:53.541] [INFO] log - 
+Worker_2 PID_7664 Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-16 00:52:53.542] [INFO] log - 
+Worker_1 PID_7659 Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-16 00:53:10.198] [INFO] log - 
+Worker_1 PID_7741 Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-16 00:53:10.223] [INFO] log - 
+Worker_2 PID_7746 Servidor LDAP: Listening on ldap://127.0.0.1:1389/
+[2017-08-16 00:53:50.280] [INFO] log - 
+Worker_1 PID_7824 Servidor HTTP: Listening on http://127.0.0.1:3000/
+[2017-08-16 00:53:50.309] [INFO] log - 
+Worker_2 PID_7829 Servidor LDAP: Listening on ldap://127.0.0.1:1389/

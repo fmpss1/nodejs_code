@@ -1,17 +1,13 @@
 "use strict";
 
-//Dependencies
-var path  = require('path');
-var fs    = require('fs');
-
-var SUFFIX       = 'o=ldap';
-var user         = 'cn=root';
-var pass         = 'secret';
-var db, dn;
-
 //Global configurations
-var config = require('../config');
+var config  = require('../config');
+var assert  = config.assert;
 
+var SUFFIX  = 'o=ldap';
+var user    = 'cn=root';
+var pass    = 'secret';
+var db, dn;
 
 class Ldap{
   constructor(ldap, server_ldap){
@@ -20,9 +16,8 @@ class Ldap{
 
 
   //Load users
-  fs.readFile(path.join(__dirname, 'users.json'), 'utf8', function (err, data) {
-    if (err) throw err; // we'll not consider error handling for now
-    //COLOCAR ASSERT
+  config.fs.readFile(config.path.join(__dirname, 'data.json'), 'utf8', function (err, data) {
+    assert.ifError(err);
     db = JSON.parse(data);
   });
 
@@ -31,12 +26,6 @@ class Ldap{
   function authorize(req, res, next) {
     /* Any user may search after bind, only cn=root has full power */
     var isSearch = (req instanceof ldap.SearchRequest);
-      
-    //if (!(db[dn].state == "inactive")){
-    //  console.log("- - - - - - MUDOU --------------");
-    //  return next(new ldap.NoSuchAttributeError('state'));
-    //}
-    //Quando um user faz bind outro não pode entrar com as suas credenciais
 
     // if (!req.connection.ldap.bindDN.equals('cn=root') && !isSearch)
     //  return next(new ldap.InsufficientAccessRightsError());
@@ -47,15 +36,7 @@ class Ldap{
 
 
 
-  server_ldap.unbind(function(req, res, next){
-    console.log(JSON.stringify(db, null, 4)); //Não esta a funcionar
-    res.end();
-  });
-
-
-
-
-
+//----------------------------------------------------------Authentication
   server_ldap.bind('cn=root', function(req, res, next) {
     console.log("BIND root");
     if (req.dn.toString() !== 'cn=root' || req.credentials !== 'secret'){
@@ -64,10 +45,6 @@ class Ldap{
     res.end();
     return next();
   });
-
-
-
-
 
   server_ldap.bind(SUFFIX, authorize, function(req, res, next) {
     console.log(JSON.stringify(db));
@@ -79,23 +56,25 @@ class Ldap{
       return next(new ldap.NoSuchObjectError(dn));
     if (!db[dn].userpassword)
       return next(new ldap.NoSuchAttributeError('userPassword'));
-    if (db[dn].userpassword.indexOf(req.credentials) === -1){
+    if (db[dn].userpassword.indexOf(req.credentials) === -1)
       return next(new ldap.InvalidCredentialsError());
-    }
-
-    //passar isto para o modify
-      console.log(db[dn].state);
-      db[dn].state=["active"];
-      console.log(db[dn].state);
-
+    if (!(db[dn].state == 'inactive'))
+      return next(new ldap.NoSuchAttributeError('state'));
     res.end();
     return next();
   });
 
+  server_ldap.unbind(function(req, res, next){
+    console.log(JSON.stringify(db, null, 4));
+    res.end();
+  });
+//----------------------------------------------------------Authentication
 
 
 
 
+
+//------------------------------------------------------------------Update
   server_ldap.add(SUFFIX, authorize, function(req, res, next) {
     console.log("ADD");
     dn = req.dn.toString();
@@ -106,48 +85,6 @@ class Ldap{
     res.end();
     return next();
   });
-
-
-
-
-
-  server_ldap.compare(SUFFIX, authorize, function(req, res, next) {
-    console.log("COMPARE");
-    dn = req.dn.toString();
-    if (!db[dn])
-      return next(new ldap.NoSuchObjectError(dn));
-    if (!db[dn][req.attribute])
-      return next(new ldap.NoSuchAttributeError(req.attribute));
-    var matches = false;
-    var vals = db[dn][req.attribute];
-    for (var i = 0; i < vals.length; i++) {
-      if (vals[i] === req.value) {
-        matches = true;
-        break;
-      }
-    }
-    res.end(matches);
-    return next();
-  });
-
-
-
-
-
-  server_ldap.del(SUFFIX, authorize, function(req, res, next) {
-    console.log("DELETE");
-    dn = req.dn.toString();
-    if (!db[dn])
-      return next(new ldap.NoSuchObjectError(dn));
-    delete db[dn];
-    console.log(JSON.stringify(db));
-    res.end();
-    return next();
-  });
-
-
-
-
 
   server_ldap.modify(SUFFIX, authorize, function(req, res, next) {
     console.log("MODIFY");
@@ -191,10 +128,23 @@ class Ldap{
     return next();
   });
 
+  server_ldap.del(SUFFIX, authorize, function(req, res, next) {
+    console.log("DELETE");
+    dn = req.dn.toString();
+    if (!db[dn])
+      return next(new ldap.NoSuchObjectError(dn));
+    delete db[dn];
+    console.log(JSON.stringify(db));
+    res.end();
+    return next();
+  });
+//------------------------------------------------------------------Update
 
 
 
 
+
+//-------------------------------------------------------------------Query
   server_ldap.search(SUFFIX, authorize, function(req, res, next) {
     console.log("SEARCH");
     dn = req.dn.toString();
@@ -239,11 +189,28 @@ class Ldap{
     return next();
   });
 
-
+  server_ldap.compare(SUFFIX, authorize, function(req, res, next) {
+    console.log("COMPARE");
+    dn = req.dn.toString();
+    if (!db[dn])
+      return next(new ldap.NoSuchObjectError(dn));
+    if (!db[dn][req.attribute])
+      return next(new ldap.NoSuchAttributeError(req.attribute));
+    var matches = false;
+    var vals = db[dn][req.attribute];
+    for (var i = 0; i < vals.length; i++) {
+      if (vals[i] === req.value) {
+        matches = true;
+        break;
+      }
+    }
+    res.end(matches);
+    return next();
+  });
+//-------------------------------------------------------------------Query
 
 
 
   }
 }
-
 module.exports = Ldap;

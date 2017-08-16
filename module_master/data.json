@@ -1,0 +1,37 @@
+{
+"cn=user, ou=user, o=ldap":{
+	"cn":["user"],
+	"objectclass":["Person"],
+	"userpassword":["user"],
+	"token":[""],
+	"state":["inactive"]
+	},
+"cn=teste, ou=teste, o=ldap":{
+	"cn":["teste"],
+	"objectclass":["Person"],
+	"userpassword":["teste"],
+	"token":[""],
+	"state":["inactive"]
+	},
+"cn=teste1, ou=teste, o=ldap":{
+	"cn":["teste1"],
+	"objectclass":["Person"],
+	"userpassword":["teste1"],
+	"token":[""],
+	"state":["inactive"]
+	},
+"cn=admin, ou=admin, o=ldap":{
+	"cn":["admin"],
+	"objectclass":["Person"],
+	"userpassword":["admin"],
+	"token":[""],
+	"state":["inactive"]
+	},
+"cn=team_01, ou=team_01, o=ldap":{
+	"cn":["team_01"],
+	"objectclass":["Server"],
+	"userpassword":["team_01"],
+	"token":[""],
+	"state":["inactive"]
+	}
+}
