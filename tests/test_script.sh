@@ -41,3 +41,8 @@ runtime=$( echo "$end - $start" | bc -l )
 
 #Apache Bench
 #ab -n 10000 -c 100 http://localhost:8000/
+
+
+localhost:3000/api/login?team=user&username=user&password=user
+localhost:3000/api/logout?token=0.6600718819536269
+localhost:3000/api/login?team=teste&username=teste&password=teste
