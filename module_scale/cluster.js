@@ -2,7 +2,6 @@
 
 //Global configurations
 var config  = require('../config');
-var ldap    = config.ldap;
 var assert  = config.assert;
 
 var client, dn, change;
@@ -12,10 +11,24 @@ class Cluster{
         var server_ldap     = server_ldap;
         var logger          = config.logger;
         var app             = config.app;
+        var ldap            = config.ldap;
         var os              = config.os;
         var cluster         = config.cluster;
         var http            = config.http;
+        var httpProxy       = config.httpProxy;
         var numCPUs         = config.os.cpus().length;
+
+        var proxyServers = app.get('config').addresses.map(function (target) {
+            return new httpProxy.createProxyServer({
+                target: target
+            });
+        });
+
+        var server = http.createServer(function (req, res) {
+            var proxy = proxyServers.shift();
+            proxy.web(req, res);
+            proxyServers.push(proxy);
+        });
 
         if (cluster.isMaster) {
             console.log(`Master ${process.pid} is running, número de CPUs: ${numCPUs}`);
@@ -26,7 +39,35 @@ class Cluster{
 
             cluster.on('online', function(worker) {
                 console.log('Worker_' + worker.id + ' PID_' + process.pid + ' is online');
+            });
 
+            cluster.on('exit', (worker, code, signal) => {
+                console.log('Worker_'+ worker.id + ' PID_' + process.pid + ' died with code: ' + code + ', and signal: ' + signal);
+                console.log('Starting a new worker');
+                cluster.fork();
+            });
+        } else if (cluster.worker.id === 1){
+                server.listen(app.get('config').port_proxy, app.get('config').ip, function () {
+                    logger.info('\nWorker_'+ cluster.worker.id + ' PID_' + process.pid +
+                    ' Reverse proxy: Listening on '+ app.get('config').URL_proxy +'/');
+                });
+        } else if (cluster.worker.id === 2){
+                server_ldap.listen(app.get('config').port_ldap, app.get('config').ip, function () {
+                    logger.info('\nWorker_'+ cluster.worker.id + ' PID_' + process.pid +
+                    ' LDAP server: Listening on '+ app.get('config').URL_LDAP +'/');
+                });
+        } else if (cluster.worker.id === 3){
+                app.listen(app.get('config').port_http_1, app.get('config').ip, function () {
+                    logger.info('\nWorker_'+ cluster.worker.id + ' PID_' + process.pid +
+                    ' HTTP server 1: Listening on '+ app.get('config').URL_http_1 +'/');
+                });
+        } else if (cluster.worker.id === 4){
+                app.listen(app.get('config').port_http_2, app.get('config').ip, function () {
+                    logger.info('\nWorker_'+ cluster.worker.id + ' PID_' + process.pid +
+                    ' HTTP server 1: Listening on '+ app.get('config').URL_http_2 +'/');
+                });
+        } else {     
+            
 /*
 //Usar isto para os servidores de equipa
                 client = ldap.createClient({ url: config.URL_LDAP });
@@ -46,26 +87,7 @@ class Cluster{
                     });
                 });
 */  
-            });
 
-            cluster.on('exit', (worker, code, signal) => {
-                console.log('Worker_'+ worker.id + ' PID_' + process.pid + ' died with code: ' + code + ', and signal: ' + signal);
-                console.log('Starting a new worker');
-                cluster.fork();
-            });
-
-        } else if (cluster.worker.id === 1){
-                app.listen(app.get('config').port_http, app.get('config').ip, function () {
-                    logger.info('\nWorker_'+ cluster.worker.id + ' PID_' + process.pid + ' Servidor HTTP: Listening on '+ app.get('config').URL_HTTP +'/');
-                });
-        } else if (cluster.worker.id === 2){
-                server_ldap.listen(app.get('config').port_ldap, app.get('config').ip, function () {
-                    logger.info('\nWorker_'+ cluster.worker.id + ' PID_' + process.pid + ' Servidor LDAP: Listening on '+ app.get('config').URL_LDAP +'/');
-                });   
-        } else {     
-            
-            // Workers can share any TCP connection
-            // In this case it is an HTTP server
             var server = http.createServer((req, res) => {
                 res.writeHead(200);
                 res.end('hello world ' + process.pid +'\n');

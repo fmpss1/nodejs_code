@@ -31,9 +31,6 @@ var Cluster = require("./module_scale/cluster.js");
 var cluster = new Cluster (server_ldap);
 
 
-
-
-
 /*
 setInterval(function () {
 	//Clear terminal/console in loop
@@ -53,58 +50,6 @@ function repository_location_pwd(){
 	exec('pwd', function(err,stdout,stderr){
 		logger.info(stdout);
 	});
-}
-
-*/
-
-
-
-
-
-
-
-/*
-function run(cmd, callback) {
-    var spawn = require('child_process').spawn;
-    var command = spawn(cmd);
-    var result = '';
-    command.stdout.on('data', function(data) {
-         result += data.toString();
-    });
-    command.on('close', function(code) {
-        return callback(result);
-    });
-}
-run("pwd", function(result) { console.log(result) });
-
-function getDBTeams(){
-	db_teams.find({}, function (err, data) {
-		logger.info(data);
-	});
-}
-
-function getDBChildren(){
-	db_children.find({}, function (err, data) {
-		logger.info(data);
-	});
-}
-
-//Variável temp para as funções getDBTeamsCount() e getDBChildrenCount().
-//Pensar em alternativa.
-var temp=-1;
-function getDBTeamsCount(){
-	db_teams.count({}, function (err, data) {
-		temp = data;
-	});
-	return temp;
-}
-
-var tempa=-1;
-function getDBChildrenCount(){
-	db_children.count({}, function (err, data) {
-		tempa = data;
-	});
-	return tempa;
 }
 
 */
