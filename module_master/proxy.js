@@ -1,10 +1,8 @@
 "use strict";
 
 //Dependencies
-var express = require('express');
-var router = express.Router();
-
-
+var express   = require('express');
+var router    = express.Router();
 
 //Routes
 router.use('/api', require('../routes/api'));

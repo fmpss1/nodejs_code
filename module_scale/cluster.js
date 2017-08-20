@@ -2,7 +2,6 @@
 
 //Global configurations
 var config  = require('../config');
-var assert  = config.assert;
 
 var client, dn, change;
 
@@ -16,6 +15,7 @@ class Cluster{
         var cluster         = config.cluster;
         var http            = config.http;
         var httpProxy       = config.httpProxy;
+        var assert          = config.assert;
         var numCPUs         = config.os.cpus().length;
 
         var proxyServers = app.get('config').addresses.map(function (target) {
