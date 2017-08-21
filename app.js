@@ -1,10 +1,10 @@
 "use strict";
 
-//Global configurations
+/** Global configurations */
 var config = require('./config')
 var app = config.app;
 
-//Express
+/** Express definition */
 app.set('config', config);
 app.set('views', __dirname + '/views')
 app.set('view engine', 'pug');
@@ -17,7 +17,7 @@ app.use(config.bodyParser.urlencoded({ extended: true }));
 app.locals.moment = require('moment');
 app.use(config.flash());
 
-//Routes
+/** Routes to proxy */
 app.use(require('./module_master/proxy'));
 
 //Ainda não está a funcionar, por causa das single quotes
@@ -51,5 +51,4 @@ function repository_location_pwd(){
 		logger.info(stdout);
 	});
 }
-
 */

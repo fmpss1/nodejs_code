@@ -1,6 +1,6 @@
 "use strict";
 
-//Global configurations
+/** Global configurations */
 var config  = require('../config');
 var assert  = config.assert;
 
@@ -10,10 +10,15 @@ var pass    = 'secret';
 var db, dn;
 
 class Ldap{
+  /**
+  * Represents da LDAP server
+  * @constructor
+  * @param {string} ldap - require
+  * @param {object} server_ldap - passed from app.js
+  */
   constructor(ldap, server_ldap){
     var ldap          = ldap;
     var server_ldap   = server_ldap;
-
 
   //Load users
   config.fs.readFile(config.path.join(__dirname, 'data.json'), 'utf8', function (err, data) {

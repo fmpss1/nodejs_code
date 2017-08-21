@@ -10,7 +10,9 @@ Multi-access and multi-competition application
 
 ## RESTful API Implemented
 
+´´´
 Example: http://localhost:3000
+´´´
 
 ### Module master
 * /login
@@ -30,6 +32,15 @@ Example: http://localhost:3000
 
 Linux system (implemented on Ubuntu)
 
+## Documentation
+
+JSDoc 3 - Automatic generator for HTML documentation of Javascript sources
+
+´´´
+sudo apt install jsdoc-toolkit
+jsdoc -d=jsdoc app.js
+´´´
+
 ## Installation
 
 * Download repository
@@ -38,6 +49,10 @@ Linux system (implemented on Ubuntu)
 * Install npm install -g nodemon
 * Inside the directory do npm install
 * Then always nodemon app.js
+
+## Others
+
+Sublime Text 3 
 
 ## Authors
 

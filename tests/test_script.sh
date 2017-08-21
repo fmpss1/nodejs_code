@@ -21,8 +21,6 @@ done
 
 
 
-
-
 #LDAP testes
 ldapsearch -H ldap://localhost:1389 -x -D cn=root -w secret -LLL -b "o=joyent" objectclass=* cn=root
 
@@ -46,3 +44,9 @@ runtime=$( echo "$end - $start" | bc -l )
 localhost:3000/api/login?team=user&username=user&password=user
 localhost:3000/api/logout?token=0.6600718819536269
 localhost:3000/api/login?team=teste&username=teste&password=teste
+
+
+
+jsdoc -d=jsdoc app.js
+jsdoc -d=jsdoc routes/api.js
+jsdoc -d=jsdoc module_master/ldap.js

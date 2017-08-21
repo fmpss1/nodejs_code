@@ -1,0 +1,62 @@
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"> <style>
+	.KEYW {color: #933;}
+	.COMM {color: #bbb; font-style: italic;}
+	.NUMB {color: #393;}
+	.STRN {color: #393;}
+	.REGX {color: #339;}
+	.line {border-right: 1px dotted #666; color: #666; font-style: normal;}
+	</style></head><body><pre><span class='line'>  1</span> <span class="STRN">"use strict"</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>  2</span> 
+<span class='line'>  3</span> </span><span class="COMM">/** Global configurations */</span><span class="WHIT">
+<span class='line'>  4</span> </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">config</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">require</span><span class="PUNC">(</span><span class="STRN">'./config'</span><span class="PUNC">)</span><span class="WHIT">
+<span class='line'>  5</span> </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">app</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">config.app</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>  6</span> 
+<span class='line'>  7</span> </span><span class="COMM">/** Express definition */</span><span class="WHIT">
+<span class='line'>  8</span> </span><span class="NAME">app.set</span><span class="PUNC">(</span><span class="STRN">'config'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">config</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'>  9</span> </span><span class="NAME">app.set</span><span class="PUNC">(</span><span class="STRN">'views'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">__dirname</span><span class="WHIT"> </span><span class="PUNC">+</span><span class="WHIT"> </span><span class="STRN">'/views'</span><span class="PUNC">)</span><span class="WHIT">
+<span class='line'> 10</span> </span><span class="NAME">app.set</span><span class="PUNC">(</span><span class="STRN">'view engine'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="STRN">'pug'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 11</span> </span><span class="NAME">app.set</span><span class="PUNC">(</span><span class="STRN">'view options'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="PUNC">{</span><span class="WHIT"> </span><span class="NAME">layout</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">false</span><span class="WHIT"> </span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 12</span> </span><span class="NAME">app.use</span><span class="PUNC">(</span><span class="NAME">config.cookieParser</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 13</span> </span><span class="NAME">app.use</span><span class="PUNC">(</span><span class="NAME">config.morgan</span><span class="PUNC">(</span><span class="STRN">'combined'</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 14</span> </span><span class="NAME">app.use</span><span class="PUNC">(</span><span class="NAME">config.session</span><span class="PUNC">(</span><span class="PUNC">{</span><span class="WHIT"> </span><span class="NAME">secret</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="STRN">'example'</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">resave</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">true</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">saveUninitialized</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">true</span><span class="WHIT"> </span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 15</span> </span><span class="NAME">app.use</span><span class="PUNC">(</span><span class="NAME">config.bodyParser.json</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 16</span> </span><span class="NAME">app.use</span><span class="PUNC">(</span><span class="NAME">config.bodyParser.urlencoded</span><span class="PUNC">(</span><span class="PUNC">{</span><span class="WHIT"> </span><span class="NAME">extended</span><span class="PUNC">:</span><span class="WHIT"> </span><span class="KEYW">true</span><span class="WHIT"> </span><span class="PUNC">}</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 17</span> </span><span class="NAME">app.locals.moment</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">require</span><span class="PUNC">(</span><span class="STRN">'moment'</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 18</span> </span><span class="NAME">app.use</span><span class="PUNC">(</span><span class="NAME">config.flash</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 19</span> 
+<span class='line'> 20</span> </span><span class="COMM">/** Routes to proxy */</span><span class="WHIT">
+<span class='line'> 21</span> </span><span class="NAME">app.use</span><span class="PUNC">(</span><span class="NAME">require</span><span class="PUNC">(</span><span class="STRN">'./module_master/proxy'</span><span class="PUNC">)</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 22</span> 
+<span class='line'> 23</span> </span><span class="COMM">//Ainda não está a funcionar, por causa das single quotes</span><span class="WHIT">
+<span class='line'> 24</span> </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">SerdidorDaEquipa</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="STRN">'SerdidorDaEquipa.js'</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 25</span> 
+<span class='line'> 26</span> </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">Ldap</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">require</span><span class="PUNC">(</span><span class="STRN">"./module_master/ldap.js"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 27</span> </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">server_ldap</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">config.ldap.createServer</span><span class="PUNC">(</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 28</span> </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">LDAP</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">Ldap</span><span class="PUNC">(</span><span class="NAME">config.ldap</span><span class="PUNC">,</span><span class="WHIT"> </span><span class="NAME">server_ldap</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 29</span> 
+<span class='line'> 30</span> </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">Cluster</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="NAME">require</span><span class="PUNC">(</span><span class="STRN">"./module_scale/cluster.js"</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 31</span> </span><span class="KEYW">var</span><span class="WHIT"> </span><span class="NAME">cluster</span><span class="WHIT"> </span><span class="PUNC">=</span><span class="WHIT"> </span><span class="KEYW">new</span><span class="WHIT"> </span><span class="NAME">Cluster</span><span class="WHIT"> </span><span class="PUNC">(</span><span class="NAME">server_ldap</span><span class="PUNC">)</span><span class="PUNC">;</span><span class="WHIT">
+<span class='line'> 32</span> 
+<span class='line'> 33</span> 
+<span class='line'> 34</span> </span><span class="COMM">/*
+<span class='line'> 35</span> setInterval(function () {
+<span class='line'> 36</span> 	//Clear terminal/console in loop
+<span class='line'> 37</span> 	console.log('\x1Bc');
+<span class='line'> 38</span> 	logger.info('\nPlataforma: ' + process.platform + ' | ' + repository_location_pwd() +
+<span class='line'> 39</span> 		'\nNúmero de CPUs disponíveis: ' + os.cpus().length +
+<span class='line'> 40</span> 		'\n--- PROXY ---\n' +
+<span class='line'> 41</span> 		'Equipas e utilizadores registadas: ' +
+<span class='line'> 42</span> 		getDBTeamsCount() + '\n' + getDBTeams() +
+<span class='line'> 43</span> 		'\n--- SCALE ---\n' +
+<span class='line'> 44</span> 		'Processo PID do app: ' + process.pid + '\nNúmero de child PIDs: ' +
+<span class='line'> 45</span> 		getDBChildrenCount() + '\n' + getDBChildren());
+<span class='line'> 46</span> }, 50000);
+<span class='line'> 47</span> 
+<span class='line'> 48</span> function repository_location_pwd(){
+<span class='line'> 49</span> 	var exec = require('child_process').exec;
+<span class='line'> 50</span> 	exec('pwd', function(err,stdout,stderr){
+<span class='line'> 51</span> 		logger.info(stdout);
+<span class='line'> 52</span> 	});
+<span class='line'> 53</span> }
+<span class='line'> 54</span> */</span><span class="WHIT">
+<span class='line'> 55</span> </span></pre></body></html>
