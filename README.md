@@ -2,11 +2,15 @@
 
 Multi-access and multi-competition application
 
+![alt text](images/global_1.png "Global design 1")
+
+![alt text](images/global_2.png "Global design 2")
+
+![alt text](images/global_3.png "Global design 3")
+
 ## RESTful API Implemented
 
-```
 Example: http://localhost:3000
-```
 
 ### Module master
 * /login
@@ -22,6 +26,10 @@ Example: http://localhost:3000
 * /server_stop
 * /server_recovery
 
+## Requirements
+
+Linux system (implemented on Ubuntu)
+
 ## Installation
 
 * Download repository
@@ -31,3 +39,6 @@ Example: http://localhost:3000
 * Inside the directory do npm install
 * Then always nodemon app.js
 
+## Authors
+
+fmpss1@iscte-iul.pt
