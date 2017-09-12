@@ -2,22 +2,28 @@
 
 Multi-access and multi-competition application
 
-![alt text](images/global_1.png "Global design 1")
+![alt text](images/01.main_access_by_gui.png "Main access by GUI")
 
-![alt text](images/global_2.png "Global design 2")
+![alt text](images/02.global_api.png "Global API")
 
-![alt text](images/global_3.png "Global design 3")
+![alt text](images/03.global_struture.png "Global Struture")
+
+![alt text](images/04.global_design.png "Global Design 1")
+
+![alt text](images/05.global_design.png "Global Design 2")
+
+![alt text](images/06.global_design.png "Global Design 3")
 
 ## RESTful API Implemented
 
-´´´
+```
 Example: http://localhost:3000
-´´´
+```
 
 ### Module master
 * /login
 * /account_create
-* /account_change
+* /account_change_pw
 * /account_remove
 * /admin_remove_team
 * /admin_remove_username
@@ -36,10 +42,9 @@ Linux system (implemented on Ubuntu)
 
 JSDoc 3 - Automatic generator for HTML documentation of Javascript sources
 
-´´´
+```
 sudo apt install jsdoc-toolkit
-jsdoc -d=jsdoc app.js
-´´´
+```
 
 ## Installation
 
