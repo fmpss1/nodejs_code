@@ -74,8 +74,8 @@ sudo apt install jsdoc-toolkit
 
 ## Others
 
-Sublime Text 3
-draw.io
+* Sublime Text 3
+* draw.io
 
 
 
