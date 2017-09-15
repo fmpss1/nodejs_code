@@ -1,25 +1,7 @@
 'use strict'
 
-//All dependencies of the project
-var express 		= require("express");
-var session 		= require('express-session');
-var morgan 			= require("morgan");
-var bodyParser 		= require("body-parser");
-var cookieParser 	= require('cookie-parser');
-var router 			= require('router');
-var flash 			= require('flash');
-var pug 			= require('pug');
-var app 			= express();
-var cluster 		= require('cluster');
-var http 			= require('http');
-var httpProxy 		= require('http-proxy');
-var os 				= require('os');
-var ldap 			= require('ldapjs');
-var assert 			= require('assert');
-var log4js 			= require('log4js');
-var path 			= require('path');
-var fs 				= require('fs');
 
+var log4js 			= require('log4js');
 
 //All global configurations of the project
 const ip 			= '127.0.0.1'; //'localhost'
@@ -43,24 +25,7 @@ var logger = log4js.getLogger('log');
 
 
 //Exports
-module.exports.express 			= express;
-module.exports.session 			= session;
-module.exports.morgan 			= morgan;
-module.exports.bodyParser 		= bodyParser;
-module.exports.cookieParser 	= cookieParser;
-module.exports.router 			= router;
-module.exports.flash 			= flash;
-module.exports.pug 				= pug;
-module.exports.app 				= app;
-module.exports.cluster 			= cluster;
-module.exports.http 			= http;
-module.exports.httpProxy 		= httpProxy;
-module.exports.os 				= os;
-module.exports.ldap 			= ldap;
-module.exports.assert 			= assert;
 module.exports.logger 			= logger;
-module.exports.path 			= path;
-module.exports.fs 				= fs;
 module.exports.ip 				= ip;
 module.exports.port_proxy 		= port_proxy;
 module.exports.port_http_1 		= port_http_1;

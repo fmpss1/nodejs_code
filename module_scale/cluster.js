@@ -1,24 +1,27 @@
 "use strict";
 
-//Global configurations
+
+/** Dependencies */
+var cluster     = require('cluster');
+var os          = require('os');
+var ldap        = require('ldapjs');
+var http        = require('http');
+var httpProxy   = require('http-proxy');
+var assert      = require('assert');
+
+var client, dn;
+
+/** Global configurations */
 var config  = require('../config');
 
-var client, dn, change;
-
 class Cluster{
-    constructor(server_ldap){
+    constructor(app, server_ldap){
+        var app             = app;
         var server_ldap     = server_ldap;
         var logger          = config.logger;
-        var app             = config.app;
-        var ldap            = config.ldap;
-        var os              = config.os;
-        var cluster         = config.cluster;
-        var http            = config.http;
-        var httpProxy       = config.httpProxy;
-        var assert          = config.assert;
-        var numCPUs         = config.os.cpus().length;
+        var numCPUs         = os.cpus().length;
 
-        var proxyServers = app.get('config').addresses.map(function (target) {
+        var proxyServers = config.addresses.map(function (target) {
             return new httpProxy.createProxyServer({
                 target: target
             });
@@ -47,24 +50,24 @@ class Cluster{
                 cluster.fork();
             });
         } else if (cluster.worker.id === 1){
-                server.listen(app.get('config').port_proxy, app.get('config').ip, function () {
+                server.listen(config.port_proxy, config.ip, function () {
                     logger.info('\nWorker_'+ cluster.worker.id + ' PID_' + process.pid +
-                    ' Reverse proxy: Listening on '+ app.get('config').URL_proxy +'/');
+                    ' Reverse proxy: Listening on '+ config.URL_proxy +'/');
                 });
         } else if (cluster.worker.id === 2){
-                server_ldap.listen(app.get('config').port_ldap, app.get('config').ip, function () {
+                server_ldap.listen(config.port_ldap, config.ip, function () {
                     logger.info('\nWorker_'+ cluster.worker.id + ' PID_' + process.pid +
-                    ' LDAP server: Listening on '+ app.get('config').URL_LDAP +'/');
+                    ' LDAP server: Listening on '+ config.URL_LDAP +'/');
                 });
         } else if (cluster.worker.id === 3){
-                app.listen(app.get('config').port_http_1, app.get('config').ip, function () {
+                app.listen(config.port_http_1, config.ip, function () {
                     logger.info('\nWorker_'+ cluster.worker.id + ' PID_' + process.pid +
-                    ' HTTP server 1: Listening on '+ app.get('config').URL_http_1 +'/');
+                    ' HTTP server 1: Listening on '+ config.URL_http_1 +'/');
                 });
         } else if (cluster.worker.id === 4){
-                app.listen(app.get('config').port_http_2, app.get('config').ip, function () {
+                app.listen(config.port_http_2, config.ip, function () {
                     logger.info('\nWorker_'+ cluster.worker.id + ' PID_' + process.pid +
-                    ' HTTP server 1: Listening on '+ app.get('config').URL_http_2 +'/');
+                    ' HTTP server 2: Listening on '+ config.URL_http_2 +'/');
                 });
         } else {     
             

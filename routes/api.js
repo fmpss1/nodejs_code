@@ -1,23 +1,31 @@
 "use strict";
 
+
+/** Dependencies */
+var express   = require("express");
+var router    = express.Router();
+var ldap      = require('ldapjs');
+var assert    = require('assert');
+
+var client, dn, change;
+
 /** Global configurations */
-var config  = require('../config');
-var router  = config.express.Router();
-var ldap    = config.ldap;
-var assert  = config.assert;
-var fs      = config.fs;
+var config      = require('../config');
+
 
 //var user         = 'cn=root';
 //var pass         = 'secret';
-var client, dn, change;
 
-const = ldapOptions {
+
+/*
+const ldapOptions {
   url: config.URL_LDAP,
   connectTimeout: 30000,
   reconnect: true
 }
+*/
 
-
+/*
 router.use (function(req, res, next) {
   console.log('router use -----------------');
   if (req.body.team){
@@ -60,6 +68,7 @@ function reqHasPermission (req) {
     //}
     return true;
 }
+*/
 
 
 
@@ -68,8 +77,6 @@ function reqHasPermission (req) {
 
 
 
-
-//http://localhost:3000/api/
 router.get('/', function (req, res, next) {
 	res.render('index');
 });
@@ -86,7 +93,8 @@ router.get('/api/users/:name', function (req, res) {
 });
 
 router.get('/user_secure', function (req, res, next) {
-	res.render('user_secure', { flash: req.flash() } );
+  //res.render('user_secure', { flash: req.flash() } );
+  res.render('user_secure', { name : req.session.dn } );
 });
 
 router.get('/admin_secure', function (req, res, next) {
@@ -105,20 +113,20 @@ router.get('/logout', function (req, res, next) {
     res.end();
   }
   else {
-
-    console.log(dn+'   aquuuiiii');
     modifyState(dn, ["inactive"]);
+    req.session.reset();
     res.redirect('/api/');
   }
-  delete req.session.authenticated;
   unbind();
 });
+
 
 //http://localhost:3000/api/user?team=teste&username=teste&password=teste
 router.get('/login', function (req, res, next) {
   if (!(req.query.team)){
-	res.render('login', { flash: req.flash() } );
-}
+    //res.render('login', { flash: req.flash() } );
+  res.render('login');
+  }
   else {
     client = ldap.createClient({ url: config.URL_LDAP });
     dn = 'cn='+req.query.username+', ou='+req.query.team+', o=ldap';
@@ -146,12 +154,46 @@ router.get('/login', function (req, res, next) {
   }
 });
 
+router.post('/login', function (req, res, next) {
+  if(!(req.body.team && req.body.username && req.body.password)) {
+    return res.send({"status": "error", "message": "missing team|username|password"});
+  }
+  else if((req.body.team && req.body.username && req.body.password)) {
+    client = ldap.createClient({ url: config.URL_LDAP });
+    dn = 'cn='+req.body.username+', ou='+req.body.team+', o=ldap';
+    client.bind(dn, req.body.password, function(err) {
+      if(err){
+        res.render('error_unauthorised', { status: 403 });
+      }
+      else if(req.body.username=='admin' && req.body.password=='admin'){
+        req.session.authenticated = true;
+        res.redirect('/api/admin_secure');
+      }
+      else{
+        req.session.dn = dn;
+        modifyState(dn, ["active"]);
+        res.redirect('/api/user_secure');
+      }
+    });
+  }
+});
+
+
+
+
 router.get('/account_create', function (req, res, next) {
+    console.log(req.session.dn);
     res.render('account_create', { flash: req.flash() } );
 });
 
 router.get('/account_change', function (req, res, next) {
+    console.log(req.session.dn);
 	res.render('account_change', { flash: req.flash() } );
+});
+
+router.get('/account_change_pw', function (req, res, next) {
+    console.log(req.session.dn);
+  res.render('account_change_pw', { flash: req.flash() } );
 });
 
 router.get('/account_remove', function (req, res, next) {
@@ -159,6 +201,7 @@ router.get('/account_remove', function (req, res, next) {
 });
 
 router.get('/account_search_user', function (req, res, next) {
+          console.log(req.session.dn);
     res.render('account_search_user', { flash: req.flash() } );
 });
 
@@ -190,30 +233,27 @@ router.get('/admin_account_search_user', function (req, res, next) {
 
 
 
-router.post('/login', function (req, res, next) {
-	if(!(req.body.team && req.body.username && req.body.password)) {
-    return res.send({"status": "error", "message": "missing team|username|password"});
+
+
+
+router.post('/account_change_pw', function (req, res, next) {
+  if(!req.body.password) {
+    return res.send({"status": "error", "message": "missing password"});
   }
-  if((req.body.team && req.body.username && req.body.password)) {
+  else {
     client = ldap.createClient({ url: config.URL_LDAP });
-    dn = 'cn='+req.body.username+', ou='+req.body.team+', o=ldap';
-    client.bind(dn, req.body.password, function(err) {
-      if(err){
-        res.render('error_unauthorised', { status: 403 });
-      }
-      if(req.body.username=='admin' && req.body.password=='admin'){
-        req.session.authenticated = true;
-        res.redirect('/api/admin_secure');
-      }
-      else{
-        req.session.dn = 'cn='+req.body.username+' ,ou='+req.body.team+', o=ldap';
-        req.session.authenticated = true;
-        modifyState(dn, ["active"]);
-        res.redirect('/api/user_secure');
-      }
-    });
+    modifyPassword(req);
+    if(req.body.username == 'admin'){
+      res.redirect('/api/admin_secure');
+    }
+    else{
+      res.redirect('/api/login');
+    }
   }
 });
+
+
+
 
 
 //ACRESCENTAR AO SESSION E AO USERS.JSON:
@@ -235,7 +275,7 @@ router.post('/account_create', function (req, res, next) {
   }
   else {
     client = ldap.createClient({ url: config.URL_LDAP });
-    createAccount(req);
+    createAccount(req, res);
   }
 });
 
@@ -267,34 +307,36 @@ router.post('/account_remove', function (req, res, next) {
 });
 
 router.post('/account_search_user', function (req, res, next) {
-  if(!(req.body.team && req.body.username && req.body.password)) {
-    return res.send({"status": "error", "message": "missing team|username|password"});
+  if(!req.body.word) {
+    return res.send({"status": "error", "message": "missing username to search"});
   }
   else {
     var opts = {
-      //filter: '(&(objectClass=inetOrgPerson)(cn=*ser))',
-      //filter: '(&(objectClass=inetOrgPerson))',
-      filter: '(&(cn=*))',
-      scope: 'sub',
-      attributes: ['cn']
-      //attributes: []
+      filter:       '(objectclass=Person)',
+      scope:        'sub',
+      attributes:   ['cn']
     };
     //var newDN = 'ou='+req.body.team+', ou=user, o=ldap';
-    dn = 'cn='+req.body.username+' ,ou='+req.body.team+', o=ldap';
-    client.search(dn, opts, function(err, resp) {
+    //dn = 'cn='+req.body.username+' ,ou='+req.body.team+', o=ldap';
+    //dn = 'o=ldap';
+    
+    console.log(req.session.dn);
+    client = ldap.createClient({ url: config.URL_LDAP });
+    client.search(req.session.dn, opts, function(err, resp) {
       assert.ifError(err);
-      //if(req.body.username == 'admin'){
-      //  res.render('admin_secure', { status: 403 });
-      //}
-      //else{
-      //  res.render('index', { status: 403 });
-      //}
-
+/*
+      if(req.body.username == 'admin'){
+        res.render('admin_secure', { status: 403 });
+      }
+      else{
+        res.render('index', { status: 403 });
+      }
+*/
       resp.on('searchEntry', function(entry) {
         console.log('entry: ' + JSON.stringify(entry.object.cn));
 
-        if(JSON.stringify(entry.object.cn) == '"'+ req.body.username +'"'){
-          console.log('cn='+req.body.username);
+        if(JSON.stringify(entry.object.cn) == '"'+ req.body.word +'"'){
+          console.log('cn='+req.body.word);
         }
         else{
           console.log('ERRO');
@@ -310,6 +352,7 @@ router.post('/account_search_user', function (req, res, next) {
       resp.on('end', function(result) {
         console.log('status: ' + result.status);
       });
+      
     });
 
   }
@@ -343,7 +386,7 @@ function clientModify(dn, change){
   });
 }
 
-function createAccount(req){
+function createAccount(req, res){
   dn = 'cn='+req.body.username+' ,ou='+req.body.team+', o=ldap';
   var newUser = {
     cn:                     req.body.username,

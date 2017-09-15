@@ -1,34 +1,48 @@
 "use strict";
 
+
+/** Dependencies */
+var express 	= require("express");
+var router 		= express.Router();
+var morgan 		= require("morgan");
+var bodyParser 	= require("body-parser");
+var sessions 	= require('client-sessions');
+var pug 		= require('pug');
+var ldap 		= require('ldapjs');
+var assert 		= require('assert');
+var app 		= express();
+
 /** Global configurations */
-var config = require('./config')
-var app = config.app;
+var config = require('./config');
 
 /** Express definition */
-app.set('config', config);
-app.set('views', __dirname + '/views')
+app.set('views', __dirname + '/views');
 app.set('view engine', 'pug');
 app.set('view options', { layout: false });
-app.use(config.cookieParser());
-app.use(config.morgan('combined'));
-app.use(config.session({ secret: 'example', resave: true, saveUninitialized: true }));
-app.use(config.bodyParser.json());
-app.use(config.bodyParser.urlencoded({ extended: true }));
+app.use(morgan('combined'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+//Nota: em localhost usar um dos browsers em anónimo
+app.use(sessions({
+	cookieName: 'session',
+	secret: 'example',
+	duration: 30 * 60 * 1000,
+	activeDuration: 5 * 60 * 1000
+}));
 app.locals.moment = require('moment');
-app.use(config.flash());
 
-/** Routes to proxy */
+/** Routes to proxy and then to api*/
 app.use(require('./module_master/proxy'));
 
 //Ainda não está a funcionar, por causa das single quotes
 var SerdidorDaEquipa = 'SerdidorDaEquipa.js';
 
-var Ldap = require("./module_master/ldap.js");
-var server_ldap = config.ldap.createServer();
-var LDAP = new Ldap(config.ldap, server_ldap);
+var Ldap = require('./module_master/ldap');
+var server_ldap = ldap.createServer();
+var LDAP = new Ldap(ldap, server_ldap);
 
-var Cluster = require("./module_scale/cluster.js");
-var cluster = new Cluster (server_ldap);
+var Cluster = require('./module_scale/cluster');
+var cluster = new Cluster (app, server_ldap);
 
 
 /*
