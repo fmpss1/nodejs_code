@@ -1,5 +1,5 @@
 
-# Project: Multi-access and multi-competition application
+# Project: Multi-access and multi-competition
 
 
 ## Arquitecture and Design
@@ -26,6 +26,7 @@ Example: http://localhost:3000/api
 
 ### Module master
 * /login
+* /menu
 * /account_create
 * /account_change_pw
 * /account_remove
@@ -62,9 +63,10 @@ sudo apt install jsdoc-toolkit
 
 ## Others
 * Sublime Text 3
+* Cloud9
+* GitHub
 * draw.io
 
 
 ## Authors
 fmpss1@iscte-iul.pt
-
