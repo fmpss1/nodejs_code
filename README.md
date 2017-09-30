@@ -6,18 +6,20 @@
 
 #### Main access by GUI
 ![alt text](images/01.main_access_by_gui.png "Main access by GUI")
-#### Global API
-![alt text](images/02.global_api.png "Global API")
+#### Global API Non-admin
+![alt text](images/02.global_api_non-admin.png "Global API non-admin")
+#### Global API Admin
+![alt text](images/03.global_api_non-admin.png "Global API non-admin")
 #### Global struture
-![alt text](images/03.global_struture.png "Global struture")
+![alt text](images/04.global_struture.png "Global struture")
 #### Global design 1
-![alt text](images/04.global_design.png "Global design 1")
+![alt text](images/05.global_design.png "Global design 1")
 #### Global design 2
-![alt text](images/05.global_design.png "Global design 2")
+![alt text](images/06.global_design.png "Global design 2")
 #### Global design 3
-![alt text](images/06.global_design.png "Global design 3")
+![alt text](images/07.global_design.png "Global design 3")
 #### LDAP hierarchy
-![alt text](images/07.LDAP_hierarchy.png "LDAP hierarchy")
+![alt text](images/08.LDAP_hierarchy.png "LDAP hierarchy")
 
 ## RESTful API Implemented
 ```
@@ -26,10 +28,14 @@ Example: http://localhost:3000/api
 
 ### Module master
 * /login
-* /menu
 * /account_create
-* /account_change_pw
+* /api/doc
+* /menu
+* /account_change
 * /account_remove
+* /account_search
+* /users
+* /teams
 * /admin_remove_team
 * /admin_remove_username
 * /logout
@@ -38,11 +44,11 @@ Example: http://localhost:3000/api
 * /server_start
 * /server_restart
 * /server_clone
-* /server_stop
+* /server_shutdown
 
 
 ## Requirements
-Linux system (implemented on Ubuntu)
+Linux system (implemented on Ubuntu and Mint)
 
 
 ## Installation
