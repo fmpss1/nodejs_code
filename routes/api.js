@@ -180,6 +180,35 @@ router.post('/login', function (req, res, next) {
 
 
 
+//http://localhost:3000/api/menu?team=teste&username=teste&password=teste&namespace=teste
+router.get('/menu', function (req, res, next) {
+  client = ldap.createClient({ url: config.URL_LDAP });
+    dn = 'cn='+req.query.username+', ou='+req.query.team+', o=ldap';
+    client.bind(dn, req.query.password, function(err) {
+      if(err){
+        res.render('error_unauthorised', { status: 403 });
+      }
+      else if(req.query.username=='admin' && req.query.password=='admin'){
+        req.session.authenticated = true;
+        res.redirect('/api/admin_secure');
+      }
+      else{
+        var accessToken = Math.random();
+        console.log(accessToken);
+        res.setHeader ('accessToken', accessToken);
+        //return res.send(accessToken);
+        //res.writeHead (200);
+        req.session.dn = 'cn='+req.query.username+' ,ou='+req.query.team+', o=ldap';
+        req.session.authenticated = true;
+        //Tratar
+        //modifyToken(dn, accessToken);
+        //modifyState(dn, ["active"]);
+      }
+      res.send({"team": "teste", "username": "teste", "namespace" : "teste"});
+      //res.end();
+    });
+});
+
 
 router.get('/account_create', function (req, res, next) {
     console.log(req.session.dn);
