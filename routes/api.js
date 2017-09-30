@@ -204,8 +204,15 @@ router.get('/menu', function (req, res, next) {
         //modifyToken(dn, accessToken);
         //modifyState(dn, ["active"]);
       }
-      res.send({"team": "teste", "username": "teste", "namespace" : "teste"});
-      //res.end();
+      res.send({"id" : "id",
+                    "team_name" : "team_name",
+                    "game_fase_number" : "number",
+                    "room_1"  : "iframe_url",
+                    "room_2"  : "iframe_url",
+                    "room_4"  : "iframe_url",
+                    "room_5"  : "iframe_url"
+                }
+      );
     });
 });
 

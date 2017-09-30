@@ -50,3 +50,4 @@ localhost:3000/api/login?team=teste&username=teste&password=teste
 jsdoc -d=jsdoc app.js
 jsdoc -d=jsdoc routes/api.js
 jsdoc -d=jsdoc module_master/ldap.js
+
