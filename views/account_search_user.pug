@@ -8,15 +8,8 @@ html(lang="en")
 		form(method='post')
 
 			p
-				label(for='team') Team
-				input(type='text', name='team')
+				label(for='word') User
+				input(type='text', name='word')
+				input(type='submit')
 			p
-				label(for='username') Username
-				input(type='text', name='username')
-			p
-				label(for='password') Password
-				input(type='password', name='password')
-
-			input(type='submit')
-			p
-				li: a(href="/user_secure") Back to last page
+				li: a(href="/api/user_secure") Back to last page

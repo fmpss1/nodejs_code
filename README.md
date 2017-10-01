@@ -30,16 +30,17 @@ Example: http://localhost:3000/api
 
 ### Module master
 * /login
-* /account_create
-* /api/doc
 * /menu
-* /account_change
+* /api_doc
+* /account_create
+* /account_change_pw
 * /account_remove
-* /account_search
-* /users
-* /teams
+* /account_search_user
+* /account_search_users
+* /account_search_team
+* /account_search_teams
 * /admin_remove_team
-* /admin_remove_username
+* /admin_remove_user
 * /logout
 
 ### Module scale
@@ -52,8 +53,8 @@ Example: http://localhost:3000/api
 
 
 ## Requirements
-Linux system (implemented and tested on Ubuntu and Mint)
-Minimum 6 core processor machine
+* Linux system (implemented and tested on Ubuntu and Mint)
+* Minimum 6 core processor machine
 
 
 ## Installation

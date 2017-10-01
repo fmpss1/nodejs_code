@@ -189,6 +189,10 @@ router.post('/login', function (req, res, next) {
 
 //http://localhost:3000/api/menu?team=teste&username=teste&password=teste&namespace=teste
 router.get('/menu', function (req, res, next) {
+  if(!(req.query.team && req.query.username && req.query.password)) {
+    return res.send({"status": "error", "message": "missing team|username|password|namespace"});
+  }
+  else if((req.query.team && req.query.username && req.query.password)) {
   client = ldap.createClient({ url: config.URL_LDAP });
     dn = 'cn='+req.query.username+', ou='+req.query.team+', o=ldap';
     client.bind(dn, req.query.password, function(err) {
@@ -221,6 +225,7 @@ router.get('/menu', function (req, res, next) {
                 }
       );
     });
+  }
 });
 
 

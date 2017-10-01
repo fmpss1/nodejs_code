@@ -3,16 +3,16 @@ html(lang="en")
 	head
 		title Secure Area
 	body
-		h1 Hi, secure user.
+		h1 Hi, secure user - #{name}
 		p Navigate to
 			table(width="600")
 				tr
 					td RESTful API links
 					td Direct
 				tr
-					td http://localhost:3000/account_change
+					td http://localhost:3000/account_change_pw
 					td
-						li: a(href="/api/account_change") Change account
+						li: a(href="/api/account_change_pw") Change password
 				tr
 					td http://localhost:3000/account_remove
 					td
