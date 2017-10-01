@@ -43,6 +43,8 @@ Example: http://localhost:3000/api
 * /logout
 
 ### Module scale
+* /server_add_user
+* /server_remove_user
 * /server_start
 * /server_restart
 * /server_clone
