@@ -65,17 +65,17 @@ Minimum 6 core processor machine
 
 ## Documentation
 JSDoc 3 - Automatic generator for HTML documentation of Javascript sources
-Installation:
+
 ```
-sudo apt install jsdoc-toolkit
+Installation: sudo apt install jsdoc-toolkit
 ```
 
 ## Command-line JSON processor
-*Request example:
+* Request example:
 ```
 curl http://localhost:3000/api | jq
 ```
-*Response example:
+* Response example:
 ```
 {
   "Access to the Simulator: http://localhost:3000/api/": {
@@ -87,9 +87,9 @@ curl http://localhost:3000/api | jq
     	"http://localhost:3000/api/api_doc"
  }}
 ```
-Installation:
+
 ```
-sudo apt-get install jq
+Installation: sudo apt-get install jq
 ```
 
 ## Others
