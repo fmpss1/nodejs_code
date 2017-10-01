@@ -73,12 +73,19 @@ function reqHasPermission (req) {
 
 
 
-
-
-
-
 router.get('/', function (req, res, next) {
-	res.render('index');
+  if(req.headers['user-agent'].includes("curl"))
+    res.send({"Access to the Simulator -> http://localhost:3000/api/" :
+                {
+                  "Login to access to the simulator" :
+                    "http://localhost:3000/api/login",
+                  "Create an account to access to the simulator" :
+                    "http://localhost:3000/api/account_create",
+                  "Documentation about this simulator API" :
+                    "http://localhost:3000/api/api_doc"
+              }});
+	else
+    res.render('index');
 });
 
 router.param('name', function(req, res, next, name){

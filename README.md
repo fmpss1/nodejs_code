@@ -4,6 +4,8 @@
 
 ## Arquitecture and Design
 
+#### Main access by CLI
+![alt text](images/01.main_access_by_cli.png "Main access by CLI")
 #### Main access by GUI
 ![alt text](images/01.main_access_by_gui.png "Main access by GUI")
 #### Global API Non-admin
@@ -21,7 +23,7 @@
 #### LDAP hierarchy
 ![alt text](images/08.LDAP_hierarchy.png "LDAP hierarchy")
 
-## RESTful API Implemented
+## RESTful API Implemented (Two ways to access: CLI and GUI)
 ```
 Example: http://localhost:3000/api
 ```
@@ -48,7 +50,8 @@ Example: http://localhost:3000/api
 
 
 ## Requirements
-Linux system (implemented on Ubuntu and Mint)
+Linux system (implemented and tested on Ubuntu and Mint)
+Minimum 6 core processor machine
 
 
 ## Installation
@@ -62,10 +65,32 @@ Linux system (implemented on Ubuntu and Mint)
 
 ## Documentation
 JSDoc 3 - Automatic generator for HTML documentation of Javascript sources
+Installation:
 ```
 sudo apt install jsdoc-toolkit
 ```
 
+## Command-line JSON processor
+*Request example:
+```
+curl http://localhost:3000/api | jq
+```
+*Response example:
+```
+{
+  "Access to the Simulator: http://localhost:3000/api/": {
+    "Login to access to the simulator": 
+    	"http://localhost:3000/api/login",
+    "Create an account to access to the simulator":
+    	"http://localhost:3000/api/account_create",
+    "Documentation about this simulator API":
+    	"http://localhost:3000/api/api_doc"
+ }}
+```
+Installation:
+```
+sudo apt-get install jq
+```
 
 ## Others
 * Sublime Text 3
