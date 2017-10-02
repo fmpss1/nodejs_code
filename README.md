@@ -1,5 +1,7 @@
 
-# Project: Multi-access and multi-competition
+# Project: Scalable Clustering with Node.js
+
+Special atention on multi-access and multi-competition
 
 
 ## Arquitecture and Design
