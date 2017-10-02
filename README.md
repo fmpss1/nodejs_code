@@ -13,7 +13,7 @@ Special attention on multi-access and multi-competition
 #### Global API Non-admin
 ![alt text](images/02.global_api_non-admin.png "Global API non-admin")
 #### Global API Admin
-![alt text](images/03.global_api_admin.png "Global API non-admin")
+![alt text](images/03.global_api_admin.png "Global API admin")
 #### Global struture
 ![alt text](images/04.global_struture.png "Global struture")
 #### Global design
