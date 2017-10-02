@@ -14,14 +14,14 @@
 ![alt text](images/03.global_api_admin.png "Global API non-admin")
 #### Global struture
 ![alt text](images/04.global_struture.png "Global struture")
-#### Global design 1
-![alt text](images/05.global_design.png "Global design 1")
-#### Global design 2
-![alt text](images/06.global_design.png "Global design 2")
-#### Global design 3
-![alt text](images/07.global_design.png "Global design 3")
+#### Global design
+![alt text](images/05.global_design.png "Global design")
+#### Locally cluster architecture
+![alt text](images/06.locally_cluster_architecture.png "Locally cluster architecture")
+#### Cloud cluster architecture
+![alt text](images/06.cloud_cluster_architecture.png "Cloud cluster architecture")
 #### LDAP hierarchy
-![alt text](images/08.LDAP_hierarchy.png "LDAP hierarchy")
+![alt text](images/07.LDAP_hierarchy.png "LDAP hierarchy")
 
 ## RESTful API Implemented (Two ways to access: CLI and GUI)
 ```
@@ -39,17 +39,20 @@ Example: http://localhost:3000/api
 * /account_search_users
 * /account_search_team
 * /account_search_teams
-* /admin_remove_team
-* /admin_remove_user
+* /admin_remove_team**
+* /admin_remove_user**
 * /logout
 
 ### Module scale
 * /server_add_user
 * /server_remove_user
-* /server_start
-* /server_restart
-* /server_clone
-* /server_shutdown
+* /server_start**
+* /server_restart**
+* /server_clone**
+* /server_shutdown**
+
+** Use only by Administrator
+
 
 
 ## Requirements
@@ -100,6 +103,7 @@ Installation: sudo apt-get install jq
 * Cloud9
 * GitHub
 * draw.io
+* html2pug
 
 
 ## Authors
