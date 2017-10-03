@@ -219,8 +219,10 @@ router.post('/login', function (req, res, next) {
 //curl "http://localhost:3000/api/menu?team=teste&username=teste&password=teste&namespace=teste" | jq
 //http://localhost:3000/api/menu
 router.get('/menu', function (req, res, next) {
-  if(req.session.dn)
-    res.send(menuJSON);
+  if(req.session.dn){
+    res.render('menu', { json : menuJSON } );
+    //res.send();
+  }
   else if(!(req.query.team && req.query.username && req.query.password))
     res.send(errorMessageJSON);
   else {
