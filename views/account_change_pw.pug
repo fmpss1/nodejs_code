@@ -6,15 +6,12 @@ html(lang="en")
 		h1 Change Account
 		p Write the team, username and password to change your account.
 		form(method='post')
-
 			p
 				label(for='password') Password
 				input(type='password', name='password')
 			p
 				label(for='new_password') New password
 				input(type='password', name='new_password')
-
 			input(type='submit')
-			
 			p
 				li: a(href="/api/user_secure") Back to last page
