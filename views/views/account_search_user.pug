@@ -1,0 +1,15 @@
+doctype html
+html(lang="en")
+	head
+		title Search for user Account
+	body
+		h1 Search for user Account
+		p Write the username to search for that user account.
+		form(method='post')
+
+			p
+				label(for='word') User
+				input(type='text', name='word')
+				input(type='submit')
+			p
+				li: a(href="/api/user_secure") Back to last page

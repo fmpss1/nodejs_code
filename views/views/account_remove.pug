@@ -1,0 +1,23 @@
+doctype html
+html(lang="en")
+	head
+		title Remove account
+	body
+		h1 Remove account
+		p Write the team, username and password to remove the account.
+		form(method='post')
+
+			p
+				label(for='team') Team
+				input(type='text', name='team')
+			p
+				label(for='username') Username
+				input(type='text', name='username')
+			p
+				label(for='password') Password
+				input(type='password', name='password')
+
+			input(type='submit')
+			
+			p
+				li: a(href="/api/user_secure") Back to last page
