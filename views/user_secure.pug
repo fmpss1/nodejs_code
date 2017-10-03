@@ -3,37 +3,49 @@ html(lang="en")
 	head
 		title Secure Area
 	body
-		h1 Hi, secure user - #{name}
+		h3 Hi, secure user - #{name}
 		p Navigate to
 			table(width="600")
 				tr
 					td RESTful API links
 					td Direct
 				tr
-					td http://localhost:3000/account_change_pw
+					td http://localhost:3000/api/menu
+					td
+						li: a(href="/api/menu") Get menu
+				tr
+					td http://localhost:3000/api/account_change_pw
 					td
 						li: a(href="/api/account_change_pw") Change password
 				tr
-					td http://localhost:3000/account_remove
+					td http://localhost:3000/api/account_remove
 					td
 						li: a(href="/api/account_remove") Remove account
 				tr
-					td http://localhost:3000/account_search_user
+					td http://localhost:3000/api/account_search_user
 					td
 						li: a(href="/api/account_search_user") Search for user
 				tr
-					td http://localhost:3000/account_search_team
+					td http://localhost:3000/api/account_search_users
+					td
+						li: a(href="/api/account_search_users") List all users
+				tr
+					td http://localhost:3000/api/account_search_team
 					td
 						li: a(href="/api/account_search_team") Search for team
 				tr
-					td http://localhost:3000/server_start
+					td http://localhost:3000/api/account_search_teams
 					td
-						li: a(href="/api/server_start") Create server
+						li: a(href="/api/account_search_teams") List all teams
 				tr
-					td http://localhost:3000/server_stop
+					td http://localhost:3000/api/server_add_user
 					td
-						li: a(href="/api/server_stop") Stop server
+						li: a(href="/api/server_add_user") Add to server
 				tr
-					td http://localhost:3000/logout
+					td http://localhost:3000/api/server_remove_user
+					td
+						li: a(href="/api/server_remove_user") Remove from server
+				tr
+					td http://localhost:3000/api/logout
 					td
 						li: a(href="/api/logout") Logout
