@@ -1,18 +1,21 @@
 doctype html
 html(lang="en")
-	head
-		title API Documentation
-	body
-		h1 RESTful API for the simulator
-		h2 REST Endpoints
-
-		h3 POST /start_server
-		p - Description:
-		p - Input
-		p - Success ouput
-		p - Failure output
-		p - Example request
-
+    head
+        title  API Documentation 
+    body
+        h1  API Documentation 
+        table(border="1")
+            tbody
+                tr
+                    td  / 
+                    td Permite o utilizador ligar-se ao simulador via reverse proxy 
+                tr
+                    td  /login 
+                    td  Permite o utilizador autenticar-se via LDAP 
+                tr
+                    td  /menu 
+                    td
+                        Devolve as fases do jogo em curso terminadas de todas as equipas exceto a equipa da qual o utilizador que faz parte
 
 		p
 			li: a(href="/api/") Back to start page
