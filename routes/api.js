@@ -140,11 +140,11 @@ router.get('/api/users/:name', function (req, res) {
 });
 
 router.get('/user_secure', function (req, res, next) {
-  res.render('user_secure', { name : req.session.dn } );
+  res.render('user_secure', { name : req.session.dn, url : config.URL_LDAP } );
 });
 
 router.get('/admin_secure', function (req, res, next) {
-    res.render('admin_secure', { name : req.session.dn } );
+    res.render('admin_secure', { name : req.session.dn, url : config.URL_LDAP } );
 });
 
 router.get('/api_doc', function (req, res, next) {
