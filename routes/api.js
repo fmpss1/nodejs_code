@@ -148,7 +148,7 @@ router.get('/admin_secure', function (req, res, next) {
 });
 
 router.get('/api_doc', function (req, res, next) {
-	res.render('api_doc');
+	res.render('api_doc', { url : config.URL_proxy });
 });
 
 router.get('/logout', function (req, res, next) {
