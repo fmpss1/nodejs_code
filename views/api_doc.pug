@@ -7,15 +7,41 @@ html(lang="en")
         table(border="1")
             tbody
                 tr
-                    td  #{url}/api/ 
-                    td Permite o utilizador ligar-se ao simulador via reverse proxy 
+                    td  #{url}/api/
+                    td Permite o utilizador ligar-se ao simulador via reverse proxy
                 tr
-                    td  #{url}/api/login 
-                    td  Permite o utilizador autenticar-se via LDAP 
+                    td  #{url}/api/login
+                    td  Permite o utilizador autenticar-se via LDAP
                 tr
-                    td  #{url}/api/menu 
-                    td
-                        Devolve as fases do jogo em curso terminadas de todas as equipas exceto a equipa da qual o utilizador que faz parte
+                    td  #{url}/api/menu
+                    td Devolve as fases do jogo em curso terminadas de todas as equipas exceto a equipa da qual o utilizador que faz parte
+                tr
+                    td  #{url}/api/account_change_pw
+                    td Modifica a password do utilizador
+                tr
+                    td  #{url}/api/account_remove
+                    td O próprio utilizador pode eliminar a sua conta. Esta funcionalidade é específica dos utilizadores normais. O administrador não pode apagar a sua própria conta, devido a ser o gestor de todo o sistema
+                tr
+                    td  #{url}/api/account_search_user
+                    td Permite localizar outro jogador
+                tr
+                    td  #{url}/api/account_search_users
+                    td O utilizador pode listar todos os utilizadores existentes no simulador, no momento do pedido
+                tr
+                    td  #{url}/api/account_search_team
+                    td O utilizador pode listar todos os utilizadores de uma equipa específica existente no simulador, no momento do pedido
+                tr
+                    td  #{url}/api/account_search_teams
+                    td O utilizador pode listar todas as equipas existentes no simulador, no momento do pedido
+                tr
+                    td  #{url}/api/server_add_user
+                    td Associa a uma equipa o respetivo utilizador
+                tr
+                    td  #{url}/api/server_remove_user
+                    td Desassocia o respetivo utilizador da equipa
+                tr
+                    td  #{url}/api/logout
+                    td O utilizador pode sair do jogo em qualquer momento e automaticamente perde a sua autenticação
+    p
+        li: a(href="/api") Back to start page
 
-		p
-			li: a(href="/api/") Back to start page

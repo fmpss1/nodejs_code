@@ -21,6 +21,34 @@ var indexJSON = {"Access to the Simulator -> http://localhost:3000/api/" :
                   "Documentation about this simulator API" :
                     "http://localhost:3000/api/api_doc"}}
 
+var apiJSON = {"API Documentation  -> http://ip:port/api/api_doc" :
+              {
+                "ip:port" : config.URL_proxy,
+                "/api/" :
+                  "Permite o utilizador ligar-se ao simulador via reverse proxy",
+                "/api/login" :
+                  "Permite o utilizador autenticar-se via LDAP",
+                "/api/menu" :
+                  "Devolve as fases do jogo em curso terminadas de todas as equipas exceto a equipa da qual o utilizador que faz parte",
+                "/api/account_change_pw" :
+                  "Modifica a password do utilizador",
+                "/api/account_remove" :
+                  "O próprio utilizador pode eliminar a sua conta. Esta funcionalidade é específica dos utilizadores normais. O administrador não pode apagar a sua própria conta, devido a ser o gestor de todo o sistema",
+                "/api/account_search_user" :
+                  "Permite localizar outro jogador",
+                "/api/account_search_users" :
+                  "O utilizador pode listar todos os utilizadores existentes no simulador, no momento do pedido",
+                "/api/account_search_team" :
+                  "O utilizador pode listar todos os utilizadores de uma equipa específica existente no simulador, no momento do pedido",
+                "/api/account_search_teams" :
+                  "O utilizador pode listar todas as equipas existentes no simulador, no momento do pedido",
+                "/api/server_add_user" :
+                  "Associa a uma equipa o respetivo utilizador",
+                "/api/server_remove_user" :
+                  "Desassocia o respetivo utilizador da equipa",
+                "/api/logout" :
+                  "O utilizador pode sair do jogo em qualquer momento e automaticamente perde a sua autenticação"}}
+
 var menuJSON = {"id" : "id",
                     "team_name" : "team_name",
                     "game_fase_number" : "number",
@@ -148,7 +176,10 @@ router.get('/admin_secure', function (req, res, next) {
 });
 
 router.get('/api_doc', function (req, res, next) {
-	res.render('api_doc', { url : config.URL_proxy });
+  if(req.headers['user-agent'].includes("curl"))
+    res.send(apiJSON);
+  else
+    res.render('api_doc', { url : config.URL_proxy });
 });
 
 router.get('/logout', function (req, res, next) {
@@ -221,7 +252,6 @@ router.post('/login', function (req, res, next) {
 router.get('/menu', function (req, res, next) {
   if(req.session.dn){
     res.render('menu', { json : menuJSON } );
-    //res.send();
   }
   else if(!(req.query.team && req.query.username && req.query.password))
     res.send(errorMessageJSON);

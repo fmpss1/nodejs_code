@@ -4,7 +4,7 @@
 var log4js 			= require('log4js');
 
 //All global configurations of the project
-const ip 			= '127.0.0.1'; //'localhost'
+const ip 			= 'localhost'; //'127.0.0.1' ou '0.0.0.0'
 const port_proxy 	= process.env.PORT || 3000;
 const port_http_1 	= process.env.PORT || 3001;
 const port_http_2 	= process.env.PORT || 3002;

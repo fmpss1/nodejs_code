@@ -1,9 +1,11 @@
 doctype html
 html(lang="en")
 	head
-		title Menu
+		title Get Menu
 	body
-		#{json}
-		
+		h1 Get Menu
+
+		li= JSON.stringify(json, null, 2)
+
 		p
-			li: a(href="/api/") Back to start page
+			li: a(href="/api/user_secure") Back to last page
