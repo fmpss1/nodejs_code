@@ -11,5 +11,8 @@ html(lang="en")
 				label(for='word') User
 				input(type='text', name='word')
 				input(type='submit')
+
+			li= JSON.stringify(json, null, 2)
+
 			p
 				li: a(href="/api/user_secure") Back to last page

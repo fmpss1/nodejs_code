@@ -9,10 +9,10 @@ var http        = require('http');
 var httpProxy   = require('http-proxy');
 var assert      = require('assert');
 
-var client, dn;
-
 /** Global configurations */
 var config  = require('../config');
+
+var client, dn;
 
 class Cluster{
     constructor(app, server_ldap){

@@ -7,10 +7,11 @@ var router    = express.Router();
 var ldap      = require('ldapjs');
 var assert    = require('assert');
 
-var client, dn, change;
-
 /** Global configurations */
 var config      = require('../config');
+
+var client, dn, change;
+
 
 var indexJSON = {"Access to the Simulator -> http://localhost:3000/api/" :
                 {
@@ -69,102 +70,11 @@ var errorPasswordJSON = {"status": "error",
 
 
 
-
-
-
-//ACRESCENTAR AO SESSION E AO USERS.JSON:
-// ultimo acesso, quandos acessos, etc
-
-  //Nota: só quando se muda de browser é que o porto de origem muda.
-
-  //  config.logger.info("\n Novo acesso -> " + Date() +
-  //  '\n *** [Client] User remote address and port ' + 
-  //  req.connection.remoteAddress +':'+ req.connection.remotePort +
-  //  '\n *** [Server] User local  address and port ' +
-  //  req.connection.localAddress +':'+ req.connection.localPort);
-
-
-
-
-
-
-
-//var user         = 'cn=root';
-//var pass         = 'secret';
-
-
-/*
-const ldapOptions {
-  url: config.URL_LDAP,
-  connectTimeout: 30000,
-  reconnect: true
-}
-*/
-
-/*
-router.use (function(req, res, next) {
-  console.log('router use -----------------');
-  if (req.body.team){
-    console.log('router body');
-  }
-  if (req.query.team){
-    console.log('router query');
-    
-    if (! isGETLogin (req) ) {
-        if (! reqHasPermission (req) ){
-            res.writeHead(401);  // unauthorized
-            res.end();
-            return; // don't call next()
-        }
-    }
-  }
-  else console.log('falta tratar');
-  next();
-});
-
-function isGETLogin (req) {
-//  if (req.path != "/login" || req.path != "/logout") { return false; }
-    if (req.method != "GET" || req.method == "POST") { return false; }
-    return true;
-}
-
-function reqHasPermission (req) {
-    // decode req.accessToken, extract 
-    // supposed fields there:
-    console.log(req.headers.accessToken);
-    //console.log(req.headers.accessToken.userId);
-    //console.log(req.headers.accessToken.roleId);
-    //console.log(req.headers.accessToken.expiryTime);
-    // and check them
-
-    // for the moment we do a very rigorous check
-    //if (req.headers.accessToken != "you-are-welcome" && req.query.team) {
-    //      console.log('testees dddddd');
-    //    return false;
-    //}
-    return true;
-}
-*/
-
-
-
-
 router.get('/', function (req, res, next) {
   if(req.headers['user-agent'].includes("curl"))
     res.send(indexJSON);
 	else
     res.render('index');
-});
-
-router.param('name', function(req, res, next, name){
-	var modified = name + '-dude';
-    req.name = modified;
-    next();
-});
-
-router.get('/api/users/:name', function (req, res) {
-	res.send('What is up ' + req.name + '!' 
-    + req.session.isLoggedIn + req.session.userId + req.session.type);
 });
 
 router.get('/user_secure', function (req, res, next) {
@@ -185,21 +95,12 @@ router.get('/api_doc', function (req, res, next) {
 router.get('/logout', function (req, res, next) {
   client = ldap.createClient({ url: config.URL_LDAP });
   dn = req.session.dn;
-  console.log(dn);
-  if (req.query.token){
-    modifyToken(dn, [""]);
-    res.end();
-  }
-  else {
-    modifyState(dn, ["inactive"]);
-    req.session.reset();
-    res.redirect('/api/');
-  }
+  modifyState(dn, ["inactive"]);
+  req.session.reset();
+  res.redirect('/api/');
   unbind();
 });
 
-
-//http://localhost:3000/api/user?team=teste&username=teste&password=teste
 router.get('/login', function (req, res, next) {
   if(!req.query.team)
     res.render('login');
@@ -247,8 +148,6 @@ router.post('/login', function (req, res, next) {
   }
 });
 
-//curl "http://localhost:3000/api/menu?team=teste&username=teste&password=teste&namespace=teste" | jq
-//http://localhost:3000/api/menu
 router.get('/menu', function (req, res, next) {
   if(req.session.dn){
     res.render('menu', { json : menuJSON } );
@@ -267,23 +166,23 @@ router.get('/menu', function (req, res, next) {
   }
 });
 
-
-
-
-router.get('/account_search_team', function (req, res, next) {
-    res.render('account_search_team');
-});
-router.get('/admin_remove_team', function (req, res, next) {
-    res.render('admin_remove_team');
-});
-router.get('/admin_remove_user', function (req, res, next) {
-    res.render('admin_remove_user');
+router.get('/account_create', function (req, res, next) {
+    res.render('account_create');
 });
 
+router.post('/account_create', function (req, res, next) {
+  if(!(req.body.team && req.body.username && req.body.password))
+    res.send(errorMessageJSON);
+  else {
+    client = ldap.createClient({ url: config.URL_LDAP });
+    createAccount(req, res);
+  }
+});
 
 router.get('/account_change_pw', function (req, res, next) {
   res.render('account_change_pw');
 });
+
 router.post('/account_change_pw', function (req, res, next) {
   if(!(req.body.password && req.body.new_password))
     res.send(errorPasswordJSON);
@@ -296,22 +195,10 @@ router.post('/account_change_pw', function (req, res, next) {
   }
 });
 
-router.get('/account_create', function (req, res, next) {
-    res.render('account_create');
-});
-router.post('/account_create', function (req, res, next) {
-	if(!(req.body.team && req.body.username && req.body.password)) {
-    res.send(errorMessageJSON);
-  }
-  else {
-    client = ldap.createClient({ url: config.URL_LDAP });
-    createAccount(req, res);
-  }
-});
-
 router.get('/account_remove', function (req, res, next) {
     res.render('account_remove');
 });
+
 router.post('/account_remove', function (req, res, next) {
   if(!(req.body.team && req.body.username && req.body.password))
     res.send(errorMessageJSON);
@@ -320,8 +207,24 @@ router.post('/account_remove', function (req, res, next) {
 });
 
 router.get('/account_search_user', function (req, res, next) {
-    res.render('account_search_user');
+  if(req.session.dn){
+    res.render('account_search_user', { json : "info do user" } );
+  }
+  else if(!(req.query.team && req.query.username && req.query.password))
+    res.send(errorMessageJSON);
+  else {
+    client = ldap.createClient({ url: config.URL_LDAP });
+    dn = 'cn='+req.query.username+', ou='+req.query.team+', o=ldap';
+    client.bind(dn, req.query.password, function(err) {
+      if(err)
+        res.send(errorUserActivoJSON);
+      else
+        res.send(menuJSON);
+    });
+  }
+    res.render('');
 });
+
 router.post('/account_search_user', function (req, res, next) {
   if(!req.body.word) {
     res.send({"status": "error", "message": "missing username to search"});
@@ -332,32 +235,19 @@ router.post('/account_search_user', function (req, res, next) {
       scope:        'sub',
       attributes:   ['cn']
     };
-    //var newDN = 'ou='+req.body.team+', ou=user, o=ldap';
-    //dn = 'cn='+req.body.username+' ,ou='+req.body.team+', o=ldap';
-    //dn = 'o=ldap';
-    
     console.log(req.session.dn);
     client = ldap.createClient({ url: config.URL_LDAP });
-    client.search(req.session.dn, opts, function(err, resp) {
+    //client.search(req.session.dn, opts, function(err, resp) {
+    client.search(req.body.word, opts, function(err, resp) {
       assert.ifError(err);
-/*
-      if(req.body.username == 'admin'){
-        res.render('admin_secure', { status: 403 });
-      }
-      else{
-        res.render('index', { status: 403 });
-      }
-*/
       resp.on('searchEntry', function(entry) {
         console.log('entry: ' + JSON.stringify(entry.object.cn));
-
-        if(JSON.stringify(entry.object.cn) == '"'+ req.body.word +'"'){
+        if(JSON.stringify(entry.object.cn) == '"'+ req.body.word +'"')
           console.log('cn='+req.body.word);
-        }
         else{
           console.log('ERRO');
         }
-          res.send(JSON.parse(entry).attributes);
+        res.send(JSON.parse(entry).attributes);
       });
       resp.on('searchReference', function(referral) {
         console.log('referral: ' + referral.uris.join());
@@ -367,11 +257,29 @@ router.post('/account_search_user', function (req, res, next) {
       });
       resp.on('end', function(result) {
         console.log('status: ' + result.status);
-      });
-      
+      });  
     });
-
   }
+});
+
+router.get('/account_search_users', function (req, res, next) {
+    res.render('account_search_users');
+});
+
+router.get('/account_search_team', function (req, res, next) {
+    res.render('account_search_team');
+});
+
+router.get('/account_search_teams', function (req, res, next) {
+    res.render('account_search_teams');
+});
+
+router.get('/admin_remove_team', function (req, res, next) {
+    res.render('admin_remove_team');
+});
+
+router.get('/admin_remove_user', function (req, res, next) {
+    res.render('admin_remove_user');
 });
 
 function modifyPassword(dn, req) {
@@ -388,13 +296,6 @@ function modifyState(dn, toChange) {
   clientModify(dn, change);
 }
 
-function modifyToken(dn, toChange) {
-  change = new ldap.Change({
-    operation: 'replace', modification: { token: toChange }
-  });
-  clientModify(dn, change);
-}
-
 function clientModify(dn, change){
   client.modify(dn, change, function(err) {
     assert.ifError(err);
@@ -407,7 +308,6 @@ function createAccount(req, res){
     cn:                     req.body.username,
     objectClass:            'Person',
     userPassword:           req.body.password,
-    token:                  '',
     state:                  'inactive',
     pid:                    '',
     clientproxyipsource:    '',
@@ -449,6 +349,5 @@ function unbind(){
     assert.ifError(err);
   }); 
 }
-
 
 module.exports = router;
