@@ -106,6 +106,7 @@ router.get('/login', function (req, res, next) {
     res.render('login');
   else {
     client = ldap.createClient({ url: config.URL_LDAP });
+    
     dn = 'cn='+req.query.username+', ou='+req.query.team+', o=ldap';
     client.bind(dn, req.query.password, function(err) {
       if(err){
@@ -195,16 +196,6 @@ router.post('/account_change_pw', function (req, res, next) {
   }
 });
 
-router.get('/account_remove', function (req, res, next) {
-    res.render('account_remove');
-});
-
-router.post('/account_remove', function (req, res, next) {
-  if(!(req.body.team && req.body.username && req.body.password))
-    res.send(errorMessageJSON);
-  else
-    deleteAccount(req);
-});
 
 router.get('/account_search_user', function (req, res, next) {
   if(req.session.dn){
@@ -222,7 +213,6 @@ router.get('/account_search_user', function (req, res, next) {
         res.send(menuJSON);
     });
   }
-    res.render('');
 });
 
 router.post('/account_search_user', function (req, res, next) {
@@ -231,31 +221,32 @@ router.post('/account_search_user', function (req, res, next) {
   }
   else {
     var opts = {
-      filter:       '(objectclass=Person)',
-      scope:        'sub',
-      attributes:   ['cn']
+      filter:       '(objectclass=*)',  //'(cn=admin)',
+      scope:        'base',
+      attributes:   ['dn', 'cn', 'userpassword', 'state']
     };
-    console.log(req.session.dn);
     client = ldap.createClient({ url: config.URL_LDAP });
-    //client.search(req.session.dn, opts, function(err, resp) {
-    client.search(req.body.word, opts, function(err, resp) {
+
+    req.session.word = req.body.word;
+    client.search(req.session.dn, opts, function(err, resp) {
       assert.ifError(err);
       resp.on('searchEntry', function(entry) {
-        console.log('entry: ' + JSON.stringify(entry.object.cn));
-        if(JSON.stringify(entry.object.cn) == '"'+ req.body.word +'"')
-          console.log('cn='+req.body.word);
-        else{
-          console.log('ERRO');
-        }
-        res.send(JSON.parse(entry).attributes);
+        res.render('account_search_user_resp', { json : entry.object } );
+        console.log('entry: ' + JSON.stringify(entry.object));
       });
       resp.on('searchReference', function(referral) {
+        res.render('account_search_user_resp', { json : 'referral: ' + referral.uris.join() } );
         console.log('referral: ' + referral.uris.join());
       });
       resp.on('error', function(err) {
+        res.render('account_search_user_resp', { json : 'error: ' + err.message } );
         console.error('error: ' + err.message);
       });
       resp.on('end', function(result) {
+        console.log(res.headersSent);
+        if(!res.headersSent){
+          res.render('account_search_user_resp', { json : 'User not found' } );
+        }
         console.log('status: ' + result.status);
       });  
     });
@@ -274,13 +265,22 @@ router.get('/account_search_teams', function (req, res, next) {
     res.render('account_search_teams');
 });
 
+//---------------------------------------------------------------------------ADMIN
 router.get('/admin_remove_team', function (req, res, next) {
     res.render('admin_remove_team');
+});
+
+router.post('/admin_remove_team', function (req, res, next) {
+  if(!(req.body.team && req.body.username && req.body.password))
+    res.send(errorMessageJSON);
+  else
+    deleteAccount(req);
 });
 
 router.get('/admin_remove_user', function (req, res, next) {
     res.render('admin_remove_user');
 });
+//---------------------------------------------------------------------------ADMIN
 
 function modifyPassword(dn, req) {
   change = new ldap.Change({
@@ -336,10 +336,10 @@ function createAccount(req, res){
 
 function deleteAccount(req){
   dn = 'cn='+req.body.username+' ,ou='+req.body.team+', o=ldap';
-  if(req.body.username != 'admin'){
+  if(req.session.dn == 'admin'){
     client.del(dn, function(err){
       assert.ifError(err);
-      res.render('index', { status: 403 });
+      res.render('admin_secure', { status: 403 });
     });
   }
 }

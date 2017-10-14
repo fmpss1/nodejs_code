@@ -45,9 +45,13 @@ class Ldap{
 
 
 //----------------------------------------------------------Authentication
-  server_ldap.bind('cn=root', function(req, res, next) {
+  server_ldap.bind('cn=admin', function(req, res, next) {
+    console.log(JSON.stringify(db));
     console.log("BIND root");
-    if (req.dn.toString() !== 'cn=root' || req.credentials !== 'secret'){
+    dn = req.dn.toString();
+    console.log(dn);
+
+    if (req.dn.toString() !== 'cn=admin' || req.credentials !== 'admin'){
       return next(new ldap.InvalidCredentialsError());    
     }
     res.end();
@@ -58,16 +62,16 @@ class Ldap{
     console.log(JSON.stringify(db));
     console.log("BIND SUFFIX");
     dn = req.dn.toString();
-    console.log(dn);
-      
     if (!db[dn])
       return next(new ldap.NoSuchObjectError(dn));
+    /*
     if (!db[dn].userpassword)
       return next(new ldap.NoSuchAttributeError('userPassword'));
     if (db[dn].userpassword.indexOf(req.credentials) === -1)
       return next(new ldap.InvalidCredentialsError());
     if (!(db[dn].state == 'inactive'))
       return next(new ldap.NoSuchAttributeError('state'));
+    */
     res.end();
     return next();
   });
@@ -153,6 +157,28 @@ class Ldap{
 
 
 //-------------------------------------------------------------------Query
+
+/*
+server_ldap.search('o=ldap', function(req, res, next) {
+  
+  dn = req.dn.toString();
+  var obj = {
+    dn: dn,
+    attributes: {
+      objectclass: db[dn].objectclass,
+      cn: db[dn].cn,
+      state: db[dn].state
+    }
+  }
+
+ if (req.filter.matches(obj.attributes))
+    res.send(obj);
+  res.end();
+
+});
+
+*/
+
   server_ldap.search(SUFFIX, authorize, function(req, res, next) {
     console.log("SEARCH");
     dn = req.dn.toString();
@@ -160,32 +186,87 @@ class Ldap{
       return next(new ldap.NoSuchObjectError(dn));
     var scopeCheck;
     switch (req.scope) {
+
+
+
       case 'base':
         if (req.filter.matches(db[dn])) {
+          /*
           res.send({
             dn: dn,
             attributes: db[dn]
           });
+          */
+          res.json(db[dn]);
         }
         res.end();
         return next();
-      case 'one':
+
+
+
+      //Alterado para listar todos
+      case 'sub':
+
         scopeCheck = function(k) {
+          console.log("- - - - - "+ req.dn.equals(k));
           if (req.dn.equals(k))
             return true;
           var parent = ldap.parseDN(k).parent();
-          return (parent ? parent.equals(req.dn) : false);
+          console.log("- - - - -> "+ parent +" == "+ req.dn);
+
+
+          return (parent ? parent : false);
         };
         break;
+
+
+      //Alterado para listar todos
+      case 'one':
+        scopeCheck = function(k) {
+          console.log("- - - - - "+ req.dn.equals(k));
+          if (req.dn.equals(k))
+            return true;
+          var parent = ldap.parseDN(k).parent();
+          console.log("- - - - -> "+ parent +" == "+ req.dn);
+
+
+          return (parent ? parent : false);
+        };
+        break;
+
+
+
+/*    //Original
       case 'sub':
         scopeCheck = function(k) {
+          console.log("- - - - - "+ req.dn.equals(k));
+          console.log("- - - - - "+ req.dn.parentOf(k));
           return (req.dn.equals(k) || req.dn.parentOf(k));
         };
         break;
-    }
+
+
+      //Original
+      case 'one':
+        scopeCheck = function(k) {
+          console.log("- - - - - "+ req.dn.equals(k));
+          if (req.dn.equals(k))
+            return true;
+          var parent = ldap.parseDN(k).parent();
+          console.log("- - - - -> "+ parent +" == "+ req.dn);
+
+
+          return (parent ? parent.equals(req.dn) : false);
+        };
+        break;
+
+*/     
+
+
+   }
     Object.keys(db).forEach(function(key) {
       if (!scopeCheck(key))
-        return;
+       return;
       if (req.filter.matches(db[key])) {
         res.send({
           dn: key,
@@ -196,6 +277,8 @@ class Ldap{
     res.end();
     return next();
   });
+
+
 
   server_ldap.compare(SUFFIX, authorize, function(req, res, next) {
     console.log("COMPARE");
