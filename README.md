@@ -12,8 +12,12 @@ Special attention on multi-access and multi-competition
 ![alt text](images/01.main_access_by_gui.png "Main access by GUI")
 #### Global API Non-admin
 ![alt text](images/02.global_api_non-admin.png "Global API non-admin")
+#### Global API Non-admin GUI
+![alt text](images/02.1.global_api_non-admin.png "Global API non-admin GUI")
 #### Global API Admin
 ![alt text](images/03.global_api_admin.png "Global API admin")
+#### Global API Admin GUI
+![alt text](images/03.1.global_api_admin.png "Global API admin GUI")
 #### Global struture
 ![alt text](images/04.global_struture.png "Global struture")
 #### Global design

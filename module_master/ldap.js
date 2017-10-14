@@ -191,13 +191,10 @@ server_ldap.search('o=ldap', function(req, res, next) {
 
       case 'base':
         if (req.filter.matches(db[dn])) {
-          /*
           res.send({
             dn: dn,
             attributes: db[dn]
           });
-          */
-          res.json(db[dn]);
         }
         res.end();
         return next();
@@ -277,6 +274,9 @@ server_ldap.search('o=ldap', function(req, res, next) {
     res.end();
     return next();
   });
+
+
+
 
 
 
