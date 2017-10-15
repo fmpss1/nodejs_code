@@ -1,5 +1,6 @@
 "use strict";
 
+
 var fs        = require('fs');
 var path      = require('path');
 var assert      = require('assert');
@@ -10,7 +11,7 @@ var config  = require('../app');
 var SUFFIX  = 'o=ldap';
 var user    = 'cn=root';
 var pass    = 'secret';
-var db, dn;
+var data, dn;
 
 class Ldap{
   /**
@@ -24,9 +25,9 @@ class Ldap{
     var server_ldap   = server_ldap;
 
   //Load users
-  fs.readFile(path.join(__dirname, 'data.json'), 'utf8', function (err, data) {
+  fs.readFile(path.join(__dirname, 'data.json'), 'utf8', function (err, dt) {
     assert.ifError(err);
-    db = JSON.parse(data);
+    data = JSON.parse(dt);
   });
 
 
@@ -46,7 +47,7 @@ class Ldap{
 
 //----------------------------------------------------------Authentication
   server_ldap.bind('cn=admin', function(req, res, next) {
-    console.log(JSON.stringify(db));
+    console.log(JSON.stringify(data));
     console.log("BIND root");
     dn = req.dn.toString();
     console.log(dn);
@@ -59,25 +60,23 @@ class Ldap{
   });
 
   server_ldap.bind(SUFFIX, authorize, function(req, res, next) {
-    console.log(JSON.stringify(db));
+    console.log(JSON.stringify(data));
     console.log("BIND SUFFIX");
     dn = req.dn.toString();
-    if (!db[dn])
+    if (!data[dn])
       return next(new ldap.NoSuchObjectError(dn));
-    /*
-    if (!db[dn].userpassword)
+    if (!data[dn].userpassword)
       return next(new ldap.NoSuchAttributeError('userPassword'));
-    if (db[dn].userpassword.indexOf(req.credentials) === -1)
+    if (data[dn].userpassword.indexOf(req.credentials) === -1)
       return next(new ldap.InvalidCredentialsError());
-    if (!(db[dn].state == 'inactive'))
+    if (!(data[dn].state == 'inactive'))
       return next(new ldap.NoSuchAttributeError('state'));
-    */
     res.end();
     return next();
   });
 
   server_ldap.unbind(function(req, res, next){
-    console.log(JSON.stringify(db, null, 4));
+    console.log(JSON.stringify(data, null, 4));
     res.end();
   });
 //----------------------------------------------------------Authentication
@@ -90,10 +89,10 @@ class Ldap{
   server_ldap.add(SUFFIX, authorize, function(req, res, next) {
     console.log("ADD");
     dn = req.dn.toString();
-    if (db[dn])
+    if (data[dn])
       return next(new ldap.EntryAlreadyExistsError(dn));
-    db[dn] = req.toObject().attributes;
-    console.log(JSON.stringify(db));
+    data[dn] = req.toObject().attributes;
+    console.log(JSON.stringify(data));
     res.end();
     return next();
   });
@@ -103,9 +102,9 @@ class Ldap{
     dn = req.dn.toString();
     if (!req.changes.length)
       return next(new ldap.ProtocolError('changes required'));
-    if (!db[dn])
+    if (!data[dn])
       return next(new ldap.NoSuchObjectError(dn));
-    var entry = db[dn];
+    var entry = data[dn];
     for (var i = 0; i < req.changes.length; i++) {
       var mod = req.changes[i].modification;
       switch (req.changes[i].operation) {
@@ -117,7 +116,7 @@ class Ldap{
           } else {
             entry[mod.type] = mod.vals;
 
-                console.log(JSON.stringify(db));
+                console.log(JSON.stringify(data));
           
         } break;
         case 'add':
@@ -143,10 +142,10 @@ class Ldap{
   server_ldap.del(SUFFIX, authorize, function(req, res, next) {
     console.log("DELETE");
     dn = req.dn.toString();
-    if (!db[dn])
+    if (!data[dn])
       return next(new ldap.NoSuchObjectError(dn));
-    delete db[dn];
-    console.log(JSON.stringify(db));
+    delete data[dn];
+    console.log(JSON.stringify(data));
     res.end();
     return next();
   });
@@ -165,9 +164,9 @@ server_ldap.search('o=ldap', function(req, res, next) {
   var obj = {
     dn: dn,
     attributes: {
-      objectclass: db[dn].objectclass,
-      cn: db[dn].cn,
-      state: db[dn].state
+      objectclass: data[dn].objectclass,
+      cn: data[dn].cn,
+      state: data[dn].state
     }
   }
 
@@ -182,7 +181,7 @@ server_ldap.search('o=ldap', function(req, res, next) {
   server_ldap.search(SUFFIX, authorize, function(req, res, next) {
     console.log("SEARCH");
     dn = req.dn.toString();
-    if (!db[dn])
+    if (!data[dn])
       return next(new ldap.NoSuchObjectError(dn));
     var scopeCheck;
     switch (req.scope) {
@@ -190,10 +189,10 @@ server_ldap.search('o=ldap', function(req, res, next) {
 
 
       case 'base':
-        if (req.filter.matches(db[dn])) {
+        if (req.filter.matches(data[dn])) {
           res.send({
             dn: dn,
-            attributes: db[dn]
+            attributes: data[dn]
           });
         }
         res.end();
@@ -261,13 +260,13 @@ server_ldap.search('o=ldap', function(req, res, next) {
 
 
    }
-    Object.keys(db).forEach(function(key) {
+    Object.keys(data).forEach(function(key) {
       if (!scopeCheck(key))
        return;
-      if (req.filter.matches(db[key])) {
+      if (req.filter.matches(data[key])) {
         res.send({
           dn: key,
-          attributes: db[key]
+          attributes: data[key]
         });
       }
     });
@@ -283,12 +282,12 @@ server_ldap.search('o=ldap', function(req, res, next) {
   server_ldap.compare(SUFFIX, authorize, function(req, res, next) {
     console.log("COMPARE");
     dn = req.dn.toString();
-    if (!db[dn])
+    if (!data[dn])
       return next(new ldap.NoSuchObjectError(dn));
-    if (!db[dn][req.attribute])
+    if (!data[dn][req.attribute])
       return next(new ldap.NoSuchAttributeError(req.attribute));
     var matches = false;
-    var vals = db[dn][req.attribute];
+    var vals = data[dn][req.attribute];
     for (var i = 0; i < vals.length; i++) {
       if (vals[i] === req.value) {
         matches = true;

@@ -113,12 +113,16 @@ router.get('/login', function (req, res, next) {
         res.render('error_unauthorised', { status: 403 });
       }
       else if(req.query.username=='admin' && req.query.password=='admin'){
+
+        //CORRIGIR!!!
         req.session.authenticated = true;
         res.redirect('/api/admin_secure');
       }
       else{
         req.session.dn = dn;
         modifyState(dn, ["active"]);
+        modifyLastAccess(dn, Date());
+        modifyNumberOfAccesses(dn, 9999);
       }
       res.end();
     });
@@ -136,14 +140,19 @@ router.post('/login', function (req, res, next) {
         res.render('error_unauthorised', { status: 403 });
       else if(req.body.username=='admin' && req.body.password=='admin'){
         req.session.dn = dn;
+        req.session.pw = req.body.password;
         res.redirect('/api/admin_secure');
         modifyState(dn, ["active"]);
+        modifyLastAccess(dn, Date());
+        modifyNumberOfAccesses(dn, 9999);
       }
       else{
         req.session.dn = dn;
         req.session.pw = req.body.password;
         res.redirect('/api/user_secure');
         modifyState(dn, ["active"]);
+        modifyLastAccess(dn, Date());
+        modifyNumberOfAccesses(dn, 9999);
       }
     });
   }
@@ -220,36 +229,7 @@ router.post('/account_search_user', function (req, res, next) {
     res.send({"status": "error", "message": "missing username to search"});
   }
   else {
-    var opts = {
-      filter:       '(objectclass=*)',  //'(cn=admin)',
-      scope:        'base',
-      attributes:   ['dn', 'cn', 'userpassword', 'state']
-    };
-    client = ldap.createClient({ url: config.URL_LDAP });
-
-    req.session.word = req.body.word;
-    client.search(req.session.dn, opts, function(err, resp) {
-      assert.ifError(err);
-      resp.on('searchEntry', function(entry) {
-        res.render('account_search_user_resp', { json : entry.object } );
-        console.log('entry: ' + JSON.stringify(entry.object));
-      });
-      resp.on('searchReference', function(referral) {
-        res.render('account_search_user_resp', { json : 'referral: ' + referral.uris.join() } );
-        console.log('referral: ' + referral.uris.join());
-      });
-      resp.on('error', function(err) {
-        res.render('account_search_user_resp', { json : 'error: ' + err.message } );
-        console.error('error: ' + err.message);
-      });
-      resp.on('end', function(result) {
-        console.log(res.headersSent);
-        if(!res.headersSent){
-          res.render('account_search_user_resp', { json : 'User not found' } );
-        }
-        console.log('status: ' + result.status);
-      });  
-    });
+    search(req, res);
   }
 });
 
@@ -282,9 +262,155 @@ router.get('/admin_remove_user', function (req, res, next) {
 });
 //---------------------------------------------------------------------------ADMIN
 
+
+router.get('/server_start', function (req, res, next) {
+  if(req.session.dn){
+    //Regista no LDAP e depois da confirmação
+    modifyServerStart(dn, req);
+    search_start_server(req, res);
+    //Envia mensagem ao cluster
+  }
+  else if(!(req.query.team && req.query.username && req.query.password))
+    res.send(errorMessageJSON);
+  else {
+    client = ldap.createClient({ url: config.URL_LDAP });
+    dn = 'cn='+req.query.username+', ou='+req.query.team+', o=ldap';
+    client.bind(dn, req.query.password, function(err) {
+      if(err)
+        res.send(errorUserActivoJSON);
+      else
+        res.send(menuJSON);
+    });
+  }
+});
+
+function search_start_server(req, res){
+      var opts = {
+      filter:       '(objectclass=*)',  //'(cn=admin)',
+      scope:        'base',
+      attributes:   [
+                      'dn',
+                      'cn',
+                      'state',
+                      'clientproxyipsource',
+                      'clientproxyportsource',
+                      'proxyipdest',
+                      'proxyportdest',
+                      'clientserveripsource',
+                      'clientserverportsource',
+                      'serveripdest',
+                      'serverportdest'
+                    ]
+    };
+    client = ldap.createClient({ url: config.URL_LDAP });
+
+    req.session.word = req.body.word;
+    client.search(req.session.dn, opts, function(err, resp) {
+      assert.ifError(err);
+
+      resp.on('searchEntry', function(entry) {
+        res.render('server_start', { json : entry.object } );
+        console.log('entry: ' + JSON.stringify(entry.object));
+      });
+      resp.on('searchReference', function(referral) {
+        res.render('account_search_user_resp', { json : 'referral: ' + referral.uris.join() } );
+        console.log('referral: ' + referral.uris.join());
+      });
+      resp.on('error', function(err) {
+        res.render('account_search_user_resp', { json : 'error: ' + err.message } );
+        console.error('error: ' + err.message);
+      });
+      resp.on('end', function(result) {
+        console.log(res.headersSent);
+        if(!res.headersSent){
+          res.render('account_search_user_resp', { json : 'User not found' } );
+        }
+        console.log('status: ' + result.status);
+      });  
+    });
+}
+
+
+
+//---------------------------------------------------------------------------MODIFY
+//O método modify apenas permite alterar um parametro de cada vez
+
+function clientModify(dn, change){
+  client.modify(dn, change, function(err) {
+    assert.ifError(err);
+  });
+}
+
+//Nota: só quando se muda de browser é que o porto de origem muda
+function modifyServerStart(dn, req){
+  modifyClientProxyIpSource(dn, req);
+  modifyClientProxyPortSource(dn, req);
+  modifyProxyIpDest(dn, req);
+  modifyProxyPortDest(dn, req);
+  modifyClientServerIpSource(dn, req);
+  modifyClientServerPortSource(dn, req);
+}
+
 function modifyPassword(dn, req) {
   change = new ldap.Change({
     operation: 'replace', modification: { userpassword: req.body.new_password }
+  });
+  clientModify(dn, change);
+}
+
+function modifyClientProxyIpSource(dn, req){
+  change = new ldap.Change({
+    operation: 'replace', modification: { clientproxyipsource: req.connection.remoteAddress }
+  });
+  clientModify(dn, change);
+}
+
+function modifyClientProxyPortSource(dn, req){
+  change = new ldap.Change({
+    operation: 'replace', modification: { clientproxyportsource: req.connection.remotePort }
+  });
+  clientModify(dn, change);
+}
+
+function modifyProxyIpDest(dn, req){
+  change = new ldap.Change({
+    operation: 'replace', modification: { proxyipdest: config.ip_proxy }
+  });
+  clientModify(dn, change);
+}
+
+function modifyProxyPortDest(dn, req){
+  change = new ldap.Change({
+    operation: 'replace', modification: { proxyportdest: config.port_proxy }
+  });
+  clientModify(dn, change);
+}
+
+function modifyClientServerIpSource(dn, req){
+  change = new ldap.Change({
+    operation: 'replace', modification: { clientserveripsource: req.connection.localAddress }
+  });
+  clientModify(dn, change);
+}
+
+function modifyClientServerPortSource(dn, req){
+  change = new ldap.Change({
+    operation: 'replace', modification: { clientserverportsource: req.connection.localPort }
+  });
+  clientModify(dn, change);
+}
+
+function modifyLastAccess(dn, toChange){
+  change = new ldap.Change({
+    operation: 'replace', modification: { lastaccess: toChange }
+  });
+  clientModify(dn, change);
+}
+
+function modifyNumberOfAccesses(dn, toChange){
+  change = new ldap.Change({
+    operation: 'replace',
+    modification: { numberofaccesses: toChange}
   });
   clientModify(dn, change);
 }
@@ -295,11 +421,41 @@ function modifyState(dn, toChange) {
   });
   clientModify(dn, change);
 }
+//---------------------------------------------------------------------------MODIFY
 
-function clientModify(dn, change){
-  client.modify(dn, change, function(err) {
-    assert.ifError(err);
-  });
+
+function search(req, res){
+      var opts = {
+      filter:       '(objectclass=*)',  //'(cn=admin)',
+      scope:        'base',
+      attributes:   ['dn', 'cn', 'state']
+    };
+    client = ldap.createClient({ url: config.URL_LDAP });
+
+    req.session.word = req.body.word;
+    client.search(req.session.dn, opts, function(err, resp) {
+      assert.ifError(err);
+
+      resp.on('searchEntry', function(entry) {
+        res.render('account_search_user_resp', { json : entry.object } );
+        console.log('entry: ' + JSON.stringify(entry.object));
+      });
+      resp.on('searchReference', function(referral) {
+        res.render('account_search_user_resp', { json : 'referral: ' + referral.uris.join() } );
+        console.log('referral: ' + referral.uris.join());
+      });
+      resp.on('error', function(err) {
+        res.render('account_search_user_resp', { json : 'error: ' + err.message } );
+        console.error('error: ' + err.message);
+      });
+      resp.on('end', function(result) {
+        console.log(res.headersSent);
+        if(!res.headersSent){
+          res.render('account_search_user_resp', { json : 'User not found' } );
+        }
+        console.log('status: ' + result.status);
+      });  
+    });
 }
 
 function createAccount(req, res){
@@ -318,7 +474,7 @@ function createAccount(req, res){
     clientserverportsource: '',
     serveripdest:           '',
     serverportdest:         '',
-    lastaccess:             '',
+    lastaccess:             Date(),
     numberofaccesses:       ''
   }
   client.add(dn, newUser, function(err){

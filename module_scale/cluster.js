@@ -8,6 +8,8 @@ var ldap        = require('ldapjs');
 var http        = require('http');
 var httpProxy   = require('http-proxy');
 var assert      = require('assert');
+var mod_events  = require('events');
+var mod_child_process = require('child_process');
 
 /** Global configurations */
 var config  = require('../config');
@@ -69,8 +71,24 @@ class Cluster{
                     logger.info('\nWorker_'+ cluster.worker.id + ' PID_' + process.pid +
                     ' HTTP server 2: Listening on '+ config.URL_http_2 +'/');
                 });
+        } else if (cluster.worker.id === 5){
+                newWorker(config.ip_w5, config.port_w5);
+        } else if (cluster.worker.id === 6){
+                newWorker(config.ip_w6, config.port_w6);
+        } else if (cluster.worker.id === 7){
+                newWorker(config.ip_w7, config.port_w7);
+        } else if (cluster.worker.id === 8){
+                newWorker(config.ip_w8, config.port_w8);
         } else {     
-            
+            console.log("ERRO: No workers to start!");
+        }
+
+//Trocar por switch, fica mais elegante
+
+        function newWorker(ip, port){
+
+            //Descobrir como listar os CP por worker
+            //console.log(cluster.worker.process);
 /*
 //Usar isto para os servidores de equipa
                 client = ldap.createClient({ url: config.URL_LDAP });
@@ -92,52 +110,46 @@ class Cluster{
 */  
 
             var server = http.createServer((req, res) => {
-                res.writeHead(200);
-                res.end('hello world ' + process.pid +'\n');
       
-
                 //cluster.on('new_server', function(worker) {
 
                 var spawn = require('child_process').spawn;
-                var child = spawn('node', ['SerdidorDaEquipa.js', parseInt(4000+Math.random()*5000) ]);
+                var child = spawn('node', ['module_scale/teamServer.js', parseInt(4000+Math.random()*5000) ]);
         
+                res.writeHead(200);
+                //Resposta ao localhost:8000
+                res.end('Worker_'+cluster.worker.id+' PID_'+process.pid+
+                    ' started a CP with PID_' + child.pid);
 
                 //var child = spawn('node', ['servers/SerdidorDaEquipa.js', port_routes]);
                 //var data = {pid: child.pid, port: port_routes, date: Date()};
                 //db_children.insert( data, function(err, data){});
                 //logger.info('\nProcesso PID ' + child.pid + ' do servidor no porto ' + port_routes + '\n' + data);
 
-                child.stdin.write('Hello there!');
+                child.stdin.write('Worker_'+cluster.worker.id+' PID_'+process.pid+
+                    ' started a CP with PID_' + child.pid +' Hello there!');
+
                 child.stderr.on('data', function (data) {
-                    console.log('\nThere was an error: ' + data);
+                    console.log('There was an error: ' + data);
                     //logger.error('\nThere was an error: ' + data);
                 });
                 child.stdout.on('data', function (data) {
-                    console.log('\nWe received a reply: \n' + data);
+                    console.log('' + data);
                     //logger.info('\nWe received a reply: \n' + data);
                 });
                 //});
-
             });
 
-            server = server.listen(8000, function(err) {
+            server = server.listen(port, function(err) {
                 if (err) throw err;
                 //var host = server.address().address;
                 //var port = server.address().port;
-                var host = 'localhost';
-                var port = '8000';
-
-                console.log('Server listening at http://%s:%s/', host, port);
+                console.log('Worker_' + cluster.worker.id + ' PID_' + process.pid +' listening at http://%s:%s/', ip, port);
             });
       
-
-            //module.exports = function (inp, callback) {
-            //  callback(null, inp + ' BAR (' + worker.process.pid + ')')
-            //}
-
             console.log('Worker_' + cluster.worker.id + ' PID_' + process.pid + ' started');
         }
-    }
+   }
 }
 
 module.exports = Cluster;
