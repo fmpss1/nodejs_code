@@ -63,13 +63,13 @@ Example: http://localhost:3000/api
 
 ## Requirements
 * Linux system (implemented and tested on Ubuntu 16.04.3 LTS)
-* Minimum 6 core processor machine
+* Minimum 5 core processor machine
 
 
 ## Installation
 *	Download or clone the repositoy (https://github.com/fmpss1/nodejs_code.git)
 *	Install node.js e npm (sudo apt-get install nodejs-legacy npm)
-*	Install npm install -g nodemon (optional)
+*	Install npm install -g nodemon loadtest (optional)
 *	Inside the directory do npm install
 *	To run the application do node app.js or nodemon app.js
 
