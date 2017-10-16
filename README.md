@@ -9,25 +9,28 @@ Special attention on multi-access and multi-competition
 #### Main access by CLI
 ![alt text](images/01.main_access_by_cli.png "Main access by CLI")
 #### Main access by GUI
-![alt text](images/01.main_access_by_gui.png "Main access by GUI")
+![alt text](images/02.main_access_by_gui.png "Main access by GUI")
 #### Global API Non-admin
-![alt text](images/02.global_api_non-admin.png "Global API non-admin")
+![alt text](images/03.global_api_non-admin.png "Global API non-admin")
 #### Global API Non-admin GUI
-![alt text](images/02.1.global_api_non-admin.png "Global API non-admin GUI")
+![alt text](images/04.global_api_non-admin.png "Global API non-admin GUI")
 #### Global API Admin
-![alt text](images/03.global_api_admin.png "Global API admin")
+![alt text](images/05.global_api_admin.png "Global API admin")
 #### Global API Admin GUI
-![alt text](images/03.1.global_api_admin.png "Global API admin GUI")
-#### Global struture
-![alt text](images/04.global_struture.png "Global struture")
-#### Global design
-![alt text](images/05.global_design.png "Global design")
-#### Locally cluster architecture
-![alt text](images/06.locally_cluster_architecture.png "Locally cluster architecture")
-#### Cloud cluster architecture
-![alt text](images/06.cloud_cluster_architecture.png "Cloud cluster architecture")
+![alt text](images/06.global_api_admin.png "Global API admin GUI")
 #### LDAP hierarchy
 ![alt text](images/07.LDAP_hierarchy.png "LDAP hierarchy")
+#### Global struture
+![alt text](images/08.global_struture.png "Global struture")
+#### Locally cluster architecture
+![alt text](images/09.locally_cluster_architecture.png "Locally cluster architecture")
+#### Cloud cluster architecture
+![alt text](images/10.cloud_cluster_architecture.png "Cloud cluster architecture")
+#### Global design
+![alt text](images/11.global_design.png "Global design")
+#### Global design scale module
+![alt text](images/12.global_design_scale_module.png "Global design scale module")
+
 
 ## RESTful API Implemented (Two ways to access: CLI and GUI)
 ```
