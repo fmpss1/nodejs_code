@@ -14,7 +14,8 @@ Special attention on multi-access and multi-competition
 ![alt text](images/03.global_api_non-admin.png "Global API non-admin")
 #### Global API Non-admin GUI
 ![alt text](images/04.global_api_non-admin.png "Global API non-admin GUI")
-
+#### Global API Admin
+![alt text](images/05.global_api_admin.png "Global API admin")
 #### Global API Admin GUI
 ![alt text](images/06.global_api_admin.png "Global API admin GUI")
 #### LDAP hierarchy
