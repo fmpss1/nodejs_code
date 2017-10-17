@@ -28,8 +28,7 @@ Special attention on multi-access and multi-competition
 ![alt text](images/10.cloud_cluster_architecture.png "Cloud cluster architecture")
 #### Global design
 ![alt text](images/11.global_design.png "Global design")
-#### Global design scale module
-![alt text](images/12.global_design_scale_module.png "Global design scale module")
+
 
 
 ## RESTful API Implemented (Two ways to access: CLI and GUI)
