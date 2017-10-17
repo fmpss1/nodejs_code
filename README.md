@@ -75,6 +75,7 @@ Example: http://localhost:3000/api
 *	Install npm install -g nodemon loadtest (optional)
 *	Inside the directory do npm install
 *	To run the application do node app.js or nodemon app.js
+*	Example to add the new middleware to the package.json file: npm install pug -save (optional)
 
 
 ## Documentation
@@ -98,7 +99,8 @@ curl http://localhost:3000/api | jq
     "Create an account to access to the simulator":
     	"http://localhost:3000/api/account_create",
     "Documentation about this simulator API":
-    	"http://localhost:3000/api/api_doc"
+    	"http://localhost:3000/api/api_doc",
+    "Remember" : "This is case sensitive!"
  }}
 ```
 

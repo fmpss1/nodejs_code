@@ -9,4 +9,7 @@ html(lang="en")
 		li= JSON.stringify(json, null, 2)
 
 		p
-			li: a(href="/api/user_secure") Back to last page
+			if (name == "cn=admin, ou=admin, o=ldap")
+				li: a(href="/api/admin_secure") Back to last page
+			else
+				li: a(href="/api/user_secure") Back to last page

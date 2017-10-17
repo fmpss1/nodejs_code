@@ -20,7 +20,8 @@ var indexJSON = {"Access to the Simulator -> http://localhost:3000/api/" :
                   "Create an account to access to the simulator" :
                     "http://localhost:3000/api/account_create",
                   "Documentation about this simulator API" :
-                    "http://localhost:3000/api/api_doc"}}
+                    "http://localhost:3000/api/api_doc",
+                    "Remember" : "This is case sensitive!"}}
 
 var apiJSON = {"API Documentation  -> http://ip:port/api/api_doc" :
               {
@@ -160,7 +161,7 @@ router.post('/login', function (req, res, next) {
 
 router.get('/menu', function (req, res, next) {
   if(req.session.dn){
-    res.render('menu', { json : menuJSON } );
+    res.render('menu', { json : menuJSON, name : req.session.dn } );
   }
   else if(!(req.query.team && req.query.username && req.query.password))
     res.send(errorMessageJSON);
@@ -190,7 +191,7 @@ router.post('/account_create', function (req, res, next) {
 });
 
 router.get('/account_change_pw', function (req, res, next) {
-  res.render('account_change_pw');
+  res.render('account_change_pw', { name : req.session.dn } );
 });
 
 router.post('/account_change_pw', function (req, res, next) {
@@ -208,7 +209,7 @@ router.post('/account_change_pw', function (req, res, next) {
 
 router.get('/account_search_user', function (req, res, next) {
   if(req.session.dn){
-    res.render('account_search_user', { json : "info do user" } );
+    res.render('account_search_user', { json : "info do user", name : req.session.dn } );
   }
   else if(!(req.query.team && req.query.username && req.query.password))
     res.send(errorMessageJSON);
@@ -234,15 +235,15 @@ router.post('/account_search_user', function (req, res, next) {
 });
 
 router.get('/account_search_users', function (req, res, next) {
-    res.render('account_search_users');
+    res.render('account_search_users', { name : req.session.dn } );
 });
 
 router.get('/account_search_team', function (req, res, next) {
-    res.render('account_search_team');
+    res.render('account_search_team', { name : req.session.dn } );
 });
 
 router.get('/account_search_teams', function (req, res, next) {
-    res.render('account_search_teams');
+    res.render('account_search_teams', { name : req.session.dn } );
 });
 
 //---------------------------------------------------------------------------ADMIN
@@ -265,6 +266,7 @@ router.get('/admin_remove_user', function (req, res, next) {
 
 router.get('/server_start', function (req, res, next) {
   if(req.session.dn){
+
     //Regista no LDAP e depois da confirmação
     modifyServerStart(dn, req);
     search_start_server(req, res);
@@ -309,7 +311,7 @@ function search_start_server(req, res){
       assert.ifError(err);
 
       resp.on('searchEntry', function(entry) {
-        res.render('server_start', { json : entry.object } );
+        res.render('server_start', { json : entry.object, name : req.session.dn } );
         console.log('entry: ' + JSON.stringify(entry.object));
       });
       resp.on('searchReference', function(referral) {
@@ -329,6 +331,19 @@ function search_start_server(req, res){
       });  
     });
 }
+
+
+router.get('/server_restart', function (req, res, next) {
+  res.render('server_restart', { name : req.session.dn } );
+});
+
+router.get('/server_clone', function (req, res, next) {
+  res.render('server_clone', { name : req.session.dn } );
+});
+
+router.get('/server_shutdown', function (req, res, next) {
+  res.render('server_shutdown', { name : req.session.dn } );
+});
 
 
 

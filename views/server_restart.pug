@@ -1,1 +1,15 @@
-aaa
+doctype html
+html(lang="en")
+	head
+		title Server Restart
+	body
+		h1 Server Started
+		h3 My information
+
+		li= JSON.stringify(json, null, 2)
+
+		p
+			if (name == "cn=admin, ou=admin, o=ldap")
+				li: a(href="/api/admin_secure") Back to last page
+			else
+				li: a(href="/api/user_secure") Back to last page

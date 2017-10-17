@@ -1,29 +1,15 @@
 doctype html
 html(lang="en")
 	head
-		title Change Account
+		title Server Clone
 	body
-		h1 Change Account
-		p Write the team, username and password to change your account.
-		form(method='post')
+		h1 Server Started
+		h3 My information
 
-			p
-				label(for='team') Team
-				input(type='text', name='team')
-			p
-				label(for='new_team') New team
-				input(type='text', name='new_team')
-			p
-				label(for='username') Username
-				input(type='text', name='username')
-			p
-				label(for='new_username') New username
-				input(type='text', name='new_username')
-			p
-				label(for='password') Password
-				input(type='password', name='password')
-			p
-				label(for='new_password') New password
-				input(type='password', name='new_password')
+		li= JSON.stringify(json, null, 2)
 
-			input(type='submit')
+		p
+			if (name == "cn=admin, ou=admin, o=ldap")
+				li: a(href="/api/admin_secure") Back to last page
+			else
+				li: a(href="/api/user_secure") Back to last page
