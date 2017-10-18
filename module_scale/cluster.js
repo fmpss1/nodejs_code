@@ -85,6 +85,8 @@ class Cluster{
 
 //Trocar por switch, fica mais elegante
 
+
+
         function newWorker(ip, port){
 
             //Descobrir como listar os CP por worker
@@ -114,8 +116,12 @@ class Cluster{
                 //cluster.on('new_server', function(worker) {
 
                 var spawn = require('child_process').spawn;
-                var child = spawn('node', ['module_scale/teamServer.js', parseInt(4000+Math.random()*5000) ]);
-        
+                //Atribuição aleatória dos portos dos CPs
+                //var child = spawn('node', ['module_scale/teamServer.js', parseInt(4000+Math.random()*5000) ]);
+                //Atribuição específica dos portos dos CPs
+                var child = spawn('node', ['module_scale/teamServer.js', 8050 ], {detached: true});
+
+
                 res.writeHead(200);
                 //Resposta ao localhost:8000
                 res.end('Worker_'+cluster.worker.id+' PID_'+process.pid+
@@ -137,7 +143,22 @@ class Cluster{
                     console.log('' + data);
                     //logger.info('\nWe received a reply: \n' + data);
                 });
+                child.on('close', function(code) {
+                    console.log('closing code: ' + code);
+                });
+
+                child.on('exit', function(code) {
+                    console.log('exit code: ' + code);
+                    process.kill(-child.pid);
+                    
+                });
                 //});
+                //});
+
+                //Deteta o CRTL+C e termina os child processes ativos desbloqueando o porto utilizado
+                process.on('SIGINT', function() {
+                    process.kill(-child.pid);
+                });
             });
 
             server = server.listen(port, function(err) {
@@ -149,6 +170,37 @@ class Cluster{
       
             console.log('Worker_' + cluster.worker.id + ' PID_' + process.pid + ' started');
         }
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+        setInterval(function () {
+            //CPU Usage
+            var load = os.loadavg();
+            var message =   "  1 Min: %" + Math.floor(load[0]*100) + 
+                            "  5 min: %" + Math.floor(load[1]*100) +
+                            " 15 min: %" + Math.floor(load[2]*100);
+            console.log(message);
+        }, 5000);
+
+        setInterval(function () {
+            //Memory Usage
+            var freemem = os.freemem();
+            var totalmem = os.totalmem();
+            var message =   " Free Mem: " + Math.floor(freemem/1000000000) +
+                            " Total Mem: " + Math.floor(totalmem/1000000000);
+            console.log(message);
+        }, 5000);
+*/        
    }
 }
 
@@ -172,71 +224,4 @@ process.on('SIGTERM', function() {
     process.exit(0);
   });
 });
-*/
-
-
-/* ---agora
-var lastSocketKey = 0;
-var socketMap = {};
-*/
-
-
-/*
-server.on('connection', function(socket) {
-    // generate a new, unique socket-key
-    var socketKey = ++lastSocketKey;
-    // add socket when it is connected
-    socketMap[socketKey] = socket;
-    socket.on('close', function() {
-        // remove socket when it is closed
-        delete socketMap[socketKey];
-    });
-});
-*/
-
-
-//Handle SIGTERM and SIGINT (ctrl-c) nicely
-//process.once('SIGTERM', end);
-//process.once('SIGINT', end);
-
-
-/*
-function end() {
-    // loop through all sockets and destroy them
-    Object.keys(socketMap).forEach(function(socketKey){
-        socketMap[socketKey].destroy();
-    });
-
-    //after all the sockets are destroyed, we may close the server!
-    server.close(function(err){
-        if(err) throw err();
-
-        console.log('Server stopped');
-        //exit gracefully
-        process.exit(0);
-    });
-}
-*/
-
-/* ---agora
-var os = require('os');
-
-setInterval(function () {
-//CPU Usage
-  var load = os.loadavg();
-  var message = "  1 Min: %" + Math.floor(load[0]*100) + 
-                "  5 min: %" + Math.floor(load[1]*100) +
-                " 15 min: %" + Math.floor(load[2]*100);
-  console.log(message);
-}, 5000);
-
-setInterval(function () {
-//Memory Usage
-  var freemem = os.freemem();
-  var totalmem = os.totalmem();
-  var message =  " Free Mem: " + Math.floor(freemem/1000000000) +
-                " Total Mem: " + Math.floor(totalmem/1000000000);
-  console.log(message);
-}, 5000);
-
 */

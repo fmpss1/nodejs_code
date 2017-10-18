@@ -1,0 +1,802 @@
+
+#Cenário 010101 (utilizadores igual à concorrencia)
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ loadtest http://localhost:8050 -t 5 -c 1
+[Tue Oct 17 2017 22:44:32 GMT+0100 (WEST)] INFO Requests: 0, requests per second: 0, mean latency: 0 ms
+[Tue Oct 17 2017 22:44:37 GMT+0100 (WEST)] INFO 
+[Tue Oct 17 2017 22:44:37 GMT+0100 (WEST)] INFO Target URL:          http://localhost:8050
+[Tue Oct 17 2017 22:44:37 GMT+0100 (WEST)] INFO Max time (s):        5
+[Tue Oct 17 2017 22:44:37 GMT+0100 (WEST)] INFO Concurrency level:   1
+[Tue Oct 17 2017 22:44:37 GMT+0100 (WEST)] INFO Agent:               none
+[Tue Oct 17 2017 22:44:37 GMT+0100 (WEST)] INFO 
+[Tue Oct 17 2017 22:44:37 GMT+0100 (WEST)] INFO Completed requests:  13364
+[Tue Oct 17 2017 22:44:37 GMT+0100 (WEST)] INFO Total errors:        0
+[Tue Oct 17 2017 22:44:37 GMT+0100 (WEST)] INFO Total time:          5.00059281 s
+[Tue Oct 17 2017 22:44:37 GMT+0100 (WEST)] INFO Requests per second: 2672
+[Tue Oct 17 2017 22:44:37 GMT+0100 (WEST)] INFO Mean latency:        0.4 ms
+[Tue Oct 17 2017 22:44:37 GMT+0100 (WEST)] INFO 
+[Tue Oct 17 2017 22:44:37 GMT+0100 (WEST)] INFO Percentage of the requests served within a certain time
+[Tue Oct 17 2017 22:44:37 GMT+0100 (WEST)] INFO   50%      1 ms
+[Tue Oct 17 2017 22:44:37 GMT+0100 (WEST)] INFO   90%      1 ms
+[Tue Oct 17 2017 22:44:37 GMT+0100 (WEST)] INFO   95%      1 ms
+[Tue Oct 17 2017 22:44:37 GMT+0100 (WEST)] INFO   99%      1 ms
+[Tue Oct 17 2017 22:44:37 GMT+0100 (WEST)] INFO  100%      14 ms (longest request)
+
+
+
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ loadtest http://localhost:8050 -c 1 -t 1
+[Wed Oct 18 2017 01:08:38 GMT+0100 (WEST)] INFO Requests: 0, requests per second: 0, mean latency: 0 ms
+[Wed Oct 18 2017 01:08:39 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 01:08:39 GMT+0100 (WEST)] INFO Target URL:          http://localhost:8050
+[Wed Oct 18 2017 01:08:39 GMT+0100 (WEST)] INFO Max time (s):        1
+[Wed Oct 18 2017 01:08:39 GMT+0100 (WEST)] INFO Concurrency level:   1
+[Wed Oct 18 2017 01:08:39 GMT+0100 (WEST)] INFO Agent:               none
+[Wed Oct 18 2017 01:08:39 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 01:08:39 GMT+0100 (WEST)] INFO Completed requests:  2192
+[Wed Oct 18 2017 01:08:39 GMT+0100 (WEST)] INFO Total errors:        0
+[Wed Oct 18 2017 01:08:39 GMT+0100 (WEST)] INFO Total time:          1.000516525 s
+[Wed Oct 18 2017 01:08:39 GMT+0100 (WEST)] INFO Requests per second: 2191
+[Wed Oct 18 2017 01:08:39 GMT+0100 (WEST)] INFO Mean latency:        0.4 ms
+[Wed Oct 18 2017 01:08:39 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 01:08:39 GMT+0100 (WEST)] INFO Percentage of the requests served within a certain time
+[Wed Oct 18 2017 01:08:39 GMT+0100 (WEST)] INFO   50%      1 ms
+[Wed Oct 18 2017 01:08:39 GMT+0100 (WEST)] INFO   90%      1 ms
+[Wed Oct 18 2017 01:08:39 GMT+0100 (WEST)] INFO   95%      1 ms
+[Wed Oct 18 2017 01:08:39 GMT+0100 (WEST)] INFO   99%      1 ms
+[Wed Oct 18 2017 01:08:39 GMT+0100 (WEST)] INFO  100%      14 ms (longest request)
+
+
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ loadtest http://localhost:8050 -c 1 -t 1
+[Wed Oct 18 2017 01:10:00 GMT+0100 (WEST)] INFO Requests: 0, requests per second: 0, mean latency: 0 ms
+[Wed Oct 18 2017 01:10:01 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 01:10:01 GMT+0100 (WEST)] INFO Target URL:          http://localhost:8050
+[Wed Oct 18 2017 01:10:01 GMT+0100 (WEST)] INFO Max time (s):        1
+[Wed Oct 18 2017 01:10:01 GMT+0100 (WEST)] INFO Concurrency level:   1
+[Wed Oct 18 2017 01:10:01 GMT+0100 (WEST)] INFO Agent:               none
+[Wed Oct 18 2017 01:10:01 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 01:10:01 GMT+0100 (WEST)] INFO Completed requests:  2338
+[Wed Oct 18 2017 01:10:01 GMT+0100 (WEST)] INFO Total errors:        0
+[Wed Oct 18 2017 01:10:01 GMT+0100 (WEST)] INFO Total time:          1.000573087 s
+[Wed Oct 18 2017 01:10:01 GMT+0100 (WEST)] INFO Requests per second: 2337
+[Wed Oct 18 2017 01:10:01 GMT+0100 (WEST)] INFO Mean latency:        0.4 ms
+[Wed Oct 18 2017 01:10:01 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 01:10:01 GMT+0100 (WEST)] INFO Percentage of the requests served within a certain time
+[Wed Oct 18 2017 01:10:01 GMT+0100 (WEST)] INFO   50%      1 ms
+[Wed Oct 18 2017 01:10:01 GMT+0100 (WEST)] INFO   90%      1 ms
+[Wed Oct 18 2017 01:10:01 GMT+0100 (WEST)] INFO   95%      1 ms
+[Wed Oct 18 2017 01:10:01 GMT+0100 (WEST)] INFO   99%      1 ms
+[Wed Oct 18 2017 01:10:01 GMT+0100 (WEST)] INFO  100%      11 ms (longest request)
+far
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+faroleco@faroleco-K30AD-M31AD-M51AD:~$ loadtest http://localhost:8050 -c 1 -t 1
+[Wed Oct 18 2017 01:46:15 GMT+0100 (WEST)] INFO Requests: 0, requests per second: 0, mean latency: 0 ms
+[Wed Oct 18 2017 01:46:16 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 01:46:16 GMT+0100 (WEST)] INFO Target URL:          http://localhost:8050
+[Wed Oct 18 2017 01:46:16 GMT+0100 (WEST)] INFO Max time (s):        1
+[Wed Oct 18 2017 01:46:16 GMT+0100 (WEST)] INFO Concurrency level:   1
+[Wed Oct 18 2017 01:46:16 GMT+0100 (WEST)] INFO Agent:               none
+[Wed Oct 18 2017 01:46:16 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 01:46:16 GMT+0100 (WEST)] INFO Completed requests:  2123
+[Wed Oct 18 2017 01:46:16 GMT+0100 (WEST)] INFO Total errors:        0
+[Wed Oct 18 2017 01:46:16 GMT+0100 (WEST)] INFO Total time:          1.000445953 s
+[Wed Oct 18 2017 01:46:16 GMT+0100 (WEST)] INFO Requests per second: 2122
+[Wed Oct 18 2017 01:46:16 GMT+0100 (WEST)] INFO Mean latency:        0.5 ms
+[Wed Oct 18 2017 01:46:16 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 01:46:16 GMT+0100 (WEST)] INFO Percentage of the requests served within a certain time
+[Wed Oct 18 2017 01:46:16 GMT+0100 (WEST)] INFO   50%      1 ms
+[Wed Oct 18 2017 01:46:16 GMT+0100 (WEST)] INFO   90%      1 ms
+[Wed Oct 18 2017 01:46:16 GMT+0100 (WEST)] INFO   95%      1 ms
+[Wed Oct 18 2017 01:46:16 GMT+0100 (WEST)] INFO   99%      1 ms
+[Wed Oct 18 2017 01:46:16 GMT+0100 (WEST)] INFO  100%      19 ms (longest request)
+
+
+faroleco@faroleco-K30AD-M31AD-M51AD:~$ 
+faroleco@faroleco-K30AD-M31AD-M51AD:~$ 
+faroleco@faroleco-K30AD-M31AD-M51AD:~$ loadtest http://localhost:8051 -c 1 -t 1
+[Wed Oct 18 2017 01:46:35 GMT+0100 (WEST)] INFO Requests: 0, requests per second: 0, mean latency: 0 ms
+[Wed Oct 18 2017 01:46:36 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 01:46:36 GMT+0100 (WEST)] INFO Target URL:          http://localhost:8051
+[Wed Oct 18 2017 01:46:36 GMT+0100 (WEST)] INFO Max time (s):        1
+[Wed Oct 18 2017 01:46:36 GMT+0100 (WEST)] INFO Concurrency level:   1
+[Wed Oct 18 2017 01:46:36 GMT+0100 (WEST)] INFO Agent:               none
+[Wed Oct 18 2017 01:46:36 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 01:46:36 GMT+0100 (WEST)] INFO Completed requests:  2237
+[Wed Oct 18 2017 01:46:36 GMT+0100 (WEST)] INFO Total errors:        0
+[Wed Oct 18 2017 01:46:36 GMT+0100 (WEST)] INFO Total time:          1.000468855 s
+[Wed Oct 18 2017 01:46:36 GMT+0100 (WEST)] INFO Requests per second: 2236
+[Wed Oct 18 2017 01:46:36 GMT+0100 (WEST)] INFO Mean latency:        0.4 ms
+[Wed Oct 18 2017 01:46:36 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 01:46:36 GMT+0100 (WEST)] INFO Percentage of the requests served within a certain time
+[Wed Oct 18 2017 01:46:36 GMT+0100 (WEST)] INFO   50%      1 ms
+[Wed Oct 18 2017 01:46:36 GMT+0100 (WEST)] INFO   90%      1 ms
+[Wed Oct 18 2017 01:46:36 GMT+0100 (WEST)] INFO   95%      1 ms
+[Wed Oct 18 2017 01:46:36 GMT+0100 (WEST)] INFO   99%      1 ms
+[Wed Oct 18 2017 01:46:36 GMT+0100 (WEST)] INFO  100%      18 ms (longest request)
+
+faroleco@faroleco-K30AD-M31AD-M51AD:~$ loadtest http://localhost:8052 -c 1 -t 1
+[Wed Oct 18 2017 01:47:13 GMT+0100 (WEST)] INFO Requests: 0, requests per second: 0, mean latency: 0 ms
+[Wed Oct 18 2017 01:47:14 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 01:47:14 GMT+0100 (WEST)] INFO Target URL:          http://localhost:8053
+[Wed Oct 18 2017 01:47:14 GMT+0100 (WEST)] INFO Max time (s):        1
+[Wed Oct 18 2017 01:47:14 GMT+0100 (WEST)] INFO Concurrency level:   1
+[Wed Oct 18 2017 01:47:14 GMT+0100 (WEST)] INFO Agent:               none
+[Wed Oct 18 2017 01:47:14 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 01:47:14 GMT+0100 (WEST)] INFO Completed requests:  2227
+[Wed Oct 18 2017 01:47:14 GMT+0100 (WEST)] INFO Total errors:        0
+[Wed Oct 18 2017 01:47:14 GMT+0100 (WEST)] INFO Total time:          1.000296393 s
+[Wed Oct 18 2017 01:47:14 GMT+0100 (WEST)] INFO Requests per second: 2226
+[Wed Oct 18 2017 01:47:14 GMT+0100 (WEST)] INFO Mean latency:        0.4 ms
+[Wed Oct 18 2017 01:47:14 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 01:47:14 GMT+0100 (WEST)] INFO Percentage of the requests served within a certain time
+[Wed Oct 18 2017 01:47:14 GMT+0100 (WEST)] INFO   50%      1 ms
+[Wed Oct 18 2017 01:47:14 GMT+0100 (WEST)] INFO   90%      1 ms
+[Wed Oct 18 2017 01:47:14 GMT+0100 (WEST)] INFO   95%      1 ms
+[Wed Oct 18 2017 01:47:14 GMT+0100 (WEST)] INFO   99%      1 ms
+[Wed Oct 18 2017 01:47:14 GMT+0100 (WEST)] INFO  100%      18 ms (longest request)
+faroleco@faroleco-K30AD-M31AD-M51AD:~$ loadtest http://localhost:8053 -c 1 -t 1
+[Wed Oct 18 2017 01:47:30 GMT+0100 (WEST)] INFO Requests: 0, requests per second: 0, mean latency: 0 ms
+[Wed Oct 18 2017 01:47:31 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 01:47:31 GMT+0100 (WEST)] INFO Target URL:          http://localhost:8054
+[Wed Oct 18 2017 01:47:31 GMT+0100 (WEST)] INFO Max time (s):        1
+[Wed Oct 18 2017 01:47:31 GMT+0100 (WEST)] INFO Concurrency level:   1
+[Wed Oct 18 2017 01:47:31 GMT+0100 (WEST)] INFO Agent:               none
+[Wed Oct 18 2017 01:47:31 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 01:47:31 GMT+0100 (WEST)] INFO Completed requests:  2165
+[Wed Oct 18 2017 01:47:31 GMT+0100 (WEST)] INFO Total errors:        0
+[Wed Oct 18 2017 01:47:31 GMT+0100 (WEST)] INFO Total time:          1.000265423 s
+[Wed Oct 18 2017 01:47:31 GMT+0100 (WEST)] INFO Requests per second: 2164
+[Wed Oct 18 2017 01:47:31 GMT+0100 (WEST)] INFO Mean latency:        0.4 ms
+[Wed Oct 18 2017 01:47:31 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 01:47:31 GMT+0100 (WEST)] INFO Percentage of the requests served within a certain time
+[Wed Oct 18 2017 01:47:31 GMT+0100 (WEST)] INFO   50%      1 ms
+[Wed Oct 18 2017 01:47:31 GMT+0100 (WEST)] INFO   90%      1 ms
+[Wed Oct 18 2017 01:47:31 GMT+0100 (WEST)] INFO   95%      1 ms
+[Wed Oct 18 2017 01:47:31 GMT+0100 (WEST)] INFO   99%      1 ms
+[Wed Oct 18 2017 01:47:31 GMT+0100 (WEST)] INFO  100%      24 ms (longest request)
+faroleco@faroleco-K30AD-M31AD-M51AD:~$ 
+faroleco@faroleco-K30AD-M31AD-M51AD:~$ loadtest http://localhost:8054 -c 1 -t 1
+[Wed Oct 18 2017 01:47:49 GMT+0100 (WEST)] INFO Requests: 0, requests per second: 0, mean latency: 0 ms
+[Wed Oct 18 2017 01:47:50 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 01:47:50 GMT+0100 (WEST)] INFO Target URL:          http://localhost:8055
+[Wed Oct 18 2017 01:47:50 GMT+0100 (WEST)] INFO Max time (s):        1
+[Wed Oct 18 2017 01:47:50 GMT+0100 (WEST)] INFO Concurrency level:   1
+[Wed Oct 18 2017 01:47:50 GMT+0100 (WEST)] INFO Agent:               none
+[Wed Oct 18 2017 01:47:50 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 01:47:50 GMT+0100 (WEST)] INFO Completed requests:  2164
+[Wed Oct 18 2017 01:47:50 GMT+0100 (WEST)] INFO Total errors:        0
+[Wed Oct 18 2017 01:47:50 GMT+0100 (WEST)] INFO Total time:          1.0004094669999999 s
+[Wed Oct 18 2017 01:47:50 GMT+0100 (WEST)] INFO Requests per second: 2163
+[Wed Oct 18 2017 01:47:50 GMT+0100 (WEST)] INFO Mean latency:        0.4 ms
+[Wed Oct 18 2017 01:47:50 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 01:47:50 GMT+0100 (WEST)] INFO Percentage of the requests served within a certain time
+[Wed Oct 18 2017 01:47:50 GMT+0100 (WEST)] INFO   50%      1 ms
+[Wed Oct 18 2017 01:47:50 GMT+0100 (WEST)] INFO   90%      1 ms
+[Wed Oct 18 2017 01:47:50 GMT+0100 (WEST)] INFO   95%      1 ms
+[Wed Oct 18 2017 01:47:50 GMT+0100 (WEST)] INFO   99%      1 ms
+[Wed Oct 18 2017 01:47:50 GMT+0100 (WEST)] INFO  100%      18 ms (longest request)
+
+
+
+
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ ./tests_scripts.sh
+HTTP/1.1 200 OK
+Date: Wed, 18 Oct 2017 01:01:41 GMT
+Connection: keep-alive
+
+[Wed Oct 18 2017 02:01:41 GMT+0100 (WEST)] INFO Requests: 0, requests per second: 0, mean latency: 0 ms
+[Wed Oct 18 2017 02:01:42 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:01:42 GMT+0100 (WEST)] INFO Target URL:          http://localhost:8050
+[Wed Oct 18 2017 02:01:42 GMT+0100 (WEST)] INFO Max time (s):        1
+[Wed Oct 18 2017 02:01:42 GMT+0100 (WEST)] INFO Concurrency level:   1
+[Wed Oct 18 2017 02:01:42 GMT+0100 (WEST)] INFO Agent:               none
+[Wed Oct 18 2017 02:01:42 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:01:42 GMT+0100 (WEST)] INFO Completed requests:  2182
+[Wed Oct 18 2017 02:01:42 GMT+0100 (WEST)] INFO Total errors:        47
+[Wed Oct 18 2017 02:01:42 GMT+0100 (WEST)] INFO Total time:          1.0004858840000002 s
+[Wed Oct 18 2017 02:01:42 GMT+0100 (WEST)] INFO Requests per second: 2181
+[Wed Oct 18 2017 02:01:42 GMT+0100 (WEST)] INFO Mean latency:        0.4 ms
+[Wed Oct 18 2017 02:01:42 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:01:42 GMT+0100 (WEST)] INFO Percentage of the requests served within a certain time
+[Wed Oct 18 2017 02:01:42 GMT+0100 (WEST)] INFO   50%      1 ms
+[Wed Oct 18 2017 02:01:42 GMT+0100 (WEST)] INFO   90%      1 ms
+[Wed Oct 18 2017 02:01:42 GMT+0100 (WEST)] INFO   95%      1 ms
+[Wed Oct 18 2017 02:01:42 GMT+0100 (WEST)] INFO   99%      1 ms
+[Wed Oct 18 2017 02:01:42 GMT+0100 (WEST)] INFO  100%      12 ms (longest request)
+[Wed Oct 18 2017 02:01:42 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:01:42 GMT+0100 (WEST)] INFO  100%      12 ms (longest request)
+[Wed Oct 18 2017 02:01:42 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:01:42 GMT+0100 (WEST)] INFO    -1:   47 errors
+
+
+
+
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ ./tests_scripts.sh
+HTTP/1.1 200 OK
+Date: Wed, 18 Oct 2017 01:05:22 GMT
+Connection: keep-alive
+
+[Wed Oct 18 2017 02:05:22 GMT+0100 (WEST)] INFO Requests: 0, requests per second: 0, mean latency: 0 ms
+[Wed Oct 18 2017 02:05:23 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:05:23 GMT+0100 (WEST)] INFO Target URL:          http://localhost:8050
+[Wed Oct 18 2017 02:05:23 GMT+0100 (WEST)] INFO Max time (s):        1
+[Wed Oct 18 2017 02:05:23 GMT+0100 (WEST)] INFO Concurrency level:   5
+[Wed Oct 18 2017 02:05:23 GMT+0100 (WEST)] INFO Agent:               none
+[Wed Oct 18 2017 02:05:23 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:05:23 GMT+0100 (WEST)] INFO Completed requests:  3859
+[Wed Oct 18 2017 02:05:23 GMT+0100 (WEST)] INFO Total errors:        33
+[Wed Oct 18 2017 02:05:23 GMT+0100 (WEST)] INFO Total time:          1.0002139049999998 s
+[Wed Oct 18 2017 02:05:23 GMT+0100 (WEST)] INFO Requests per second: 3858
+[Wed Oct 18 2017 02:05:23 GMT+0100 (WEST)] INFO Mean latency:        1.3 ms
+[Wed Oct 18 2017 02:05:23 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:05:23 GMT+0100 (WEST)] INFO Percentage of the requests served within a certain time
+[Wed Oct 18 2017 02:05:23 GMT+0100 (WEST)] INFO   50%      1 ms
+[Wed Oct 18 2017 02:05:23 GMT+0100 (WEST)] INFO   90%      1 ms
+[Wed Oct 18 2017 02:05:23 GMT+0100 (WEST)] INFO   95%      2 ms
+[Wed Oct 18 2017 02:05:23 GMT+0100 (WEST)] INFO   99%      6 ms
+[Wed Oct 18 2017 02:05:23 GMT+0100 (WEST)] INFO  100%      15 ms (longest request)
+[Wed Oct 18 2017 02:05:23 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:05:23 GMT+0100 (WEST)] INFO  100%      15 ms (longest request)
+[Wed Oct 18 2017 02:05:23 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:05:23 GMT+0100 (WEST)] INFO    -1:   33 errors
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ 
+
+
+
+
+
+
+
+
+
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ ./tests_scripts.sh
+HTTP/1.1 200 OK
+Date: Wed, 18 Oct 2017 01:08:42 GMT
+Connection: keep-alive
+
+[Wed Oct 18 2017 02:08:42 GMT+0100 (WEST)] INFO Requests: 0, requests per second: 0, mean latency: 0 ms
+[Wed Oct 18 2017 02:08:43 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:08:43 GMT+0100 (WEST)] INFO Target URL:          http://localhost:8050
+[Wed Oct 18 2017 02:08:43 GMT+0100 (WEST)] INFO Max time (s):        1
+[Wed Oct 18 2017 02:08:43 GMT+0100 (WEST)] INFO Concurrency level:   10
+[Wed Oct 18 2017 02:08:43 GMT+0100 (WEST)] INFO Agent:               none
+[Wed Oct 18 2017 02:08:43 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:08:43 GMT+0100 (WEST)] INFO Completed requests:  4135
+[Wed Oct 18 2017 02:08:43 GMT+0100 (WEST)] INFO Total errors:        50
+[Wed Oct 18 2017 02:08:43 GMT+0100 (WEST)] INFO Total time:          1.000313412 s
+[Wed Oct 18 2017 02:08:43 GMT+0100 (WEST)] INFO Requests per second: 4134
+[Wed Oct 18 2017 02:08:43 GMT+0100 (WEST)] INFO Mean latency:        2.4 ms
+[Wed Oct 18 2017 02:08:43 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:08:43 GMT+0100 (WEST)] INFO Percentage of the requests served within a certain time
+[Wed Oct 18 2017 02:08:43 GMT+0100 (WEST)] INFO   50%      1 ms
+[Wed Oct 18 2017 02:08:43 GMT+0100 (WEST)] INFO   90%      3 ms
+[Wed Oct 18 2017 02:08:43 GMT+0100 (WEST)] INFO   95%      4 ms
+[Wed Oct 18 2017 02:08:43 GMT+0100 (WEST)] INFO   99%      9 ms
+[Wed Oct 18 2017 02:08:43 GMT+0100 (WEST)] INFO  100%      17 ms (longest request)
+[Wed Oct 18 2017 02:08:43 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:08:43 GMT+0100 (WEST)] INFO  100%      17 ms (longest request)
+[Wed Oct 18 2017 02:08:43 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:08:43 GMT+0100 (WEST)] INFO    -1:   50 errors
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ 
+
+
+
+
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ ./tests_scripts.sh
+HTTP/1.1 200 OK
+Date: Wed, 18 Oct 2017 01:10:58 GMT
+Connection: keep-alive
+
+[Wed Oct 18 2017 02:10:58 GMT+0100 (WEST)] INFO Requests: 0, requests per second: 0, mean latency: 0 ms
+[Wed Oct 18 2017 02:10:59 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:10:59 GMT+0100 (WEST)] INFO Target URL:          http://localhost:8050
+[Wed Oct 18 2017 02:10:59 GMT+0100 (WEST)] INFO Max time (s):        1
+[Wed Oct 18 2017 02:10:59 GMT+0100 (WEST)] INFO Concurrency level:   30
+[Wed Oct 18 2017 02:10:59 GMT+0100 (WEST)] INFO Agent:               none
+[Wed Oct 18 2017 02:10:59 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:10:59 GMT+0100 (WEST)] INFO Completed requests:  4219
+[Wed Oct 18 2017 02:10:59 GMT+0100 (WEST)] INFO Total errors:        60
+[Wed Oct 18 2017 02:10:59 GMT+0100 (WEST)] INFO Total time:          1.00038857 s
+[Wed Oct 18 2017 02:10:59 GMT+0100 (WEST)] INFO Requests per second: 4217
+[Wed Oct 18 2017 02:10:59 GMT+0100 (WEST)] INFO Mean latency:        7 ms
+[Wed Oct 18 2017 02:10:59 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:10:59 GMT+0100 (WEST)] INFO Percentage of the requests served within a certain time
+[Wed Oct 18 2017 02:10:59 GMT+0100 (WEST)] INFO   50%      5 ms
+[Wed Oct 18 2017 02:10:59 GMT+0100 (WEST)] INFO   90%      10 ms
+[Wed Oct 18 2017 02:10:59 GMT+0100 (WEST)] INFO   95%      13 ms
+[Wed Oct 18 2017 02:10:59 GMT+0100 (WEST)] INFO   99%      20 ms
+[Wed Oct 18 2017 02:10:59 GMT+0100 (WEST)] INFO  100%      24 ms (longest request)
+[Wed Oct 18 2017 02:10:59 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:10:59 GMT+0100 (WEST)] INFO  100%      24 ms (longest request)
+[Wed Oct 18 2017 02:10:59 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:10:59 GMT+0100 (WEST)] INFO    -1:   60 errors
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ ./tests_scripts.sh
+HTTP/1.1 200 OK
+Date: Wed, 18 Oct 2017 01:16:58 GMT
+Connection: keep-alive
+
+[Wed Oct 18 2017 02:16:58 GMT+0100 (WEST)] INFO Requests: 0, requests per second: 0, mean latency: 0 ms
+[Wed Oct 18 2017 02:17:03 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:17:03 GMT+0100 (WEST)] INFO Target URL:          http://localhost:8050
+[Wed Oct 18 2017 02:17:03 GMT+0100 (WEST)] INFO Max time (s):        5
+[Wed Oct 18 2017 02:17:03 GMT+0100 (WEST)] INFO Concurrency level:   1
+[Wed Oct 18 2017 02:17:03 GMT+0100 (WEST)] INFO Agent:               none
+[Wed Oct 18 2017 02:17:03 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:17:03 GMT+0100 (WEST)] INFO Completed requests:  13012
+[Wed Oct 18 2017 02:17:03 GMT+0100 (WEST)] INFO Total errors:        42
+[Wed Oct 18 2017 02:17:03 GMT+0100 (WEST)] INFO Total time:          5.000440071 s
+[Wed Oct 18 2017 02:17:03 GMT+0100 (WEST)] INFO Requests per second: 2602
+[Wed Oct 18 2017 02:17:03 GMT+0100 (WEST)] INFO Mean latency:        0.4 ms
+[Wed Oct 18 2017 02:17:03 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:17:03 GMT+0100 (WEST)] INFO Percentage of the requests served within a certain time
+[Wed Oct 18 2017 02:17:03 GMT+0100 (WEST)] INFO   50%      1 ms
+[Wed Oct 18 2017 02:17:03 GMT+0100 (WEST)] INFO   90%      1 ms
+[Wed Oct 18 2017 02:17:03 GMT+0100 (WEST)] INFO   95%      1 ms
+[Wed Oct 18 2017 02:17:03 GMT+0100 (WEST)] INFO   99%      1 ms
+[Wed Oct 18 2017 02:17:03 GMT+0100 (WEST)] INFO  100%      13 ms (longest request)
+[Wed Oct 18 2017 02:17:03 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:17:03 GMT+0100 (WEST)] INFO  100%      13 ms (longest request)
+[Wed Oct 18 2017 02:17:03 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:17:03 GMT+0100 (WEST)] INFO    -1:   42 errors
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ 
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ vim tests_scripts.sh 
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ 
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ 
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ ./tests_scripts.sh
+HTTP/1.1 200 OK
+Date: Wed, 18 Oct 2017 01:18:27 GMT
+Connection: keep-alive
+
+[Wed Oct 18 2017 02:18:27 GMT+0100 (WEST)] INFO Requests: 0, requests per second: 0, mean latency: 0 ms
+[Wed Oct 18 2017 02:18:32 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:18:32 GMT+0100 (WEST)] INFO Target URL:          http://localhost:8050
+[Wed Oct 18 2017 02:18:32 GMT+0100 (WEST)] INFO Max time (s):        5
+[Wed Oct 18 2017 02:18:32 GMT+0100 (WEST)] INFO Concurrency level:   5
+[Wed Oct 18 2017 02:18:32 GMT+0100 (WEST)] INFO Agent:               none
+[Wed Oct 18 2017 02:18:32 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:18:32 GMT+0100 (WEST)] INFO Completed requests:  22420
+[Wed Oct 18 2017 02:18:32 GMT+0100 (WEST)] INFO Total errors:        23
+[Wed Oct 18 2017 02:18:32 GMT+0100 (WEST)] INFO Total time:          5.0003353420000005 s
+[Wed Oct 18 2017 02:18:32 GMT+0100 (WEST)] INFO Requests per second: 4484
+[Wed Oct 18 2017 02:18:32 GMT+0100 (WEST)] INFO Mean latency:        1.1 ms
+[Wed Oct 18 2017 02:18:32 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:18:32 GMT+0100 (WEST)] INFO Percentage of the requests served within a certain time
+[Wed Oct 18 2017 02:18:32 GMT+0100 (WEST)] INFO   50%      1 ms
+[Wed Oct 18 2017 02:18:32 GMT+0100 (WEST)] INFO   90%      1 ms
+[Wed Oct 18 2017 02:18:32 GMT+0100 (WEST)] INFO   95%      1 ms
+[Wed Oct 18 2017 02:18:32 GMT+0100 (WEST)] INFO   99%      5 ms
+[Wed Oct 18 2017 02:18:32 GMT+0100 (WEST)] INFO  100%      16 ms (longest request)
+[Wed Oct 18 2017 02:18:32 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:18:32 GMT+0100 (WEST)] INFO  100%      16 ms (longest request)
+[Wed Oct 18 2017 02:18:32 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:18:32 GMT+0100 (WEST)] INFO    -1:   23 errors
+
+
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ 
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ 
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ vim tests_scripts.sh 
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ ./tests_scripts.sh
+HTTP/1.1 200 OK
+Date: Wed, 18 Oct 2017 01:19:20 GMT
+Connection: keep-alive
+
+[Wed Oct 18 2017 02:19:20 GMT+0100 (WEST)] INFO Requests: 0, requests per second: 0, mean latency: 0 ms
+[Wed Oct 18 2017 02:19:25 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:19:25 GMT+0100 (WEST)] INFO Target URL:          http://localhost:8050
+[Wed Oct 18 2017 02:19:25 GMT+0100 (WEST)] INFO Max time (s):        5
+[Wed Oct 18 2017 02:19:25 GMT+0100 (WEST)] INFO Concurrency level:   10
+[Wed Oct 18 2017 02:19:25 GMT+0100 (WEST)] INFO Agent:               none
+[Wed Oct 18 2017 02:19:25 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:19:25 GMT+0100 (WEST)] INFO Completed requests:  18699
+[Wed Oct 18 2017 02:19:25 GMT+0100 (WEST)] INFO Total errors:        0
+[Wed Oct 18 2017 02:19:25 GMT+0100 (WEST)] INFO Total time:          5.000318224 s
+[Wed Oct 18 2017 02:19:25 GMT+0100 (WEST)] INFO Requests per second: 3740
+[Wed Oct 18 2017 02:19:25 GMT+0100 (WEST)] INFO Mean latency:        2.7 ms
+[Wed Oct 18 2017 02:19:25 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:19:25 GMT+0100 (WEST)] INFO Percentage of the requests served within a certain time
+[Wed Oct 18 2017 02:19:25 GMT+0100 (WEST)] INFO   50%      1 ms
+[Wed Oct 18 2017 02:19:25 GMT+0100 (WEST)] INFO   90%      2 ms
+[Wed Oct 18 2017 02:19:25 GMT+0100 (WEST)] INFO   95%      3 ms
+[Wed Oct 18 2017 02:19:25 GMT+0100 (WEST)] INFO   99%      8 ms
+[Wed Oct 18 2017 02:19:25 GMT+0100 (WEST)] INFO  100%      1028 ms (longest request)
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ 
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ 
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ vim tests_scripts.sh 
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ 
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ 
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ vim tests_scripts.sh
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ 
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ 
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ ./tests_scripts.sh
+HTTP/1.1 200 OK
+Date: Wed, 18 Oct 2017 01:20:47 GMT
+Connection: keep-alive
+
+[Wed Oct 18 2017 02:20:47 GMT+0100 (WEST)] INFO Requests: 0, requests per second: 0, mean latency: 0 ms
+[Wed Oct 18 2017 02:20:52 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:20:52 GMT+0100 (WEST)] INFO Target URL:          http://localhost:8050
+[Wed Oct 18 2017 02:20:52 GMT+0100 (WEST)] INFO Max time (s):        5
+[Wed Oct 18 2017 02:20:52 GMT+0100 (WEST)] INFO Concurrency level:   30
+[Wed Oct 18 2017 02:20:52 GMT+0100 (WEST)] INFO Agent:               none
+[Wed Oct 18 2017 02:20:52 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:20:52 GMT+0100 (WEST)] INFO Completed requests:  25203
+[Wed Oct 18 2017 02:20:52 GMT+0100 (WEST)] INFO Total errors:        29
+[Wed Oct 18 2017 02:20:52 GMT+0100 (WEST)] INFO Total time:          5.0003315409999995 s
+[Wed Oct 18 2017 02:20:52 GMT+0100 (WEST)] INFO Requests per second: 5040
+[Wed Oct 18 2017 02:20:52 GMT+0100 (WEST)] INFO Mean latency:        5.9 ms
+[Wed Oct 18 2017 02:20:52 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:20:52 GMT+0100 (WEST)] INFO Percentage of the requests served within a certain time
+[Wed Oct 18 2017 02:20:52 GMT+0100 (WEST)] INFO   50%      5 ms
+[Wed Oct 18 2017 02:20:52 GMT+0100 (WEST)] INFO   90%      7 ms
+[Wed Oct 18 2017 02:20:52 GMT+0100 (WEST)] INFO   95%      11 ms
+[Wed Oct 18 2017 02:20:52 GMT+0100 (WEST)] INFO   99%      14 ms
+[Wed Oct 18 2017 02:20:52 GMT+0100 (WEST)] INFO  100%      27 ms (longest request)
+[Wed Oct 18 2017 02:20:52 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:20:52 GMT+0100 (WEST)] INFO  100%      27 ms (longest request)
+[Wed Oct 18 2017 02:20:52 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:20:52 GMT+0100 (WEST)] INFO    -1:   29 errors
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ ./tests_scripts.sh
+HTTP/1.1 200 OK
+Date: Wed, 18 Oct 2017 01:29:50 GMT
+Connection: keep-alive
+
+[Wed Oct 18 2017 02:29:50 GMT+0100 (WEST)] INFO Requests: 0, requests per second: 0, mean latency: 0 ms
+[Wed Oct 18 2017 02:29:55 GMT+0100 (WEST)] INFO Requests: 13670, requests per second: 2731, mean latency: 0.4 ms
+[Wed Oct 18 2017 02:29:55 GMT+0100 (WEST)] INFO Errors: 45, accumulated errors: 45, 0.3% of total requests
+[Wed Oct 18 2017 02:30:00 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:30:00 GMT+0100 (WEST)] INFO Target URL:          http://localhost:8050
+[Wed Oct 18 2017 02:30:00 GMT+0100 (WEST)] INFO Max time (s):        10
+[Wed Oct 18 2017 02:30:00 GMT+0100 (WEST)] INFO Concurrency level:   1
+[Wed Oct 18 2017 02:30:00 GMT+0100 (WEST)] INFO Agent:               none
+[Wed Oct 18 2017 02:30:00 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:30:00 GMT+0100 (WEST)] INFO Completed requests:  27444
+[Wed Oct 18 2017 02:30:00 GMT+0100 (WEST)] INFO Total errors:        45
+[Wed Oct 18 2017 02:30:00 GMT+0100 (WEST)] INFO Total time:          10.000287727000002 s
+[Wed Oct 18 2017 02:30:00 GMT+0100 (WEST)] INFO Requests per second: 2744
+[Wed Oct 18 2017 02:30:00 GMT+0100 (WEST)] INFO Mean latency:        0.3 ms
+[Wed Oct 18 2017 02:30:00 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:30:00 GMT+0100 (WEST)] INFO Percentage of the requests served within a certain time
+[Wed Oct 18 2017 02:30:00 GMT+0100 (WEST)] INFO   50%      1 ms
+[Wed Oct 18 2017 02:30:00 GMT+0100 (WEST)] INFO   90%      1 ms
+[Wed Oct 18 2017 02:30:00 GMT+0100 (WEST)] INFO   95%      1 ms
+[Wed Oct 18 2017 02:30:00 GMT+0100 (WEST)] INFO   99%      1 ms
+[Wed Oct 18 2017 02:30:00 GMT+0100 (WEST)] INFO  100%      12 ms (longest request)
+[Wed Oct 18 2017 02:30:00 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:30:00 GMT+0100 (WEST)] INFO  100%      12 ms (longest request)
+[Wed Oct 18 2017 02:30:00 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:30:00 GMT+0100 (WEST)] INFO    -1:   45 errors
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ 
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ 
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ 
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ vim tests_scripts.sh
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ 
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ 
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ ./tests_scripts.sh
+HTTP/1.1 200 OK
+Date: Wed, 18 Oct 2017 01:31:42 GMT
+Connection: keep-alive
+
+[Wed Oct 18 2017 02:31:42 GMT+0100 (WEST)] INFO Requests: 0, requests per second: 0, mean latency: 0 ms
+[Wed Oct 18 2017 02:31:47 GMT+0100 (WEST)] INFO Requests: 22789, requests per second: 4558, mean latency: 1.1 ms
+[Wed Oct 18 2017 02:31:47 GMT+0100 (WEST)] INFO Errors: 45, accumulated errors: 45, 0.2% of total requests
+[Wed Oct 18 2017 02:31:52 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:31:52 GMT+0100 (WEST)] INFO Target URL:          http://localhost:8050
+[Wed Oct 18 2017 02:31:52 GMT+0100 (WEST)] INFO Max time (s):        10
+[Wed Oct 18 2017 02:31:52 GMT+0100 (WEST)] INFO Concurrency level:   5
+[Wed Oct 18 2017 02:31:52 GMT+0100 (WEST)] INFO Agent:               none
+[Wed Oct 18 2017 02:31:52 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:31:52 GMT+0100 (WEST)] INFO Completed requests:  47134
+[Wed Oct 18 2017 02:31:52 GMT+0100 (WEST)] INFO Total errors:        45
+[Wed Oct 18 2017 02:31:52 GMT+0100 (WEST)] INFO Total time:          10.005845956 s
+[Wed Oct 18 2017 02:31:52 GMT+0100 (WEST)] INFO Requests per second: 4711
+[Wed Oct 18 2017 02:31:52 GMT+0100 (WEST)] INFO Mean latency:        1 ms
+[Wed Oct 18 2017 02:31:52 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:31:52 GMT+0100 (WEST)] INFO Percentage of the requests served within a certain time
+[Wed Oct 18 2017 02:31:52 GMT+0100 (WEST)] INFO   50%      1 ms
+[Wed Oct 18 2017 02:31:52 GMT+0100 (WEST)] INFO   90%      1 ms
+[Wed Oct 18 2017 02:31:52 GMT+0100 (WEST)] INFO   95%      1 ms
+[Wed Oct 18 2017 02:31:52 GMT+0100 (WEST)] INFO   99%      4 ms
+[Wed Oct 18 2017 02:31:52 GMT+0100 (WEST)] INFO  100%      15 ms (longest request)
+[Wed Oct 18 2017 02:31:52 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:31:52 GMT+0100 (WEST)] INFO  100%      15 ms (longest request)
+[Wed Oct 18 2017 02:31:52 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:31:52 GMT+0100 (WEST)] INFO    -1:   45 errors
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ 
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ 
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ vim tests_scripts.sh
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ ./tests_scripts.sh
+HTTP/1.1 200 OK
+Date: Wed, 18 Oct 2017 01:33:12 GMT
+Connection: keep-alive
+
+[Wed Oct 18 2017 02:33:12 GMT+0100 (WEST)] INFO Requests: 0, requests per second: 0, mean latency: 0 ms
+[Wed Oct 18 2017 02:33:17 GMT+0100 (WEST)] INFO Requests: 23450, requests per second: 4689, mean latency: 2.1 ms
+[Wed Oct 18 2017 02:33:17 GMT+0100 (WEST)] INFO Errors: 60, accumulated errors: 60, 0.3% of total requests
+[Wed Oct 18 2017 02:33:22 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:33:22 GMT+0100 (WEST)] INFO Target URL:          http://localhost:8050
+[Wed Oct 18 2017 02:33:22 GMT+0100 (WEST)] INFO Max time (s):        10
+[Wed Oct 18 2017 02:33:22 GMT+0100 (WEST)] INFO Concurrency level:   10
+[Wed Oct 18 2017 02:33:22 GMT+0100 (WEST)] INFO Agent:               none
+[Wed Oct 18 2017 02:33:22 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:33:22 GMT+0100 (WEST)] INFO Completed requests:  47771
+[Wed Oct 18 2017 02:33:22 GMT+0100 (WEST)] INFO Total errors:        60
+[Wed Oct 18 2017 02:33:22 GMT+0100 (WEST)] INFO Total time:          10.00039134 s
+[Wed Oct 18 2017 02:33:22 GMT+0100 (WEST)] INFO Requests per second: 4777
+[Wed Oct 18 2017 02:33:22 GMT+0100 (WEST)] INFO Mean latency:        2.1 ms
+[Wed Oct 18 2017 02:33:22 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:33:22 GMT+0100 (WEST)] INFO Percentage of the requests served within a certain time
+[Wed Oct 18 2017 02:33:22 GMT+0100 (WEST)] INFO   50%      1 ms
+[Wed Oct 18 2017 02:33:22 GMT+0100 (WEST)] INFO   90%      2 ms
+[Wed Oct 18 2017 02:33:22 GMT+0100 (WEST)] INFO   95%      2 ms
+[Wed Oct 18 2017 02:33:22 GMT+0100 (WEST)] INFO   99%      4 ms
+[Wed Oct 18 2017 02:33:22 GMT+0100 (WEST)] INFO  100%      41 ms (longest request)
+[Wed Oct 18 2017 02:33:22 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:33:22 GMT+0100 (WEST)] INFO  100%      41 ms (longest request)
+[Wed Oct 18 2017 02:33:22 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:33:22 GMT+0100 (WEST)] INFO    -1:   60 errors
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ 
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ 
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ 
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ vim tests_scripts.sh
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ ./tests_scripts.sh
+HTTP/1.1 200 OK
+Date: Wed, 18 Oct 2017 01:34:17 GMT
+Connection: keep-alive
+
+[Wed Oct 18 2017 02:34:17 GMT+0100 (WEST)] INFO Requests: 0, requests per second: 0, mean latency: 0 ms
+[Wed Oct 18 2017 02:34:22 GMT+0100 (WEST)] INFO Requests: 20627, requests per second: 4124, mean latency: 7.3 ms
+[Wed Oct 18 2017 02:34:27 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:34:27 GMT+0100 (WEST)] INFO Target URL:          http://localhost:8050
+[Wed Oct 18 2017 02:34:27 GMT+0100 (WEST)] INFO Max time (s):        10
+[Wed Oct 18 2017 02:34:27 GMT+0100 (WEST)] INFO Concurrency level:   30
+[Wed Oct 18 2017 02:34:27 GMT+0100 (WEST)] INFO Agent:               none
+[Wed Oct 18 2017 02:34:27 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:34:27 GMT+0100 (WEST)] INFO Completed requests:  47401
+[Wed Oct 18 2017 02:34:27 GMT+0100 (WEST)] INFO Total errors:        0
+[Wed Oct 18 2017 02:34:27 GMT+0100 (WEST)] INFO Total time:          10.000257777 s
+[Wed Oct 18 2017 02:34:27 GMT+0100 (WEST)] INFO Requests per second: 4740
+[Wed Oct 18 2017 02:34:27 GMT+0100 (WEST)] INFO Mean latency:        6.3 ms
+[Wed Oct 18 2017 02:34:27 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:34:27 GMT+0100 (WEST)] INFO Percentage of the requests served within a certain time
+[Wed Oct 18 2017 02:34:27 GMT+0100 (WEST)] INFO   50%      5 ms
+[Wed Oct 18 2017 02:34:27 GMT+0100 (WEST)] INFO   90%      7 ms
+[Wed Oct 18 2017 02:34:27 GMT+0100 (WEST)] INFO   95%      10 ms
+[Wed Oct 18 2017 02:34:27 GMT+0100 (WEST)] INFO   99%      13 ms
+[Wed Oct 18 2017 02:34:27 GMT+0100 (WEST)] INFO  100%      1032 ms (longest request)
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ 
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ 
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ vim tests_scripts.sh
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ ./tests_scripts.sh
+HTTP/1.1 200 OK
+Date: Wed, 18 Oct 2017 01:36:38 GMT
+Connection: keep-alive
+
+[Wed Oct 18 2017 02:36:38 GMT+0100 (WEST)] INFO Requests: 0, requests per second: 0, mean latency: 0 ms
+[Wed Oct 18 2017 02:36:43 GMT+0100 (WEST)] INFO Requests: 13204, requests per second: 2641, mean latency: 0.4 ms
+[Wed Oct 18 2017 02:36:43 GMT+0100 (WEST)] INFO Errors: 47, accumulated errors: 47, 0.4% of total requests
+[Wed Oct 18 2017 02:36:48 GMT+0100 (WEST)] INFO Requests: 27192, requests per second: 2799, mean latency: 0.3 ms
+[Wed Oct 18 2017 02:36:48 GMT+0100 (WEST)] INFO Errors: 0, accumulated errors: 47, 0.2% of total requests
+[Wed Oct 18 2017 02:36:53 GMT+0100 (WEST)] INFO Requests: 40591, requests per second: 2679, mean latency: 0.4 ms
+[Wed Oct 18 2017 02:36:53 GMT+0100 (WEST)] INFO Errors: 0, accumulated errors: 47, 0.1% of total requests
+[Wed Oct 18 2017 02:36:58 GMT+0100 (WEST)] INFO Requests: 54937, requests per second: 2870, mean latency: 0.3 ms
+[Wed Oct 18 2017 02:36:58 GMT+0100 (WEST)] INFO Errors: 0, accumulated errors: 47, 0.1% of total requests
+[Wed Oct 18 2017 02:37:03 GMT+0100 (WEST)] INFO Requests: 68941, requests per second: 2800, mean latency: 0.3 ms
+[Wed Oct 18 2017 02:37:03 GMT+0100 (WEST)] INFO Errors: 0, accumulated errors: 47, 0.1% of total requests
+[Wed Oct 18 2017 02:37:08 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:37:08 GMT+0100 (WEST)] INFO Target URL:          http://localhost:8050
+[Wed Oct 18 2017 02:37:08 GMT+0100 (WEST)] INFO Max time (s):        30
+[Wed Oct 18 2017 02:37:08 GMT+0100 (WEST)] INFO Concurrency level:   1
+[Wed Oct 18 2017 02:37:08 GMT+0100 (WEST)] INFO Agent:               none
+[Wed Oct 18 2017 02:37:08 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:37:08 GMT+0100 (WEST)] INFO Completed requests:  83141
+[Wed Oct 18 2017 02:37:08 GMT+0100 (WEST)] INFO Total errors:        47
+[Wed Oct 18 2017 02:37:08 GMT+0100 (WEST)] INFO Total time:          30.000483004000003 s
+[Wed Oct 18 2017 02:37:08 GMT+0100 (WEST)] INFO Requests per second: 2771
+[Wed Oct 18 2017 02:37:08 GMT+0100 (WEST)] INFO Mean latency:        0.3 ms
+[Wed Oct 18 2017 02:37:08 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:37:08 GMT+0100 (WEST)] INFO Percentage of the requests served within a certain time
+[Wed Oct 18 2017 02:37:08 GMT+0100 (WEST)] INFO   50%      1 ms
+[Wed Oct 18 2017 02:37:08 GMT+0100 (WEST)] INFO   90%      1 ms
+[Wed Oct 18 2017 02:37:08 GMT+0100 (WEST)] INFO   95%      1 ms
+[Wed Oct 18 2017 02:37:08 GMT+0100 (WEST)] INFO   99%      1 ms
+[Wed Oct 18 2017 02:37:08 GMT+0100 (WEST)] INFO  100%      24 ms (longest request)
+[Wed Oct 18 2017 02:37:08 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:37:08 GMT+0100 (WEST)] INFO  100%      24 ms (longest request)
+[Wed Oct 18 2017 02:37:08 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:37:08 GMT+0100 (WEST)] INFO    -1:   47 errors
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ 
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ 
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ vim tests_scripts.sh
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ 
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ 
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ ./tests_scripts.sh
+HTTP/1.1 200 OK
+Date: Wed, 18 Oct 2017 01:38:39 GMT
+Connection: keep-alive
+
+[Wed Oct 18 2017 02:38:39 GMT+0100 (WEST)] INFO Requests: 0, requests per second: 0, mean latency: 0 ms
+[Wed Oct 18 2017 02:38:44 GMT+0100 (WEST)] INFO Requests: 22477, requests per second: 4495, mean latency: 1.1 ms
+[Wed Oct 18 2017 02:38:44 GMT+0100 (WEST)] INFO Errors: 50, accumulated errors: 50, 0.2% of total requests
+[Wed Oct 18 2017 02:38:49 GMT+0100 (WEST)] INFO Requests: 46707, requests per second: 4849, mean latency: 1 ms
+[Wed Oct 18 2017 02:38:49 GMT+0100 (WEST)] INFO Errors: 0, accumulated errors: 50, 0.1% of total requests
+[Wed Oct 18 2017 02:38:54 GMT+0100 (WEST)] INFO Requests: 70400, requests per second: 4738, mean latency: 1 ms
+[Wed Oct 18 2017 02:38:54 GMT+0100 (WEST)] INFO Errors: 0, accumulated errors: 50, 0.1% of total requests
+[Wed Oct 18 2017 02:38:59 GMT+0100 (WEST)] INFO Requests: 94907, requests per second: 4903, mean latency: 1 ms
+[Wed Oct 18 2017 02:38:59 GMT+0100 (WEST)] INFO Errors: 0, accumulated errors: 50, 0.1% of total requests
+[Wed Oct 18 2017 02:39:04 GMT+0100 (WEST)] INFO Requests: 119449, requests per second: 4908, mean latency: 1 ms
+[Wed Oct 18 2017 02:39:04 GMT+0100 (WEST)] INFO Errors: 0, accumulated errors: 50, 0% of total requests
+[Wed Oct 18 2017 02:39:09 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:39:09 GMT+0100 (WEST)] INFO Target URL:          http://localhost:8050
+[Wed Oct 18 2017 02:39:09 GMT+0100 (WEST)] INFO Max time (s):        30
+[Wed Oct 18 2017 02:39:09 GMT+0100 (WEST)] INFO Concurrency level:   5
+[Wed Oct 18 2017 02:39:09 GMT+0100 (WEST)] INFO Agent:               none
+[Wed Oct 18 2017 02:39:09 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:39:09 GMT+0100 (WEST)] INFO Completed requests:  144473
+[Wed Oct 18 2017 02:39:09 GMT+0100 (WEST)] INFO Total errors:        50
+[Wed Oct 18 2017 02:39:09 GMT+0100 (WEST)] INFO Total time:          30.000422313999998 s
+[Wed Oct 18 2017 02:39:09 GMT+0100 (WEST)] INFO Requests per second: 4816
+[Wed Oct 18 2017 02:39:09 GMT+0100 (WEST)] INFO Mean latency:        1 ms
+[Wed Oct 18 2017 02:39:09 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:39:09 GMT+0100 (WEST)] INFO Percentage of the requests served within a certain time
+[Wed Oct 18 2017 02:39:09 GMT+0100 (WEST)] INFO   50%      1 ms
+[Wed Oct 18 2017 02:39:09 GMT+0100 (WEST)] INFO   90%      1 ms
+[Wed Oct 18 2017 02:39:09 GMT+0100 (WEST)] INFO   95%      1 ms
+[Wed Oct 18 2017 02:39:09 GMT+0100 (WEST)] INFO   99%      3 ms
+[Wed Oct 18 2017 02:39:09 GMT+0100 (WEST)] INFO  100%      24 ms (longest request)
+[Wed Oct 18 2017 02:39:09 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:39:09 GMT+0100 (WEST)] INFO  100%      24 ms (longest request)
+[Wed Oct 18 2017 02:39:09 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:39:09 GMT+0100 (WEST)] INFO    -1:   50 errors
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ 
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ 
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ vim tests_scripts.sh
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ 
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ 
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ 
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ ./tests_scripts.sh
+./tests_scripts.sh: line 212: syntax error: unexpected end of file
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ 
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ 
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ vim tests_scripts.sh
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ ./tests_scripts.sh
+HTTP/1.1 200 OK
+Date: Wed, 18 Oct 2017 01:41:07 GMT
+Connection: keep-alive
+
+[Wed Oct 18 2017 02:41:07 GMT+0100 (WEST)] INFO Requests: 0, requests per second: 0, mean latency: 0 ms
+[Wed Oct 18 2017 02:41:12 GMT+0100 (WEST)] INFO Requests: 23916, requests per second: 4782, mean latency: 2.1 ms
+[Wed Oct 18 2017 02:41:12 GMT+0100 (WEST)] INFO Errors: 40, accumulated errors: 40, 0.2% of total requests
+[Wed Oct 18 2017 02:41:17 GMT+0100 (WEST)] INFO Requests: 48044, requests per second: 4828, mean latency: 2.1 ms
+[Wed Oct 18 2017 02:41:17 GMT+0100 (WEST)] INFO Errors: 0, accumulated errors: 40, 0.1% of total requests
+[Wed Oct 18 2017 02:41:22 GMT+0100 (WEST)] INFO Requests: 72731, requests per second: 4939, mean latency: 2 ms
+[Wed Oct 18 2017 02:41:22 GMT+0100 (WEST)] INFO Errors: 0, accumulated errors: 40, 0.1% of total requests
+[Wed Oct 18 2017 02:41:27 GMT+0100 (WEST)] INFO Requests: 97255, requests per second: 4905, mean latency: 2 ms
+[Wed Oct 18 2017 02:41:27 GMT+0100 (WEST)] INFO Errors: 0, accumulated errors: 40, 0% of total requests
+[Wed Oct 18 2017 02:41:32 GMT+0100 (WEST)] INFO Requests: 122004, requests per second: 4950, mean latency: 2 ms
+[Wed Oct 18 2017 02:41:32 GMT+0100 (WEST)] INFO Errors: 0, accumulated errors: 40, 0% of total requests
+[Wed Oct 18 2017 02:41:37 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:41:37 GMT+0100 (WEST)] INFO Target URL:          http://localhost:8050
+[Wed Oct 18 2017 02:41:37 GMT+0100 (WEST)] INFO Max time (s):        30
+[Wed Oct 18 2017 02:41:37 GMT+0100 (WEST)] INFO Concurrency level:   10
+[Wed Oct 18 2017 02:41:37 GMT+0100 (WEST)] INFO Agent:               none
+[Wed Oct 18 2017 02:41:37 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:41:37 GMT+0100 (WEST)] INFO Completed requests:  147310
+[Wed Oct 18 2017 02:41:37 GMT+0100 (WEST)] INFO Total errors:        40
+[Wed Oct 18 2017 02:41:37 GMT+0100 (WEST)] INFO Total time:          30.000268278 s
+[Wed Oct 18 2017 02:41:37 GMT+0100 (WEST)] INFO Requests per second: 4910
+[Wed Oct 18 2017 02:41:37 GMT+0100 (WEST)] INFO Mean latency:        2 ms
+[Wed Oct 18 2017 02:41:37 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:41:37 GMT+0100 (WEST)] INFO Percentage of the requests served within a certain time
+[Wed Oct 18 2017 02:41:37 GMT+0100 (WEST)] INFO   50%      1 ms
+[Wed Oct 18 2017 02:41:37 GMT+0100 (WEST)] INFO   90%      2 ms
+[Wed Oct 18 2017 02:41:37 GMT+0100 (WEST)] INFO   95%      2 ms
+[Wed Oct 18 2017 02:41:37 GMT+0100 (WEST)] INFO   99%      4 ms
+[Wed Oct 18 2017 02:41:37 GMT+0100 (WEST)] INFO  100%      47 ms (longest request)
+[Wed Oct 18 2017 02:41:37 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:41:37 GMT+0100 (WEST)] INFO  100%      47 ms (longest request)
+[Wed Oct 18 2017 02:41:37 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:41:37 GMT+0100 (WEST)] INFO    -1:   40 errors
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ 
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ 
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ 
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ vim tests_scripts.sh
+faroleco@faroleco-K30AD-M31AD-M51AD:~/Desktop/nodejs_code-master/tests$ ./tests_scripts.sh
+HTTP/1.1 200 OK
+Date: Wed, 18 Oct 2017 01:42:36 GMT
+Connection: keep-alive
+
+[Wed Oct 18 2017 02:42:36 GMT+0100 (WEST)] INFO Requests: 0, requests per second: 0, mean latency: 0 ms
+[Wed Oct 18 2017 02:42:41 GMT+0100 (WEST)] INFO Requests: 25754, requests per second: 5151, mean latency: 5.8 ms
+[Wed Oct 18 2017 02:42:41 GMT+0100 (WEST)] INFO Errors: 60, accumulated errors: 60, 0.2% of total requests
+[Wed Oct 18 2017 02:42:46 GMT+0100 (WEST)] INFO Requests: 51877, requests per second: 5227, mean latency: 5.7 ms
+[Wed Oct 18 2017 02:42:46 GMT+0100 (WEST)] INFO Errors: 0, accumulated errors: 60, 0.1% of total requests
+[Wed Oct 18 2017 02:42:51 GMT+0100 (WEST)] INFO Requests: 78586, requests per second: 5340, mean latency: 5.6 ms
+[Wed Oct 18 2017 02:42:51 GMT+0100 (WEST)] INFO Errors: 0, accumulated errors: 60, 0.1% of total requests
+[Wed Oct 18 2017 02:42:56 GMT+0100 (WEST)] INFO Requests: 104914, requests per second: 5268, mean latency: 5.7 ms
+[Wed Oct 18 2017 02:42:56 GMT+0100 (WEST)] INFO Errors: 0, accumulated errors: 60, 0.1% of total requests
+[Wed Oct 18 2017 02:43:01 GMT+0100 (WEST)] INFO Requests: 131693, requests per second: 5356, mean latency: 5.6 ms
+[Wed Oct 18 2017 02:43:01 GMT+0100 (WEST)] INFO Errors: 0, accumulated errors: 60, 0% of total requests
+[Wed Oct 18 2017 02:43:06 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:43:06 GMT+0100 (WEST)] INFO Target URL:          http://localhost:8050
+[Wed Oct 18 2017 02:43:06 GMT+0100 (WEST)] INFO Max time (s):        30
+[Wed Oct 18 2017 02:43:06 GMT+0100 (WEST)] INFO Concurrency level:   30
+[Wed Oct 18 2017 02:43:06 GMT+0100 (WEST)] INFO Agent:               none
+[Wed Oct 18 2017 02:43:06 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:43:06 GMT+0100 (WEST)] INFO Completed requests:  158423
+[Wed Oct 18 2017 02:43:06 GMT+0100 (WEST)] INFO Total errors:        60
+[Wed Oct 18 2017 02:43:06 GMT+0100 (WEST)] INFO Total time:          30.000254496 s
+[Wed Oct 18 2017 02:43:06 GMT+0100 (WEST)] INFO Requests per second: 5281
+[Wed Oct 18 2017 02:43:06 GMT+0100 (WEST)] INFO Mean latency:        5.7 ms
+[Wed Oct 18 2017 02:43:06 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:43:06 GMT+0100 (WEST)] INFO Percentage of the requests served within a certain time
+[Wed Oct 18 2017 02:43:06 GMT+0100 (WEST)] INFO   50%      5 ms
+[Wed Oct 18 2017 02:43:06 GMT+0100 (WEST)] INFO   90%      7 ms
+[Wed Oct 18 2017 02:43:06 GMT+0100 (WEST)] INFO   95%      7 ms
+[Wed Oct 18 2017 02:43:06 GMT+0100 (WEST)] INFO   99%      11 ms
+[Wed Oct 18 2017 02:43:06 GMT+0100 (WEST)] INFO  100%      33 ms (longest request)
+[Wed Oct 18 2017 02:43:06 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:43:06 GMT+0100 (WEST)] INFO  100%      33 ms (longest request)
+[Wed Oct 18 2017 02:43:06 GMT+0100 (WEST)] INFO 
+[Wed Oct 18 2017 02:43:06 GMT+0100 (WEST)] INFO    -1:   60 errors
+
+
